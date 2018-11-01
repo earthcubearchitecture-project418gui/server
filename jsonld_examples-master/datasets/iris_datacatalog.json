@@ -1,0 +1,25 @@
+{
+ "description": "ESEC is a compilation of data on non-earthquake seismic sources such as landslides, debris flows, dam collapses, floods, and avalanches that generate seismic signals but are rarely included in common earthquake catalogs. This catalog is designed to allow new entries as information regarding new recent and historic events becomes available. *We strongly encourage contributions to ESEC catalog*. If you are interested in becoming a contributor to this catalog, please see the \"ESEC Event Contribution Guidelines\":../esec-contribution-guide.\r\n", 
+ "image": "http://ds.iris.edu/media/product/esec/images/ESEC-logo-2.png", 
+ "includedInDataCatalog": {
+  "url": "http://ds.iris.edu/ds/products/", 
+  "@id": "http://ds.iris.edu/ds/products/", 
+  "@type": "DataCatalog"
+ }, 
+ "dateCreated": "2017-01-11T12:41:26.956", 
+ "keywords": "Data Products,Exotic Seismic Events Catalog,avalanches,floods,debris flows,dam collapses,ESEC,landslide", 
+ "@id": "http://ds.iris.edu/ds/products/esec/", 
+ "name": "ESEC", 
+ "author": [
+  {
+   "@type": "Person", 
+   "name": "IRIS Data Products"
+  }
+ ], 
+ "url": "http://ds.iris.edu/ds/products/esec/", 
+ "@type": "Dataset", 
+ "@context": {
+  "@vocab": "http://schema.org/"
+ }, 
+ "dateModified": "2018-10-03T06:48:12.756"
+}

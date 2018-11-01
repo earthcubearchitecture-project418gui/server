@@ -1,0 +1,110 @@
+{
+
+ 	"@context": {
+        "@vocab": "http://schema.org/",
+        "gdx": "https://geodex.org/voc/",
+        "datacite": "http://purl.org/spar/datacite/",
+        "geolink": "http://schema.geolink.org/1.0/base/main#",
+        "re3data": "http://example.org/re3data/0.1/",
+        "ecrwg": "http://example.org/ecrwg/0.1/"
+    },
+
+	"@type": ["Service", "Organization", "WebSite", "WebPage"],
+	"@id": "[DOI URL, EXAMPLE: https://doi.org/10.17616/R37P4C | URL, EXAMPLE: https://www.bco-dmo.org]",
+	
+	"legalName": "[FULL NAME, EXAMPLE: Biological and Chemical Data Management Office]",
+    "name": "[COMMON NAME, EXAMPLE: BCO-DMO]",
+    "url": "[URL, EXAMPLE: https://www.bco-dmo.org]",
+	"description": "[DESCRIPTION, EXAMPLE: The BCO-DMO resource catalog offers free and open access to publicly funded research products whose field of study are biological and chemical oceanography.]",
+	"category": ["[DOMAIN ONE, EXAMPLE: Biological Oceanography]", "[DOMAIN TWO, EXAMPLE: Chemical Oceanography]"],
+
+	"sameAs": [
+        "[ADDITIONAL LINK ONE, EXAMPLE: https://twitter.com/BCODMO]",
+        "[ADDITIONAL LINK TWO, EXAMPLE: https://www.linkedin.com/company/6378439/]"
+    	],
+
+	"contactPoint": {
+        "@type": "ContactPoint",
+        "@id": "[CONTACT URL, EXAMPLE: https://www.bco-dmo.org/about-us]",
+        "name": "[CONTACT LABEL, EXAMPLE: Support]",
+        "email": "[CONTACT EMAIL, EXAMPLE: info@bco-dmo.org]",
+        "url": "[CONTACT URL, EXAMPLE: https:/www.bco-dmo.org/about-us]",
+        "contactType": "[CONTACT TYPE, EXAMPLE: Customer Support]"
+    },
+    
+    "address": {
+      	"@type": "PostalAddress",
+      	"streetAddress": "[STREET ADDRESS, EXAMPLE: WHOI, MS#36, Shiverick House 11 School St.]",
+        "addressLocality": "[CITY, EXAMPLE: Woods Hole]",
+        "addressRegion": "[STATE, EXAMPLE: MA]",
+        "postalCode": "[ZIP CODE, EXAMPLE: 02543]",
+        "addressCountry": "[COUNTRY, EXAMPLE: USA]"
+    },
+    
+    "foundingDate": "[DATE OF INCEPTION, EXAMPLE: 2006-09-01]",
+    
+    "logo": {
+        "@type": "ImageObject",
+        "url": "[LOGO URL, EXAMPLE: https://www.bco-dmo.org/files/bcodmo/images/bco-dmo-words-BLUE.jpg]"
+     },
+
+	"parentOrganization": {
+        "@type": "Organization",
+        "@id": "[PARENT URL, EXAMPLE: http://www.nsf.gov | PARENT DOI URL, EXAMPLE: http://dx.doi.org/10.13039/1000000851 ]",
+        "legalName": "[PARENT FULL NAME, EXAMPLE: Directorate for Geosciences]",
+        "name": "[PARENT COMMON NAME, EXAMPLE: NSF-GEO]",
+        "url": "[PARENT URL, EXAMPLE: http://www.nsf.gov]",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "[STREET ADDRESS, EXAMPLE: 266 Woods Hole Road]",
+            "addressLocality": "[CITY, EXAMPLE: Woods Hole]",
+            "addressRegion": "[STATE, EXAMPLE: MA]",
+            "postalCode": "[ZIP CODE, EXAMPLE: 02543]",
+            "addressCountry": "[COUNTRY, EXAMPLE: USA]"
+        }
+    	 },
+    
+     "memberOf": {
+        "@type": "ProgramMembership",
+        "programName": "[PROGRAM NAME, EXAMPLE: EarthCube CDF Registry]",
+        "hostingOrganization": {
+            "@type": "Organization",
+            "name": "[HOSTING ORGANIZATION, EXAMPLE: RE3Data]",
+            "url": "[HOSTING ORGANIZATION URL, EXAMPLE: http://www.re3data.org]"
+        }
+   	 },
+  
+    
+     "funder": {
+        "@type": "Organization",
+        "@id": "[FUNDER URL, EXAMPLE: https://www.nsf.gov/div/index.jsp?div=OCE| FUNDER DOI URL, EXAMPLE: https://dx.doi.org/10.13039/100000141]",
+        "legalName": "[FUNDER FULL NAME, EXAMPLE: Division of Ocean Sciences]",
+        "name": "[FUNDER COMMON NAME, EXAMPLE: OCE]",
+        "url": "[FUNDER URL, EXAMPLE: https://www.nsf.gov/div/index.jsp?div=OCE]",
+        "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "http://purl.org/spar/datacite/doi",
+            "value": "[FUNDER DOI, EXAMPLE: 10.13039/100000141]",
+            "url": "[FUNDER DOI URL, EXAMPLE: https://doi.org/10.13039/100000141]"
+        },
+    
+     "publishingPrinciples": [
+        {
+            "@type": "DigitalDocument",
+            "additionalType": "https://geodex.org/voc/Protocol-TermsOfUse",
+            "name": "[COMMON NAME, EXAMPLE: Terms of Use]",
+            "url": "[URL, EXAMPLE: https://help.hydroshare.org/about-hydroshare/policies/terms-of-use/]",
+            "fileFormat": "[FILE FORMAT, EXAMPLE: text/html]"
+        },
+        {
+            "@type": "DigitalDocument",
+            "additionalType": "https://geodex.org/voc/Protocol-ResourceSubmissionPolicy",
+            "name": "[COMMON NAME, EXAMPLE: HydroShare Publication Agreement]",
+            "url": "[URL, EXAMPLE: https://help.hydroshare.org/about-hydroshare/policies/hydroshare-publication-agreement/]",
+            "fileFormat": "[FILE FORMAT, EXAMPLE: text/html]"
+        }
+    ]
+    
+    } 
+    
+}
