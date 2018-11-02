@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 5000;
 
 const { validateJSON } = require('./validateJSON');
 const { datasetPrimativesValidator } = require('./js_templates/dataset_template_primatives');
