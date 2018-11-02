@@ -15,18 +15,17 @@ function validateJSON(doc, validator, result) {
 
     if (doc[k] == undefined) {         //Missing, currently assuming its required
       result[k] = false;
-    } else if (Array.isArray(validator[k]) && !Array.isArray(doc[k])) {
-      //Multiple allowed by validator, only one value present on doc
-      //Check type
-      if (typeof doc[k] !== 'object') {
-        //doc[k] is not 'object' or 'array', must be invalid
-        result[k] = false;
-      } else {
-        result[k] = validateJSON(doc[k], validator[k], result[k]);
-      }
+    } else if (Array.isArray(validator[k]) && !Array.isArray(doc[k]) && typeof doc[k] !== 'object') {
+      //Multiple allowed by validator, only one value present on doc, acceptable
+      result[k] = validateJSON(doc[k], validator[k], result[k]);
     } else if (Array.isArray(validator[k]) && Array.isArray(doc[k])) {
-      result[k] = doc[k].map(inner =>
-        result[k] = validateJSON(inner, validator[k][0], deepCopyKeys(validator[k][0], false)));
+      result[k] = doc[k].map(inner => {
+        // Before decent, check doc[i] is 'object'
+        if (Array.isArray(inner) || typeof inner !== 'object') {
+          return false;
+        }
+        return validateJSON(inner, validator[k][0], deepCopyKeys(validator[k][0], false));
+      });
     } else if (typeof validator[k] == 'function') {
       result[k] = validator[k](doc[k])
     } else {
