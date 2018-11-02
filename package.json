@@ -2,7 +2,7 @@
   "name": "jsonld-ucar-isti",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/web.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,8 @@
     "jsonld": "^1.1.0",
     "ramda": "^0.25.0",
     "validator": "^10.8.0"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
