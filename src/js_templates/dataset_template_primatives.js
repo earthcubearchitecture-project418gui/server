@@ -1,4 +1,5 @@
 const { isURL } = require('validator');
+const { anyPass, allPass } = require('ramda');
 
 // Validates primatives at the ends of the structure
 // Currently does not validate '@context'
@@ -16,8 +17,8 @@ const datasetPrimativesValidator = {
   keywords: isString,
   license: isString,
   citation: isString,
-  includedInDataCatalog: { '@id': isString },
-  distribution: { '@type': isString, contentUrl: isString, encodingFormat: isString },
+  includedInDataCatalog: [{ '@id': isString }],
+  distribution: [{ '@type': isString, contentUrl: isString, encodingFormat: isString }],
   provider:
   {
     '@id': isString,
@@ -60,16 +61,15 @@ const datasetPrimativesValidator = {
     }
   }],
   spatialCoverage: isString,
-  variableMeasured:
-  {
+  variableMeasured: [{
     '@type': isString,
     '@id': isString,
     description: isString,
     name: isString,
     unitText: isString,
     url: isString
-  },
-  measurementTechnique: isString,
+  }],
+  measurementTechnique: anyPass([isString, isStringArray]),
 
   spatialCoverage: [{
     '@type': isString,
