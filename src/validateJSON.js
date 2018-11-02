@@ -11,28 +11,28 @@ const { deepCopyKeys } = require('./funcs');
 function validateJSON(doc, validator, result) {
   result = result || {};
   for (let k in validator) {
-    // if (k === 'creator') {
+    // if (k === 'geo') {
     //   console.log('hit');
     //   debugger;
     // }
 
     if (doc[k] == undefined) {         //Missing, currently assuming its required
       result[k] = false;
-    } else if (Array.isArray(validator[k]) && !Array.isArray(doc[k]) && typeof doc[k] !== 'object') {
+    } else if (isArray(validator[k]) && !isArray(doc[k]) && isObject(doc[k])) {
       //Multiple allowed by validator, only one value present on doc, acceptable
-      result[k] = validateJSON(doc[k], validator[k], result[k]);
-    } else if (Array.isArray(validator[k]) && Array.isArray(doc[k])) {
+      result[k] = validateJSON(doc[k], validator[k][0], result[k]);
+    } else if (isArray(validator[k]) && isArray(doc[k])) {
       result[k] = doc[k].map(inner => {
         // Before decent, check doc[i] is 'object'
-        if (Array.isArray(inner) || typeof inner !== 'object') {
+        if (isArray(inner) || typeof inner !== 'object') {
           return false;
         }
         return validateJSON(inner, validator[k][0], deepCopyKeys(validator[k][0], false));
       });
     } else if (typeof validator[k] == 'function') {
       result[k] = validator[k](doc[k]);
-    } else if (typeof validator[k] == 'object') {
-      validateJSON(doc[k], validator[k], result[k]);
+    } else if (isObject(validator[k])) {
+      result[k] = validateJSON(doc[k], validator[k]);
     } else {
       result[k] = false;
       console.log('Validation error : ', {
@@ -45,7 +45,7 @@ function validateJSON(doc, validator, result) {
 }
 
 function isArray(a) { return Array.isArray(a); }
-function isObject(o) { return (typeof doc[k] !== 'object'); }
+function isObject(o) { return (typeof o === 'object'); }
 
 // --- Example ---
 const fs = require('fs');
@@ -61,15 +61,16 @@ const JSONLD_EXAMPLES_FOLDER = '../jsonld_examples/';
 function validateLocalExample() {
   // Read example
   const docSrc = fs.readFileSync(JSONLD_EXAMPLES_FOLDER + 'datasets/bcodmo_dataset.json');
+  // const docSrc = fs.readFileSync(JSONLD_EXAMPLES_FOLDER + 'datasets/ieda_dataset.json');
 
   const doc = JSON.parse(docSrc);
 
   printLine(); //Start line
-  printLargeObj(doc);
+  // printLargeObj(doc);
 
   const result = validateJSON(doc, datasetPrimativesValidator);
 
-  printLargeObj(result);
+  // printLargeObj(result);
 
   return result;
 }

@@ -1,5 +1,9 @@
-const { isURL } = require('validator');
-const { anyPass, allPass } = require('ramda');
+
+const { isURL, isMimeType,
+  isString, isStringArray,
+  isCoord, isPolygon, isBox
+} = require('../validators/validators');
+
 
 // Validates primatives at the ends of the structure
 // Currently does not validate '@context'
@@ -7,10 +11,10 @@ const datasetPrimativesValidator = {
 
   '@type': isString,
   '@id': isString,
-  additionalType: isString,
+  additionalType: isStringArray,
   name: isString,
   alternateName: isString,
-  url: isString,
+  url: isURL,
   description: isString,
   version: isString,
   isAccessibleForFree: isString,
@@ -18,7 +22,7 @@ const datasetPrimativesValidator = {
   license: isString,
   citation: isString,
   includedInDataCatalog: [{ '@id': isString }],
-  distribution: [{ '@type': isString, contentUrl: isString, encodingFormat: isString }],
+  distribution: [{ '@type': isString, contentUrl: isURL, encodingFormat: isMimeType }],
   provider:
   {
     '@id': isString,
@@ -26,7 +30,7 @@ const datasetPrimativesValidator = {
     additionalType: isString,
     legalName: isString,
     name: isString,
-    url: isString
+    url: isURL
   },
   publisher:
   {
@@ -34,14 +38,14 @@ const datasetPrimativesValidator = {
     '@type': isString,
     description: isString,
     name: isString,
-    url: isString
+    url: isURL
   },
   creator: [{
     '@id': isString,
     '@type': isString,
     additionalType: isString,
     roleName: isString,
-    url: isString,
+    url: isURL,
     creator:
     {
       '@id': isString,
@@ -50,57 +54,54 @@ const datasetPrimativesValidator = {
       name: isString,
       givenName: isString,
       familyName: isString,
-      url: isString,
+      url: isURL,
       identifier: {
         '@type': isString,
         additionalType: isString,
         propertyID: isString,
-        url: isString,
+        url: isURL,
         value: isString
       }
     }
   }],
-  spatialCoverage: isString,
   variableMeasured: [{
     '@type': isString,
     '@id': isString,
     description: isString,
     name: isString,
     unitText: isString,
-    url: isString
+    url: isURL
   }],
-  measurementTechnique: anyPass([isString, isStringArray]),
+
+  measurementTechnique: isStringArray,
 
   spatialCoverage: [{
     '@type': isString,
     name: isString,
-    geo: {
+    subject: {
       '@type': isString,
-      latitude: isString,
-      longitude: isString
-    }
+      fileFormat: isString,
+      text: isString
+    },
+    additionalProperty: [{
+      "@type": isString,
+      value: isString,
+      propertyID: isString,
+      name: isString,
+      alternateName: isString
+    }],
+    geo: [{
+      '@type': isString,
+      latitude: isCoord,
+      longitude: isCoord,
+      box: isBox,
+      polygon: isPolygon
+    }]
   }]
 
 };
 
 //Validators
-
-function isString(input) {
-  return typeof input === 'string';
-}
-
-function isStringArray(input) {
-  if (!Array.isArray(input)) {
-    return false;
-  }
-  for (const v of input) {
-    if (!isString(v)) {
-      return false;
-    }
-  }
-  return true;
-}
-
 module.exports = {
   datasetPrimativesValidator
 }
