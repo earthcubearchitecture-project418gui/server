@@ -11,10 +11,10 @@ const { deepCopyKeys } = require('./funcs');
 function validateJSON(doc, validator, result) {
   result = result || {};
   for (let k in validator) {
-    if (k === 'creator') {
-      console.log('hit');
-      debugger;
-    }
+    // if (k === 'creator') {
+    //   console.log('hit');
+    //   debugger;
+    // }
 
     if (doc[k] == undefined) {         //Missing, currently assuming its required
       result[k] = false;
@@ -43,6 +43,9 @@ function validateJSON(doc, validator, result) {
   }
   return result;
 }
+
+function isArray(a) { return Array.isArray(a); }
+function isObject(o) { return (typeof doc[k] !== 'object'); }
 
 // --- Example ---
 const fs = require('fs');
@@ -77,27 +80,3 @@ module.exports = {
   validateLocalExample
 }
 
-// else if (Array.isArray(validator[k])) {
-//   //either array of functions or objects.
-//   //if objects, continue desent
-//   //check if doc is array first
-//   //Wrong, doc[k] doesnt have to be array
-//   if (!Array.isArray(doc[k])) {
-//     result[k] = false;
-//   }
-//   //Array of objects on validator signify array of objs in doc
-//   //Array of functions on validator signify 
-//   else if (typeof validator[k][0] === 'object') {
-//     result[k] = doc[k].map(inner =>
-//       result[k] = validateJSON(inner, validator[k][0], deepCopyKeys(validator[k][0], false)));
-//   } else if (typeof validator[k][0] === 'function') {
-//     console.log('Needs refactor before use.');
-//   }
-// } else if (typeof validator[k] == 'object') {
-//   //isObjectNotArray
-//   if (typeof doc[k] === 'object' && !Array.isArray(doc[k])) {
-//     result[k] = validateJSON(doc[k], validator[k], result[k]);
-//   } else {
-//     result[k] = false;
-//   }
-// }

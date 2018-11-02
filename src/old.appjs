@@ -9,3 +9,29 @@
 // const result = JSON.parse(templateSrc);
 // delete result['@context'];  //Not part of the validation (here)
 // deepReplaceValues(result, false);   //False until validated true
+
+
+// else if (Array.isArray(validator[k])) {
+//   //either array of functions or objects.
+//   //if objects, continue desent
+//   //check if doc is array first
+//   //Wrong, doc[k] doesnt have to be array
+//   if (!Array.isArray(doc[k])) {
+//     result[k] = false;
+//   }
+//   //Array of objects on validator signify array of objs in doc
+//   //Array of functions on validator signify 
+//   else if (typeof validator[k][0] === 'object') {
+//     result[k] = doc[k].map(inner =>
+//       result[k] = validateJSON(inner, validator[k][0], deepCopyKeys(validator[k][0], false)));
+//   } else if (typeof validator[k][0] === 'function') {
+//     console.log('Needs refactor before use.');
+//   }
+// } else if (typeof validator[k] == 'object') {
+//   //isObjectNotArray
+//   if (typeof doc[k] === 'object' && !Array.isArray(doc[k])) {
+//     result[k] = validateJSON(doc[k], validator[k], result[k]);
+//   } else {
+//     result[k] = false;
+//   }
+// }
