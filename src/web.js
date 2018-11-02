@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 const { validateJSON } = require('./validateJSON');
 const { datasetPrimativesValidator } = require('./js_templates/dataset_template_primatives');
@@ -40,5 +40,4 @@ app.post('/validate', (req, res) => {
   res.send(JSON.stringify(result));
   // res.send('Hello validate');
 });
-
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
