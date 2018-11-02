@@ -1,0 +1,11 @@
+
+// // Construct Object that replaces primatives at the end of obj tree with validator functions
+// const templateValidator = JSON.parse(templateSrc);
+// delete templateValidator['@context'];
+// deepReplaceValues(templateValidator, isString, isStringArray);
+// printLargeObj(templateValidator);
+
+/// Building result as validation occurs
+// const result = JSON.parse(templateSrc);
+// delete result['@context'];  //Not part of the validation (here)
+// deepReplaceValues(result, false);   //False until validated true
