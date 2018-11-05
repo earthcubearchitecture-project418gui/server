@@ -46,41 +46,25 @@ function isCoord(input) {
 // }
 
 function isBox(input) {
-  const original = input;
-  //Test for non-numeric chars
-  let test = input.replace(/,|-/g, ' ');
-  let res = validator.isNumeric(test);
-  if (!res) {
-    return "Contains non-numeric values";
-  }
+  let res = isStringOfNumbers(input);
+  if (res !== true) { return 'Invalid Box > ' + res; }
+  //Regex, finds coordinate pairs, requires leading 0. ".314" not accepted
+  res = isSeriesOfCoordinates(input);
+  if (typeof res === 'string') { return res; }
 
-  let coordPairs = /(-?\d*\.\d+,-?\d*\.\d+)/g;
-  res = input.match(coordPairs);
-  if (res === null) {
-    return "No coordinates detected > " + input;
-  }
-  if (res.length !== 2) {
-    return "Incorrect number of coordinates > " + input + ` has ${res.length} coords.`;
+  if (res !== 2) {
+    return 'Incorrect number of coordinates > ' + input + ` has ${res} coords.`;
   }
   return true;
 }
 
 function isPolygon(input) {
-  // const original = input;
-  // //Test for non-numeric chars
-  // let test = input.replace(/,|-/g, ' ');
-  // let res = validator.isNumeric(test);
-  // if (!res) {
-  //   return "Contains non-numeric values";
-  // }
+  let res = isStringOfNumbers(input);
+  if (res !== true) { return 'Invalid Polygon > ' + res; }
 
-  let coordPairs = /(-?\d*\.\d+,-?\d*\.\d+)/g;
-  res = input.match(coordPairs);
-  if (res === null) {
-    return "No coordinates detected > " + input;
-  }
-  if (res.length < 3) {
-    return "Not enough coordinates > " + input;
+  res = isSeriesOfCoordinates(input);
+  if (res < 3) {
+    return "Not enough coordinates > " + input.trim() + ` has ${res} coords.`;
   }
   return true;
 }
@@ -98,6 +82,32 @@ function isBoolean(input) {
   } else {
     return "Needs to be true or false > " + input;
   }
+}
+
+/**
+ * @param {string} input | example : 24.94972,-80.45361 24.94972,-80.45361
+ * @returns {string | number} string = error | number = # of coords
+ */
+function isSeriesOfCoordinates(input) {
+  let coordPairs = /(-?\d*\.\d+,-?\d*\.\d+)/g;
+  res = input.match(coordPairs);
+  if (res === null) {
+    return 'No coordinates detected > ' + input;
+  }
+  return res.length;
+}
+
+//Weak check for charaters that dont belong in series of numbers
+function isStringOfNumbers(input) {
+  //Test for non-numeric chars
+  let test = input.replace(/,|\.|-|\s/g, '');
+  console.log('[isBox] : ', input, ' : ', test);
+  let res = validator.isNumeric(test);
+  // let res = validator.isNumeric(input);
+  if (!res) {
+    return "Contains non-numeric values, such as " + test.replace(/[0-9]/g, '').split('').join(',');
+  }
+  return true;
 }
 
 module.exports = {

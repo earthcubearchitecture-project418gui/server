@@ -35,7 +35,7 @@ function deepCopyKeys(obj, scalar) {
 
 function printLine() { console.log('-'.repeat(80)); }
 function printLargeObj(obj) {
-  console.log(obj);
+  console.log(JSON.stringify(obj, undefined, 2));
   printLine();
 }
 
