@@ -7,6 +7,8 @@ const { deepCopyKeys } = require('./funcs');
  * @param {doc} object should be representable in JSON, ie. no prototypes or functions for values
  * @param {validator} object
  * @param {result} object can be null, results are added to object
+ * @return object | Duplicates structure of validator, 
+ * Possible primative values | true = passed validation, false = missing on doc, string = failed validation
  */
 function validateJSON(doc, validator, result) {
   result = result || {};
@@ -59,7 +61,6 @@ const JSONLD_EXAMPLES_FOLDER = '../jsonld_examples/';
  * @returns {native JSON} result
  */
 function validateLocalExample() {
-  // Read example
   const docSrc = fs.readFileSync(JSONLD_EXAMPLES_FOLDER + 'datasets/bcodmo_dataset.json');
   // const docSrc = fs.readFileSync(JSONLD_EXAMPLES_FOLDER + 'datasets/ieda_dataset.json');
 
@@ -70,7 +71,7 @@ function validateLocalExample() {
 
   const result = validateJSON(doc, datasetPrimativesValidator);
 
-  // printLargeObj(result);
+  printLargeObj(result);
 
   return result;
 }

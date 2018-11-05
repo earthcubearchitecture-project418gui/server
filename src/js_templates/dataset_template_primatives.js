@@ -1,6 +1,6 @@
 
 const { isURL, isMimeType,
-  isString, isStringArray,
+  isBoolean, isString, isStringArray,
   isCoord, isPolygon, isBox
 } = require('../validators/validators');
 
@@ -17,7 +17,7 @@ const datasetPrimativesValidator = {
   url: isURL,
   description: isString,
   version: isString,
-  isAccessibleForFree: isString,
+  isAccessibleForFree: isBoolean,
   keywords: isString,
   license: isString,
   citation: isString,
