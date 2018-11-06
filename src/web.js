@@ -6,28 +6,22 @@ const PORT = process.env.PORT || 3000;
 const { validateJSON } = require('./validateJSON');
 const { datasetPrimativesValidator } = require('./js_templates/dataset_template_primatives');
 
-app.get('/', (req, res) => res.send('Hello World!'));
 
+// app.use(bodyParser.json());
 app.use(bodyParser.text({ type: 'application/json' }));
 
 app.post('/validate', (req, res) => {
   console.log('Hit [/validate]');
-  // if (req.get('Content-Type') !== 'application/json') {
-  //   console.log('Invalid Content-Type');
-  //   res.send('Invalid Content-Type');
-  //   return;
-  // }
 
   const body = req.body;
 
-  console.log('Body : ');
-  console.log(body);
-  console.log(typeof body);
+  // console.log('Body : ');
+  // console.log(body);
+  // console.log(typeof body);
 
   // Parse Body to JSON
   let input;
   try {
-    // input = JSON.parse(`{"WHAT":"OKAY"}`);
     input = JSON.parse(body);
   } catch (e) {
     console.log("Failed to parse JSON : ", e);
@@ -35,9 +29,15 @@ app.post('/validate', (req, res) => {
     return;
   }
 
-  let result = validateJSON(input, datasetPrimativesValidator, {});
+  const result = validateJSON(input, datasetPrimativesValidator, {});
+  const result_string = JSON.stringify(result, undefined, 2);
+  console.log(result_string);
 
-  res.send(JSON.stringify(result));
-  // res.send('Hello validate');
+  res.send(result_string);
 });
-app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
+
+
+app.use(express.static(__dirname + '/public'));
+
+
+app.listen(PORT, () => console.log(`JSON-LD validator app listening on port ${PORT}.`));
