@@ -105,9 +105,47 @@ function isStringOfNumbers(input) {
   let res = validator.isNumeric(test);
   // let res = validator.isNumeric(input);
   if (!res) {
-    return "Contains non-numeric values, such as " + test.replace(/[0-9]/g, '').split('').join(',');
+    const invalidChars = '[' + test.replace(/[0-9]/g, '').split('').join(',') + ']';
+    return "Contains non-numeric values, such as " + invalidChars;
   }
   return true;
+}
+
+
+// Stage 2 validators
+
+/**
+ * @param {key} key to access object with
+ * @returns predicate to use against obj
+ */
+function hasValidatedProp(key) {
+  return obj => R.has(key)(obj) && obj[key] === true;
+}
+
+/**
+ * 
+ * @param {geo obj or array} input 
+ */
+function isGeos(input) {
+  if (Array.isArray(input)) {
+    return input.map(geo => isGeos(input));
+  }
+
+  const { allPass } = R;
+  const has = hasValidatedProp;
+
+  if (allPass([has('longitude'), has('latitude')])(input)) {
+    return true;
+  }
+  if (has('box')(input)) {
+    return true;
+  }
+  if (has('polygon')(input)) {
+    return true;
+  }
+
+  return "Invalid Geo object.";
+
 }
 
 module.exports = {
@@ -120,4 +158,6 @@ module.exports = {
   isMimeType,
   isCoord,
   isURL,
+
+  isGeos
 }

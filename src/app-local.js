@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const { validateLocalExample } = require('./validateJSON');
+const { validateLocalExample } = require('./validate.js');
 
 validateLocalExampleOutputResult('output.json');
 return;
@@ -18,5 +18,7 @@ function validateLocalExampleOutputResult(outputFile) {
     return;
   }
 
-  fs.writeFileSync(outputFile, result);
+  if (outputFile) {
+    fs.writeFileSync(outputFile, result);
+  }
 }

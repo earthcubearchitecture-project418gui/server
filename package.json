@@ -5,7 +5,8 @@
   "main": "src/web.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/web.js"
+    "start": "node src/web.js",
+    "local": "node src/app-local.js"
   },
   "keywords": [],
   "author": "",
