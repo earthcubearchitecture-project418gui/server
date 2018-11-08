@@ -24,7 +24,7 @@ const httpsOptions = {
   key: fs.readFileSync(keyPath)
 }
 
-const { validateDatasetDocument } = require('./validate.js');
+const { validateDatasetDocument, validateOrganizationDocument } = require('./validate.js');
 const { datasetPrimativesValidator } = require('./js_templates/dataset_primatives.js');
 
 // app.use(bodyParser.json());
@@ -65,7 +65,7 @@ app.post('/validate_org', (req, res) => {
     return;
   }
 
-  const result = validateJSON(inputDocument, datasetPrimativesValidator, {});
+  const result = validateOrganizationDocument(inputDocument, datasetPrimativesValidator, {});
   const result_string = JSON.stringify(result, undefined, 2);
 
   console.log(result_string);

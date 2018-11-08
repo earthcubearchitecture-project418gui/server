@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const { validateLocalExample } = require('./validate.js');
+const { validateExample } = require('./validate.js');
 
 validateLocalExampleOutputResult('output.json');
 return;
@@ -9,7 +9,7 @@ return;
  * @param {string} fileName
  */
 function validateLocalExampleOutputResult(outputFile) {
-  let result = validateLocalExample();
+  let result = validateExample();
 
   try {
     result = JSON.stringify(result);

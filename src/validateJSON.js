@@ -28,7 +28,7 @@ function validateJSON(doc, validator, result) {
         if (isArray(inner) || typeof inner !== 'object') {
           return false;
         }
-        return validateJSON(inner, validator[k][0], deepCopyKeys(validator[k][0], false));
+        return validateJSON(inner, validator[k][0]);
       });
     } else if (typeof validator[k] == 'function') {
       result[k] = validator[k](doc[k]);

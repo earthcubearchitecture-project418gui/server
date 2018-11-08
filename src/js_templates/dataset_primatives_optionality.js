@@ -1,43 +1,51 @@
 
+
+function isRequired(isPresent) {
+  if (typeof isPresent === 'string') {
+    return "Required property is invalid > " + isPresent;
+  }
+  return isPresent || "Required property is missing";
+
+}
 // values (true) currently have no meaning
 const datasetPrimativeOptionality = {
 
-  '@id': true,
-  name: true,
-  url: true,
-  description: true,
-  isAccessibleForFree: true,
-  keywords: true,
-  includedInDataCatalog: [{ '@id': true }],
-  distribution: [{ contentUrl: true, encodingFormat: true }],
+  '@id': isRequired,
+  name: isRequired,
+  url: isRequired,
+  description: isRequired,
+  isAccessibleForFree: isRequired,
+  keywords: isRequired,
+  includedInDataCatalog: [{ '@id': isRequired }],
+  distribution: [{ contentUrl: isRequired, encodingFormat: isRequired }],
   provider:
   {
-    '@id': true,
-    legalName: true,
-    url: true
+    '@id': isRequired,
+    legalName: isRequired,
+    url: isRequired
   },
   publisher:
   {
-    '@id': true,
-    name: true,
-    url: true
+    '@id': isRequired,
+    name: isRequired,
+    url: isRequired
   },
   creator: [{
-    '@id': true,
+    '@id': isRequired,
     creator:
     {
-      '@id': true,
-      name: true,
+      '@id': isRequired,
+      name: isRequired,
       identifier: {
-        url: true,
-        value: true
+        url: isRequired,
+        value: isRequired
       }
     }
   }],
   variableMeasured: [{
-    '@id': true,
-    name: true,
-    unitText: true
+    '@id': isRequired,
+    name: isRequired,
+    unitText: isRequired
     // url: true      Not specified
   }],
 

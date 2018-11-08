@@ -4,6 +4,7 @@ const { printLine, printLargeObj } = require('./funcs');
 const { validateJSON } = require('./validateJSON');
 
 const { datasetPrimativesValidator } = require('./js_templates/dataset_primatives');
+const { datasetPrimativeOptionality } = require('./js_templates/dataset_primatives_optionality');
 const { datasetStage2Validator } = require('./js_templates/dataset_stage2');
 
 const { orgPrimativesValidator } = require('./js_templates/org_primatives');
@@ -15,7 +16,7 @@ const JSONLD_EXAMPLES_FOLDER = 'jsonld_examples/';
  * @param {obj} doc 
  */
 function validateDatasetDocument(doc) {
-  const result = validateJSON(doc, datasetPrimativesValidator);
+  const result = fullDatasetValidationSuite(doc);
   return result;
 }
 
@@ -28,30 +29,46 @@ function validateOrganizationDocument(doc) {
   return result;
 }
 
+function fullDatasetValidationSuite(doc) {
+  const primativeResult = validateJSON(doc, datasetPrimativesValidator);
+  const requiredPrimatives = validateJSON(primativeResult, datasetPrimativeOptionality);
+  const stage2Result = validateJSON(primativeResult, datasetStage2Validator);
 
+  return {
+    primativeResult,
+    requiredPrimatives,
+    stage2Result
+  };
+}
 
-
-// --- Example ---
 
 /**
  * @returns {native JSON} result
  */
-function validateLocalExample() {
+function validateExample() {
   const docSrc = fs.readFileSync(JSONLD_EXAMPLES_FOLDER + 'datasets/bcodmo_dataset.json');
   // const docSrc = fs.readFileSync(JSONLD_EXAMPLES_FOLDER + 'datasets/ieda_dataset.json');
   const doc = JSON.parse(docSrc);
   printLine(); //Start line
 
-  const result = validateJSON(doc, datasetPrimativesValidator);
-  const stage2_result = validateJSON(result, datasetStage2Validator);
+  const primativeResult = validateJSON(doc, datasetPrimativesValidator);
+  const requiredPrimatives = validateJSON(primativeResult, datasetPrimativeOptionality);
+  const stage2Result = validateJSON(primativeResult, datasetStage2Validator);
 
-  printLargeObj(result);
-  printLargeObj(stage2_result);
+  // printLargeObj(primativeResult);
+  printLargeObj(requiredPrimatives);
+  // printLargeObj(stage2Result);
 
-  return result;
+  return {
+    primativeResult,
+    requiredPrimatives,
+    stage2Result
+  };
 }
 
 module.exports = {
   validateDatasetDocument,
-  validateLocalExample
+  validateOrganizationDocument,
+  fullDatasetValidationSuite,
+  validateExample
 };
