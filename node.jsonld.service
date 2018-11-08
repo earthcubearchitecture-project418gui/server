@@ -1,0 +1,20 @@
+[Unit]
+Description=NodeJS JSON LD Validation
+
+[Service]
+ExecStart=/usr/bin/node /var/jsonld-ucar-isti/src/web.js
+Restart=always
+User=root
+# Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'
+Group=root
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+Environment=NODE_WWW=/var/www
+Environment=NODE_CERT=/etc/pki/tls/certs/isti-com-wildcard.crt
+Environment=NODE_KEY=/etc/pki/tls/private/isti-com-wildcard.key
+Environment=PORT=443
+
+WorkingDirectory=/var/jsonld-ucar-isti
+
+[Install]
+WantedBy=multi-user.target

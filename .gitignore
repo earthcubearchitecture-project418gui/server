@@ -5,3 +5,5 @@ output.json
 npm-debug.log
 .DS_Store
 /*.env
+*.key
+*.crt

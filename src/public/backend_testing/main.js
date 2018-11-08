@@ -11,7 +11,7 @@ function onLoad() {
 
   validateButton.addEventListener('click', () => {
 
-    postData(`/validate`, inputElement.value)
+    postData(`/validate_dataset`, inputElement.value)
       .then(data => {
         console.log(data);
         let output = JSON.stringify(data, undefined, 2);

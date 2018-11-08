@@ -3,10 +3,10 @@ const fs = require('fs');
 const { printLine, printLargeObj } = require('./funcs');
 const { validateJSON } = require('./validateJSON');
 
-const { datasetPrimativesValidator } = require('./js_templates/dataset_template_primatives');
-const { datasetStage2Validator } = require('./js_templates/dataset_template_stage2');
+const { datasetPrimativesValidator } = require('./js_templates/dataset_primatives');
+const { datasetStage2Validator } = require('./js_templates/dataset_stage2');
 
-const { orgPrimativesValidator } = require('./js_templates/org_template_primatives');
+const { orgPrimativesValidator } = require('./js_templates/org_primatives');
 
 const JSONLD_EXAMPLES_FOLDER = 'jsonld_examples/';
 

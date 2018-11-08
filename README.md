@@ -7,3 +7,11 @@ The validation process is driven by looping through every value on a JS obj (val
 
 ##### Preliminary - Stage 2 of validation
 Stage 2 will verify whole objects are valid. With the result obj from stage 1 representing which primative values were present, which were valid and which were invalid, a higher level of validation can take place. 
+
+
+- systemd setup
+https://stackoverflow.com/questions/4018154/how-do-i-run-a-node-js-app-as-a-background-service/29042953#29042953
+https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units
+
+- Future 
+https://medium.com/@francoisromain/vps-deploy-with-git-fea605f1303b

@@ -1,11 +1,31 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+const https = require('https');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// const { validateJSON } = require('./validateJSON'); 
+// TODO add automatic HTTP / HTTPS control path based on port
+// For now assume
+const PORT = process.env.PORT || 443;
+const public = process.env.NODE_WWW || (path.join(__dirname, 'public'));
+
+const certPath = process.env.NODE_CERT || (path.join(__dirname, 'ssl', 'server.crt'));
+const keyPath = process.env.NODE_KEY || (path.join(__dirname, 'ssl', 'server.key'));
+
+console.log('Public folder : ', public);
+console.log('Crt : ', certPath);
+console.log('Key : ', keyPath);
+
+const httpsOptions = {
+  cert: fs.readFileSync(certPath),
+  key: fs.readFileSync(keyPath)
+}
+
 const { validateDatasetDocument } = require('./validate.js');
-const { datasetPrimativesValidator } = require('./js_templates/dataset_template_primatives.js');
+const { datasetPrimativesValidator } = require('./js_templates/dataset_primatives.js');
 
 // app.use(bodyParser.json());
 app.use(bodyParser.text({ type: 'application/json' }));
@@ -53,7 +73,8 @@ app.post('/validate_org', (req, res) => {
 });
 
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(public));
 
 
-app.listen(PORT, () => console.log(`JSON-LD validator app listening on port ${PORT}.`));
+// app.listen(PORT, () => console.log(`JSON-LD validator app listening on port ${PORT}.`));
+https.createServer(httpsOptions, app).listen(PORT, () => console.log(`JSON-LD validator app listening on port ${PORT}.`));
