@@ -1,7 +1,9 @@
+'use strict';
+
 const fs = require('fs');
 
-const { walkObjAndVisit, printLine, printLargeObj } = require('./funcs');
-const validationObjects = require('./js_templates/dataset_validation_objects');
+const { printLine, printLargeObj } = require('./funcs');
+const { isValidDataset } = require('./js_templates/dataset_validation_objects');
 
 const JSONLD_EXAMPLES_FOLDER = 'jsonld_examples/';
 
@@ -45,11 +47,6 @@ function validateExample() {
 }
 
 
-function isValidDataset(input) {
-  const validator = validationObjects.datasetTopValidator;
-  const result = walkObjAndVisit(input, validator);
-  return result;
-}
 
 module.exports = {
   validateDatasetDocument,

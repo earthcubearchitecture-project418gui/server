@@ -10,6 +10,13 @@ function walkObjAndVisit(obj, visitor) {
   return result;
 }
 
+function mapScalarOrArray(input, callback) {
+  if (Array.isArray(input)) {
+    return input.map(callback);
+  } else {
+    return callback(input);
+  }
+}
 
 // @params {scalar, arra} => replacments for values found
 function deepReplaceValues(obj, scalar, array) {
@@ -52,6 +59,7 @@ function printLargeObj(obj) {
 
 module.exports = {
   walkObjAndVisit,
+  mapScalarOrArray,
   printLine,
   printLargeObj,
   deepCopyKeys

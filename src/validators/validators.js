@@ -7,14 +7,27 @@ function required(predicate) {
     if (value === undefined) {
       return "REQUIRED : " + key;
     }
-    return predicate(value, key)
+    return predicate(value, key);
+  }
+}
+
+function optional(predicate) {
+  return function (value, key) {
+    if (value === undefined) {
+      return false;
+    }
+    return predicate(value, key);
   }
 }
 
 /// Validators return true if pass, string if fail
 
 function isURL(input) {
-  let res = validator.isURL(input);
+  let res = isString(input);
+  if (res !== true) {
+    return "Not a URL > " + res;
+  }
+  res = validator.isURL(input);
   if (!res) {
     return "Not a URL > " + input;
   }
@@ -110,7 +123,6 @@ function isSeriesOfCoordinates(input) {
 function isStringOfNumbers(input) {
   //Test for non-numeric chars
   let test = input.replace(/,|\.|-|\s/g, '');
-  console.log('[isBox] : ', input, ' : ', test);
   let res = validator.isNumeric(test);
   // let res = validator.isNumeric(input);
   if (!res) {
@@ -128,33 +140,68 @@ function isStringOfNumbers(input) {
  * @returns predicate to use against obj
  */
 function hasValidatedProp(key) {
-  return obj => R.has(key)(obj) && obj[key] === true;
+  return obj => R.has(key)(obj) && obj.hasOwnProperty(key);
 }
 
 /**
  * 
  * @param {geo obj or array} input 
  */
-function isGeos(input) {
-  if (Array.isArray(input)) {
-    return input.map(geo => isGeos(input));
+// function isGeos(input) {
+//   if (Array.isArray(input)) {
+//     return input.map(geo => isGeo(geo)).every(b => b === true);
+//   }
+
+//   return isGeo(input);
+
+//   function isGeo(geo) {
+//     if (geo === undefined) { return false; }
+//     const { allPass, has } = R;
+
+//     if (allPass([has('longitude'), has('latitude')])(geo)) {
+//       return true;
+//     }
+//     if (has('box')(geo)) {
+//       return true;
+//     }
+//     if (has('polygon')(geo)) {
+//       return true;
+//     }
+
+//     return "Invalid Geo object.";
+//   }
+// }
+
+function isValidGeo(geo) {
+  if (geo === undefined) { return false; }
+  const { allPass, anyPass, has } = R;
+  // const has = hasValidatedProp;
+
+  const coordPredicate = allPass([has('longitude'), has('latitude')]);
+  const boxPredicate = has('box');
+  const polygonPredicate = has('polygon');
+
+  const anyValidGeo = anyPass([coordPredicate, boxPredicate, polygonPredicate]);
+
+  if (anyValidGeo(geo) === false) {
+    return "Invalid Geo. Needs Coordinates, box, or polygon";
   }
 
-  const { allPass } = R;
-  const has = hasValidatedProp;
-
-  if (allPass([has('longitude'), has('latitude')])(input)) {
-    return true;
-  }
-  if (has('box')(input)) {
-    return true;
-  }
-  if (has('polygon')(input)) {
-    return true;
+  const result = {};
+  if (coordPredicate(geo)) {
+    result.longitude = isCoord(geo.longitude);
+    result.latitude = isCoord(geo.latitude);
   }
 
-  return "Invalid Geo object.";
+  if (boxPredicate(geo)) {
+    result.box = isBox(geo.box);
+  }
 
+  if (polygonPredicate(geo)) {
+    result.polygon = isPolygon(geo.polygon);
+  }
+
+  return result;
 }
 
 module.exports = {
@@ -169,5 +216,6 @@ module.exports = {
   isCoord,
   isURL,
 
-  isGeos
+  // isGeos,
+  isValidGeo
 }
