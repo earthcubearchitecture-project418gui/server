@@ -2,19 +2,19 @@ const fs = require('fs');
 
 const { validateExample } = require('./validate.js');
 
-validateLocalExample('output.json');
+validateLocalExampleOutputResult('output.json');
 return;
 
 /**
  * @param {string} fileName
  */
-function validateLocalExample(outputFile) {
+function validateLocalExampleOutputResult(outputFile) {
   let result = validateExample();
 
   try {
     result = JSON.stringify(result);
   } catch (e) {
-    console.log(" [validateLocalExample] JSON.stringify error : ", e);
+    console.log(" [validateLocalExampleOutputResult] JSON.stringify error : ", e);
     return;
   }
 

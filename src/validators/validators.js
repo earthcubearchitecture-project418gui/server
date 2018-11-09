@@ -2,6 +2,15 @@
 const validator = require('validator');
 const R = require('ramda');
 
+function required(predicate) {
+  return function (value, key) {
+    if (value === undefined) {
+      return "REQUIRED : " + key;
+    }
+    return predicate(value, key)
+  }
+}
+
 /// Validators return true if pass, string if fail
 
 function isURL(input) {
@@ -149,6 +158,7 @@ function isGeos(input) {
 }
 
 module.exports = {
+  required,
   isString,
   isStringArray,
   isBoolean,

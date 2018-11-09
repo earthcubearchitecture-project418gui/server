@@ -1,5 +1,16 @@
 
 
+function walkObjAndVisit(obj, visitor) {
+  const result = {};
+  for (k in visitor) {
+    if (!visitor.hasOwnProperty(k)) { continue; }
+    // console.log(' | Key : ', k);
+    result[k] = visitor[k](obj[k], k);
+  }
+  return result;
+}
+
+
 // @params {scalar, arra} => replacments for values found
 function deepReplaceValues(obj, scalar, array) {
   if (typeof array == 'undefined') {
@@ -40,6 +51,7 @@ function printLargeObj(obj) {
 }
 
 module.exports = {
+  walkObjAndVisit,
   printLine,
   printLargeObj,
   deepCopyKeys

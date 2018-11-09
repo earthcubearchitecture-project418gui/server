@@ -1,15 +1,10 @@
 const fs = require('fs');
 
-const { printLine, printLargeObj } = require('./funcs');
-const { validateJSON } = require('./validateJSON');
-
-const { datasetPrimativesValidator } = require('./js_templates/dataset_primatives');
-const { datasetPrimativeOptionality } = require('./js_templates/dataset_primatives_optionality');
-const { datasetStage2Validator } = require('./js_templates/dataset_stage2');
-
-const { orgPrimativesValidator } = require('./js_templates/org_primatives');
+const { walkObjAndVisit, printLine, printLargeObj } = require('./funcs');
+const validationObjects = require('./js_templates/dataset_validation_objects');
 
 const JSONLD_EXAMPLES_FOLDER = 'jsonld_examples/';
+
 
 /**
  * 
@@ -25,20 +20,11 @@ function validateDatasetDocument(doc) {
  * @param {obj} doc 
  */
 function validateOrganizationDocument(doc) {
-  const result = validateJSON(doc, orgPrimativesValidator);
   return result;
 }
 
 function fullDatasetValidationSuite(doc) {
-  const primativeResult = validateJSON(doc, datasetPrimativesValidator);
-  const requiredPrimatives = validateJSON(primativeResult, datasetPrimativeOptionality);
-  const stage2Result = validateJSON(primativeResult, datasetStage2Validator);
 
-  return {
-    primativeResult,
-    requiredPrimatives,
-    stage2Result
-  };
 }
 
 
@@ -51,19 +37,18 @@ function validateExample() {
   const doc = JSON.parse(docSrc);
   printLine(); //Start line
 
-  const primativeResult = validateJSON(doc, datasetPrimativesValidator);
-  const requiredPrimatives = validateJSON(primativeResult, datasetPrimativeOptionality);
-  const stage2Result = validateJSON(primativeResult, datasetStage2Validator);
+  const result = isValidDataset(doc);
 
-  // printLargeObj(primativeResult);
-  printLargeObj(requiredPrimatives);
-  // printLargeObj(stage2Result);
+  printLargeObj(result);
 
-  return {
-    primativeResult,
-    requiredPrimatives,
-    stage2Result
-  };
+  return result;
+}
+
+
+function isValidDataset(input) {
+  const validator = validationObjects.datasetTopValidator;
+  const result = walkObjAndVisit(input, validator);
+  return result;
 }
 
 module.exports = {
