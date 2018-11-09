@@ -3,7 +3,7 @@
 const fs = require('fs');
 
 const { printLine, printLargeObj } = require('./funcs');
-const { isValidDataset } = require('./js_templates/dataset_validation_objects');
+const { isValidDataset } = require('./js_templates/dataset_validation');
 
 const JSONLD_EXAMPLES_FOLDER = 'jsonld_examples/';
 
@@ -13,7 +13,7 @@ const JSONLD_EXAMPLES_FOLDER = 'jsonld_examples/';
  * @param {obj} doc 
  */
 function validateDatasetDocument(doc) {
-  const result = fullDatasetValidationSuite(doc);
+  const result = isValidDataset(doc);
   return result;
 }
 
@@ -22,7 +22,7 @@ function validateDatasetDocument(doc) {
  * @param {obj} doc 
  */
 function validateOrganizationDocument(doc) {
-  return result;
+  return;
 }
 
 function fullDatasetValidationSuite(doc) {

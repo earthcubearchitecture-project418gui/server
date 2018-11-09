@@ -19,7 +19,6 @@ const { required,
 
 const { walkObjAndVisit, mapScalarOrArray } = require('../funcs');
 
-
 // ---------- Top Level
 
 const datasetTopValidator = {
@@ -118,18 +117,10 @@ const spatialCoverageValidator = {
 }
 
 function isSpatialCoverage(input) {
-  // const result = {
-  //   'name': isString(input['name'])
-  // };
-
-  // console.log('[isSpatialCoverage] :', input);
-  // result['geosAreValid'] = required(isGeos)(input.geo);
   return mapScalarOrArray(input, o => walkObjAndVisit(o, spatialCoverageValidator));
 }
 
-
 // ---------- Grandchildren
-
 
 const creatorPersonValidator = {
   '@id': required(isString),
@@ -176,7 +167,7 @@ function isGeos(input) {
 
 const creatorPersonIdentifierValidator = {
   url: required(isURL),
-  value: isString
+  value: required(isString)
 }
 
 function isCreatorPersonIdentifier(input) {

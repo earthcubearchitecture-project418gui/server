@@ -24,8 +24,8 @@ const httpsOptions = {
   key: fs.readFileSync(keyPath)
 }
 
-const { validateDatasetDocument, validateOrganizationDocument } = require('./validate.js');
-const { datasetPrimativesValidator } = require('./js_templates/dataset_primatives.js');
+const { validateExample, validateDatasetDocument, validateOrganizationDocument } = require('./validate.js');
+// const { datasetPrimativesValidator } = require('./js_templates/dataset_primatives.js');
 
 // app.use(bodyParser.json());
 app.use(bodyParser.text({ type: 'application/json' }));
@@ -45,16 +45,16 @@ app.post('/validate_dataset', (req, res) => {
     return;
   }
 
-  // const result = validateJSON(inputDocument, datasetPrimativesValidator, {});
-  const result = validateDatasetDocument(inputDocument, datasetPrimativesValidator, {});
+  const result = validateDatasetDocument(inputDocument);
   const result_string = JSON.stringify(result, undefined, 2);
 
   console.log(result_string);
-  res.send(result_string);
+  res.send(result);
 });
 
 app.post('/validate_org', (req, res) => {
   console.log('Hit [/validate_org]');
+  res.status(503).send('Service unavailable');
 
   let inputDocument;
   try {
@@ -65,11 +65,11 @@ app.post('/validate_org', (req, res) => {
     return;
   }
 
-  const result = validateOrganizationDocument(inputDocument, datasetPrimativesValidator, {});
-  const result_string = JSON.stringify(result, undefined, 2);
+  // const result = validateOrganizationDocument(inputDocument, datasetPrimativesValidator, {});
+  // const result_string = JSON.stringify(result, undefined, 2);
 
-  console.log(result_string);
-  res.send(result_string);
+  // console.log(result_string);
+  // res.send(result_string);
 });
 
 
