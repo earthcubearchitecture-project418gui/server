@@ -1,0 +1,249 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://earthcube.isti.com/ucar-json-ld.dataset.schema.json",
+  "title": "UCAR Dataset",
+  "description": "",
+  "type": "object",
+  "required": [
+    "@id",
+    "name",
+    "url",
+    "description",
+    "isAccessibleForFree",
+    "keywords",
+    "provider"
+  ],
+  "properties": {
+    "@id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "alternateName": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "isAccessibleForFree": {
+      "type": "string"
+    },
+    "keywords": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "citation": {
+      "type": "string"
+    },
+    "includedInDataCatalog": {
+      "type": "object",
+      "required": [
+        "@id"
+      ],
+      "properties": {
+        "@id": {
+          "type": "string"
+        }
+      }
+    },
+    "distribution": {
+      "type": "object",
+      "required": [
+        "contentUrl",
+        "encodingFormat"
+      ],
+      "properties": {
+        "contentUrl": {
+          "type": "string"
+        },
+        "encodingFormat": {
+          "type": "string"
+        }
+      }
+    },
+    "provider": {
+      "type": "object",
+      "required": [
+        "id",
+        "legalName",
+        "url"
+      ],
+      "properties": {
+        "@id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "publisher": {
+      "type": "object",
+      "required": [
+        "@id",
+        "name",
+        "url"
+      ],
+      "properties": {
+        "@id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "creator": {
+      "type": "object",
+      "required": [
+        "@id",
+        "creator"
+      ],
+      "properties": {
+        "@id": {
+          "type": "string"
+        },
+        "roleName": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "creator": {
+          "type": "object",
+          "required": [
+            "@id",
+            "name"
+          ],
+          "properties": {
+            "@id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "givenName": {
+              "type": "string"
+            },
+            "familyName": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "identifier": {
+              "type": "object",
+              "required": [
+                "url",
+                "value"
+              ],
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "spatialCoverage": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "description": "GeoCoordinate",
+            "required": [
+              "latitude",
+              "longitude",
+              "elevation"
+            ],
+            "properties": {
+              "latitude": {
+                "type": "number",
+                "minimum": -90,
+                "maximum": 90
+              },
+              "longitude": {
+                "type": "number",
+                "minimum": -180,
+                "maximum": 180
+              },
+              "elevation": {
+                "type": "number"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "description": "GeoShape",
+            "required": [
+              "polygon"
+            ],
+            "properties": {
+              "polygon": {
+                "type": "string"
+              },
+              "longitude": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "variableMeasured": {
+      "type": "object",
+      "required": [
+        "@id",
+        "name",
+        "unitText"
+      ],
+      "properties": {
+        "@id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "unitText": {
+          "type": "string"
+        }
+      }
+    },
+    "measurementTechnique": {
+      "type": "string"
+    }
+  }
+}
