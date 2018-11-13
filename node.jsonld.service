@@ -2,7 +2,7 @@
 Description=NodeJS JSON LD Validation
 
 [Service]
-ExecStart=/usr/bin/node /var/jsonld-ucar-isti/src/web.js
+ExecStart=/usr/bin/node /var/jsonld-ucar-isti/src/back/web.js
 Restart=always
 User=root
 # Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'

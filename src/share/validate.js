@@ -1,11 +1,12 @@
 'use strict';
 
 const fs = require('fs');
+const path = require('path');
 
-const { printLine, printLargeObj } = require('./funcs');
-const { isValidDataset } = require('./js_templates/dataset_validation');
+const { printLine, printLargeObj } = require('./funcs.js');
+const { isValidDataset } = require('./dataset_validation.js');
 
-const JSONLD_EXAMPLES_FOLDER = 'jsonld_examples/';
+const JSONLD_EXAMPLES_FOLDER = path.join(__dirname, 'jsonld_examples/');
 
 
 /**

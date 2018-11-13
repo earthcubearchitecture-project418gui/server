@@ -5,8 +5,8 @@
   "main": "src/web.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "web": "node src/web.js",
-    "local": "node src/app-local.js"
+    "web": "node src/back/web.js",
+    "local": "node src/back/app-local.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,9 @@
     "express": "^4.16.4",
     "jsonld": "^1.1.0",
     "ramda": "^0.25.0",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "react-jsonschema-form": "^1.0.6",
     "validator": "^10.8.0"
   },
   "engines": {

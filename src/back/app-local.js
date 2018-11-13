@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const { validateExample } = require('./validate.js');
+const { validateExample } = require('../share/validate.js');
 
 validateLocalExample('output.json');
 return;

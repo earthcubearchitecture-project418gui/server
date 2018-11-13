@@ -1,8 +1,8 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
-  entry: './front/app.js',
+  mode: 'development',
+  entry: './src/front/app.js',
   watch: true,
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -14,9 +14,10 @@ module.exports = {
       {
         test: /\.json?$/,
         include: [
-          path.resolve(__dirname, "app")
-        ],
-        loader: "json-loader"
+          path.resolve(__dirname, path.join("src", "schema")),
+          path.resolve(__dirname, path.join("src", "share", "jsonld_examples", "datasets")),
+          path.resolve(__dirname, path.join("src", "share", "jsonld_examples", "organizations"))
+        ]
       }
     ]
   }

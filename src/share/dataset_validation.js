@@ -15,9 +15,9 @@ const { required,
   isBoolean, isString, isStringArray,
   isCoord, isPolygon, isBox,
   isValidGeo
-} = require('../validators/validators');
+} = require('./validators.js');
 
-const { walkObjAndVisit, mapScalarOrArray } = require('../funcs');
+const { walkObjAndVisit, mapScalarOrArray } = require('./funcs.js');
 
 // ---------- Top Level
 
