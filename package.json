@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ajv": "^6.5.5",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "jsonld": "^1.1.0",
@@ -20,5 +21,9 @@
   },
   "engines": {
     "node": "10.x"
+  },
+  "devDependencies": {
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
   }
 }

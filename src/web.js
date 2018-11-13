@@ -10,7 +10,7 @@ const app = express();
 // TODO add automatic HTTP / HTTPS control path based on port
 // For now assume
 const PORT = process.env.PORT || 443;
-const public = process.env.NODE_WWW || (path.join(__dirname, 'public'));
+const public = process.env.NODE_WWW || (path.join(__dirname, '..', 'public'));
 
 const certPath = process.env.NODE_CERT || (path.join(__dirname, 'ssl', 'server.crt'));
 const keyPath = process.env.NODE_KEY || (path.join(__dirname, 'ssl', 'server.key'));
