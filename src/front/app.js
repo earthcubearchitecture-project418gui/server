@@ -24,15 +24,15 @@ const { render } = require('react-dom');
 const { default: Form } = require('react-jsonschema-form');
 console.log('Form', Form);
 
-const testSchema = {
-  title: "Todo",
-  type: "object",
-  required: ["title"],
-  properties: {
-    title: { type: "string", title: "Title", default: "A new task" },
-    done: { type: "boolean", title: "Done?", default: false }
-  }
-};
+// const testSchema = {
+//   title: "Todo",
+//   type: "object",
+//   required: ["title"],
+//   properties: {
+//     title: { type: "string", title: "Title", default: "A new task" },
+//     done: { type: "boolean", title: "Done?", default: false }
+//   }
+// };
 
 const log = (type) => console.log.bind(console, type);
 
