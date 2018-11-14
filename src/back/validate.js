@@ -6,36 +6,14 @@ const path = require('path');
 const { printLine, printLargeObj } = require('../share/funcs.js');
 const { isValidDataset } = require('../share/dataset_validation.js');
 
-const JSONLD_EXAMPLES_FOLDER = path.join(__dirname, 'jsonld_examples/');
-
-
-/**
- * 
- * @param {obj} doc 
- */
-function validateDatasetDocument(doc) {
-  const result = isValidDataset(doc);
-  return result;
-}
-
-/**
- * 
- * @param {obj} doc 
- */
-function validateOrganizationDocument(doc) {
-  return;
-}
-
-function fullDatasetValidationSuite(doc) {
-
-}
+const JSONLD_EXAMPLES_FOLDER = path.join(__dirname, '..', 'share', 'jsonld_examples', 'datasets');
 
 
 /**
  * @returns {native JSON} result
  */
 function validateExample() {
-  const docSrc = fs.readFileSync(JSONLD_EXAMPLES_FOLDER + 'datasets/bcodmo_dataset.json');
+  const docSrc = fs.readFileSync(path.join(JSONLD_EXAMPLES_FOLDER, 'bcodmo_dataset.json'));
   // const docSrc = fs.readFileSync(JSONLD_EXAMPLES_FOLDER + 'datasets/ieda_dataset.json');
   const doc = JSON.parse(docSrc);
   printLine(); //Start line
@@ -46,7 +24,6 @@ function validateExample() {
 
   return result;
 }
-
 
 
 module.exports = {

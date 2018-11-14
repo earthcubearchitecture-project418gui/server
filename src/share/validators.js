@@ -206,6 +206,8 @@ function isValidGeo(geo) {
 
 module.exports = {
   required,
+  optional,
+
   isString,
   isStringArray,
   isBoolean,
