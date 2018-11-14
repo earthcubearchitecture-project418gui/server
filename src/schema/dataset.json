@@ -15,7 +15,8 @@
   ],
   "properties": {
     "@id": {
-      "type": "string"
+      "type": "string",
+      "format": "uri"
     },
     "name": {
       "type": "string"
@@ -34,13 +35,14 @@
       "type": "string"
     },
     "isAccessibleForFree": {
-      "type": "string"
+      "type": "boolean"
     },
     "keywords": {
       "type": "string"
     },
     "license": {
-      "type": "string"
+      "type": "string",
+      "format": "uri"
     },
     "citation": {
       "type": "string"
@@ -52,7 +54,8 @@
       ],
       "properties": {
         "@id": {
-          "type": "string"
+          "type": "string",
+          "format": "uri"
         }
       }
     },
@@ -64,7 +67,8 @@
       ],
       "properties": {
         "contentUrl": {
-          "type": "string"
+          "type": "string",
+          "format": "uri"
         },
         "encodingFormat": {
           "type": "string"
@@ -89,7 +93,8 @@
           "type": "string"
         },
         "url": {
-          "type": "string"
+          "type": "string",
+          "format": "uri"
         }
       }
     },
@@ -102,13 +107,15 @@
       ],
       "properties": {
         "@id": {
-          "type": "string"
+          "type": "string",
+          "format": "uri"
         },
         "description": {
           "type": "string"
         },
         "url": {
-          "type": "string"
+          "type": "string",
+          "format": "uri"
         },
         "name": {
           "type": "string"
@@ -116,6 +123,7 @@
       }
     },
     "creator": {
+      "description": "Creator (Role)",
       "type": "object",
       "required": [
         "@id",
@@ -123,15 +131,18 @@
       ],
       "properties": {
         "@id": {
-          "type": "string"
+          "type": "string",
+          "format": "uri"
         },
         "roleName": {
           "type": "string"
         },
         "url": {
-          "type": "string"
+          "type": "string",
+          "format": "uri"
         },
         "creator": {
+          "description": "Creator (Person)",
           "type": "object",
           "required": [
             "@id",
@@ -139,7 +150,8 @@
           ],
           "properties": {
             "@id": {
-              "type": "string"
+              "type": "string",
+              "format": "uri"
             },
             "name": {
               "type": "string"
@@ -151,7 +163,8 @@
               "type": "string"
             },
             "url": {
-              "type": "string"
+              "type": "string",
+              "format": "uri"
             },
             "identifier": {
               "type": "object",
@@ -161,7 +174,8 @@
               ],
               "properties": {
                 "url": {
-                  "type": "string"
+                  "type": "string",
+                  "format": "uri"
                 },
                 "value": {
                   "type": "string"
@@ -173,49 +187,57 @@
       }
     },
     "spatialCoverage": {
-      "type": "array",
-      "items": {
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "GeoCoordinate",
-            "required": [
-              "latitude",
-              "longitude",
-              "elevation"
-            ],
-            "properties": {
-              "latitude": {
-                "type": "number",
-                "minimum": -90,
-                "maximum": 90
-              },
-              "longitude": {
-                "type": "number",
-                "minimum": -180,
-                "maximum": 180
-              },
-              "elevation": {
-                "type": "number"
+      "type": "object",
+      "required": [
+        "geo"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "geo": {
+          "anyOf": [
+            {
+              "type": "object",
+              "description": "GeoCoordinate",
+              "required": [
+                "latitude",
+                "longitude",
+                "elevation"
+              ],
+              "properties": {
+                "latitude": {
+                  "type": "number",
+                  "minimum": -90,
+                  "maximum": 90
+                },
+                "longitude": {
+                  "type": "number",
+                  "minimum": -180,
+                  "maximum": 180
+                },
+                "elevation": {
+                  "type": "number"
+                }
+              }
+            },
+            {
+              "type": "object",
+              "description": "GeoShape",
+              "required": [
+                "polygon"
+              ],
+              "properties": {
+                "polygon": {
+                  "type": "string"
+                },
+                "longitude": {
+                  "type": "string"
+                }
               }
             }
-          },
-          {
-            "type": "object",
-            "description": "GeoShape",
-            "required": [
-              "polygon"
-            ],
-            "properties": {
-              "polygon": {
-                "type": "string"
-              },
-              "longitude": {
-                "type": "string"
-              }
-            }
-          }
-        ]
+          ]
+        }
       }
     },
     "variableMeasured": {
@@ -227,13 +249,15 @@
       ],
       "properties": {
         "@id": {
-          "type": "string"
+          "type": "string",
+          "format": "uri"
         },
         "description": {
           "type": "string"
         },
         "url": {
-          "type": "string"
+          "type": "string",
+          "format": "uri"
         },
         "name": {
           "type": "string"

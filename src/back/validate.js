@@ -3,8 +3,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const { printLine, printLargeObj } = require('./funcs.js');
-const { isValidDataset } = require('./dataset_validation.js');
+const { printLine, printLargeObj } = require('../share/funcs.js');
+const { isValidDataset } = require('../share/dataset_validation.js');
 
 const JSONLD_EXAMPLES_FOLDER = path.join(__dirname, 'jsonld_examples/');
 
