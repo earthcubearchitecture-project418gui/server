@@ -1,0 +1,275 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://earthcube.isti.com/ucar-json-ld.organization.schema.json",
+  "title": "UCAR Dataset",
+  "description": "",
+  "type": "object",
+  "required": [
+    "@id",
+    "legalName",
+    "name",
+    "url",
+    "description",
+    "contactPoint",
+    "address",
+    "funder"
+  ],
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "uri"
+    },
+    "legalName": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "description": {
+      "type": "string"
+    },
+    "category": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sameAs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "contactPoint": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "@id",
+          "name",
+          "email"
+        ],
+        "properties": {
+          "@id": {
+            "type": "string",
+            "format": "uri"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "contactType": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "address": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "streetAddress",
+          "addressLocality",
+          "addressRegion",
+          "postalCode",
+          "addressCountry"
+        ],
+        "properties": {
+          "streetAddress": {
+            "type": "string"
+          },
+          "addressLocality": {
+            "type": "string"
+          },
+          "addressRegion": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "addressCountry": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "foundingData": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "logo": {
+      "type": "object",
+      "required": [
+        "url"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "parentOrganization": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "@id",
+          "legalName",
+          "url"
+        ],
+        "properties": {
+          "@id": {
+            "type": "string",
+            "format": "uri"
+          },
+          "legalName": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "address": {
+            "type": "object",
+            "required": [
+              "streetAddress",
+              "addressLocality",
+              "addressRegion",
+              "postalCode",
+              "addressCountry"
+            ],
+            "properties": {
+              "streetAddress": {
+                "type": "string"
+              },
+              "addressLocality": {
+                "type": "string"
+              },
+              "addressRegion": {
+                "type": "string"
+              },
+              "postalCode": {
+                "type": "string"
+              },
+              "addressCountry": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "memberOf": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "programName"
+        ],
+        "properties": {
+          "programName": {
+            "type": "string"
+          },
+          "hostingOrganization": {
+            "type": "object",
+            "required": [
+              "name",
+              "uri"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        }
+      }
+    },
+    "funder": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "@id",
+          "legalName",
+          "url"
+        ],
+        "properties": {
+          "@id": {
+            "type": "string",
+            "format": "uri"
+          },
+          "legalName": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "identifier": {
+            "type": "object",
+            "required": [
+              "value",
+              "url"
+            ],
+            "properties": {
+              "value": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        }
+      }
+    },
+    "publishingPrinciples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "url"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "fileFormat": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
