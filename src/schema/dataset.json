@@ -78,7 +78,7 @@
     "provider": {
       "type": "object",
       "required": [
-        "id",
+        "@id",
         "legalName",
         "url"
       ],
@@ -124,61 +124,64 @@
     },
     "creator": {
       "description": "Creator (Role)",
-      "type": "object",
-      "required": [
-        "@id",
-        "creator"
-      ],
-      "properties": {
-        "@id": {
-          "type": "string",
-          "format": "uri"
-        },
-        "roleName": {
-          "type": "string"
-        },
-        "url": {
-          "type": "string",
-          "format": "uri"
-        },
-        "creator": {
-          "description": "Creator (Person)",
-          "type": "object",
-          "required": [
-            "@id",
-            "name"
-          ],
-          "properties": {
-            "@id": {
-              "type": "string",
-              "format": "uri"
-            },
-            "name": {
-              "type": "string"
-            },
-            "givenName": {
-              "type": "string"
-            },
-            "familyName": {
-              "type": "string"
-            },
-            "url": {
-              "type": "string",
-              "format": "uri"
-            },
-            "identifier": {
-              "type": "object",
-              "required": [
-                "url",
-                "value"
-              ],
-              "properties": {
-                "url": {
-                  "type": "string",
-                  "format": "uri"
-                },
-                "value": {
-                  "type": "string"
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "@id",
+          "creator"
+        ],
+        "properties": {
+          "@id": {
+            "type": "string",
+            "format": "uri"
+          },
+          "roleName": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "creator": {
+            "description": "Creator (Person)",
+            "type": "object",
+            "required": [
+              "@id",
+              "name"
+            ],
+            "properties": {
+              "@id": {
+                "type": "string",
+                "format": "uri"
+              },
+              "name": {
+                "type": "string"
+              },
+              "givenName": {
+                "type": "string"
+              },
+              "familyName": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "identifier": {
+                "type": "object",
+                "required": [
+                  "url",
+                  "value"
+                ],
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -187,88 +190,98 @@
       }
     },
     "spatialCoverage": {
-      "type": "object",
-      "required": [
-        "geo"
-      ],
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "geo": {
-          "anyOf": [
-            {
-              "type": "object",
-              "description": "GeoCoordinate",
-              "required": [
-                "latitude",
-                "longitude",
-                "elevation"
-              ],
-              "properties": {
-                "latitude": {
-                  "type": "number",
-                  "minimum": -90,
-                  "maximum": 90
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "geo"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "geo": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "description": "GeoCoordinate",
+                  "required": [
+                    "latitude",
+                    "longitude",
+                    "elevation"
+                  ],
+                  "properties": {
+                    "latitude": {
+                      "type": "number",
+                      "minimum": -90,
+                      "maximum": 90
+                    },
+                    "longitude": {
+                      "type": "number",
+                      "minimum": -180,
+                      "maximum": 180
+                    },
+                    "elevation": {
+                      "type": "number"
+                    }
+                  }
                 },
-                "longitude": {
-                  "type": "number",
-                  "minimum": -180,
-                  "maximum": 180
-                },
-                "elevation": {
-                  "type": "number"
+                {
+                  "type": "object",
+                  "description": "GeoShape",
+                  "required": [
+                    "polygon"
+                  ],
+                  "properties": {
+                    "polygon": {
+                      "type": "string"
+                    },
+                    "longitude": {
+                      "type": "string"
+                    }
+                  }
                 }
-              }
-            },
-            {
-              "type": "object",
-              "description": "GeoShape",
-              "required": [
-                "polygon"
-              ],
-              "properties": {
-                "polygon": {
-                  "type": "string"
-                },
-                "longitude": {
-                  "type": "string"
-                }
-              }
+              ]
             }
-          ]
+          }
         }
       }
     },
     "variableMeasured": {
-      "type": "object",
-      "required": [
-        "@id",
-        "name",
-        "unitText"
-      ],
-      "properties": {
-        "@id": {
-          "type": "string",
-          "format": "uri"
-        },
-        "description": {
-          "type": "string"
-        },
-        "url": {
-          "type": "string",
-          "format": "uri"
-        },
-        "name": {
-          "type": "string"
-        },
-        "unitText": {
-          "type": "string"
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "@id",
+          "name",
+          "unitText"
+        ],
+        "properties": {
+          "@id": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "name": {
+            "type": "string"
+          },
+          "unitText": {
+            "type": "string"
+          }
         }
+      },
+      "measurementTechnique": {
+        "type": "string"
       }
-    },
-    "measurementTechnique": {
-      "type": "string"
     }
   }
 }

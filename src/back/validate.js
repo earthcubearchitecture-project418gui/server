@@ -27,8 +27,5 @@ function validateExample() {
 
 
 module.exports = {
-  validateDatasetDocument,
-  validateOrganizationDocument,
-  fullDatasetValidationSuite,
   validateExample
 };

@@ -10,10 +10,10 @@ const app = express();
 // TODO add automatic HTTP / HTTPS control path based on port
 // For now assume
 const PORT = process.env.PORT || 443;
-const public = process.env.NODE_WWW || (path.join(__dirname, '..', 'public'));
+const public = process.env.NODE_WWW || (path.join(__dirname, '..', '..', 'public'));
 
-const certPath = process.env.NODE_CERT || (path.join(__dirname, 'ssl', 'server.crt'));
-const keyPath = process.env.NODE_KEY || (path.join(__dirname, 'ssl', 'server.key'));
+const certPath = process.env.NODE_CERT || (path.join(__dirname, '..', '..', 'ssl', 'server.crt'));
+const keyPath = process.env.NODE_KEY || (path.join(__dirname, '..', '..', 'ssl', 'server.key'));
 
 console.log('Public folder : ', public);
 console.log('Crt : ', certPath);
@@ -24,8 +24,8 @@ const httpsOptions = {
   key: fs.readFileSync(keyPath)
 }
 
-const { validateExample, validateDatasetDocument, validateOrganizationDocument } = require('./validate.js');
-// const { datasetPrimativesValidator } = require('./js_templates/dataset_primatives.js');
+// const { validateExample } = require('./validate.js');
+const { isValidDataset } = require('../share/dataset_validation.js');
 
 // app.use(bodyParser.json());
 app.use(bodyParser.text({ type: 'application/json' }));
@@ -41,11 +41,13 @@ app.post('/validate_dataset', (req, res) => {
     inputDocument = JSON.parse(req.body);
   } catch (e) {
     console.log("Failed to parse JSON : ", e);
-    res.send("Failed to parse JSON");
+    res.status(400);
+    res.type('text');
+    res.send("Failed to parse JSON : " + e.message);
     return;
   }
 
-  const result = validateDatasetDocument(inputDocument);
+  const result = isValidDataset(inputDocument);
   const result_string = JSON.stringify(result, undefined, 2);
 
   console.log(result_string);
@@ -61,7 +63,8 @@ app.post('/validate_org', (req, res) => {
     inputDocument = JSON.parse(req.body);
   } catch (e) {
     console.log("Failed to parse JSON : ", e);
-    res.send("Failed to parse JSON");
+    res.status(400);
+    res.send("Failed to parse JSON : " + e.message);
     return;
   }
 

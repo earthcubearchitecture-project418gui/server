@@ -10,7 +10,7 @@
 //   isVariableMeasured
 // } = require('./dataset_validators');
 
-const { required,
+const { required, optional,
   isURL, isMimeType,
   isBoolean, isString, isStringArray,
   isCoord, isPolygon, isBox,
@@ -24,22 +24,22 @@ const { walkObjAndVisit, mapScalarOrArray } = require('./funcs.js');
 const datasetTopValidator = {
   '@id': required(isString),
   name: required(isString),
-  alternateName: isString,
+  alternateName: optional(isString),
   url: required(isURL),
   description: required(isString),
-  version: isString,
+  version: optional(isString),
   isAccessibleForFree: required(isBoolean),
   keywords: required(isString),
-  license: isString,
-  citation: isString,
-  includedInDataCatalog: isIncludeDataCatalog,
-  distribution: isDistribution,
-  provider: isProvider,
-  publisher: isPublisher,
-  creator: isCreatorRole,
-  spatialCoverage: isSpatialCoverage,
-  variableMeasured: isVariableMeasured,
-  measurementTechnique: isStringArray
+  license: optional(isString),
+  citation: optional(isString),
+  includedInDataCatalog: optional(isIncludeDataCatalog),
+  distribution: optional(isDistribution),
+  provider: required(isProvider),
+  publisher: required(isPublisher),
+  creator: optional(isCreatorRole),
+  spatialCoverage: optional(isSpatialCoverage),
+  variableMeasured: optional(isVariableMeasured),
+  measurementTechnique: optional(isStringArray)
 }
 
 function isValidDataset(input) {
@@ -69,7 +69,7 @@ function isDistribution(input) {
 const providerValidator = {
   '@id': required(isString),
   legalName: required(isString),
-  name: isString,
+  name: optional(isString),
   url: required(isURL)
 }
 
@@ -79,7 +79,7 @@ function isProvider(input) {
 
 const publisherValidator = {
   '@id': required(isString),
-  description: isString,
+  description: optional(isString),
   name: required(isString),
   url: required(isURL)
 }
@@ -90,7 +90,7 @@ function isPublisher(input) {
 
 const variableMeasuredValidator = {
   '@id': required(isString),
-  description: isString,
+  description: optional(isString),
   name: required(isString),
   unitText: required(isString),
   url: required(isURL)
@@ -102,8 +102,8 @@ function isVariableMeasured(input) {
 
 const creatorRoleValidator = {
   '@id': required(isURL),
-  roleName: isString,
-  url: isURL,
+  roleName: optional(isString),
+  url: optional(isURL),
   creator: required(isCreatorPerson)
 }
 
@@ -112,7 +112,7 @@ function isCreatorRole(input) {
 }
 
 const spatialCoverageValidator = {
-  name: isString,
+  name: optional(isString),
   geo: required(isGeos)
 }
 
@@ -125,10 +125,10 @@ function isSpatialCoverage(input) {
 const creatorPersonValidator = {
   '@id': required(isString),
   name: required(isString),
-  givenName: isString,
-  familyName: isString,
-  url: isURL,
-  identifier: isCreatorPersonIdentifier
+  givenName: optional(isString),
+  familyName: optional(isString),
+  url: optional(isURL),
+  identifier: required(isCreatorPersonIdentifier)
 }
 
 function isCreatorPerson(input) {
