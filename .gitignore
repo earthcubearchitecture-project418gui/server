@@ -1,5 +1,4 @@
 node_modules/
-jsonld_examples/
 jsonld_templates/
 output.json
 npm-debug.log

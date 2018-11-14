@@ -1,0 +1,523 @@
+{
+ "@context": {
+  "@vocab": "http://schema.org/",
+  "re3data": "http://example.org/re3data/0.1/"
+ },
+ "@id": "http://opencoredata.org/id/dataset/00cd2c07-ff21-4ceb-8595-c6572eda55e9",
+ "@type": "Dataset",
+ "description": "Janus Mad Section for ocean drilling expedition 161 site 978 hole A",
+ "distribution": {
+  "@type": "DataDownload",
+  "contentUrl": "http://opencoredata.org/api/v1/documents/download/161_978A_JanusMadSection_gAdGNxTk.csv"
+ },
+ "keywords": "Leg Site Hole Core Core_type Section_number Section_type Top_cm Bot_cm Depth_mbsf Section_id Calc_water_content_wet Calc_water_content_dry Calc_bulk_density Calc_dry_density Calc_grain_density Calc_porosity Calc_void_ratio Calc_method Method Mad_comment Beaker_date_time Sample_water_content_bulk Sample_water_content_solids Sample_bulk_density Sample_dry_density Sample_grain_density Sample_porosity Sample_void_ratio Janus Mad Section DSDP, OPD, IODP, JanusMadSection",
+ "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+ "name": "161_978A_JanusMadSection_gAdGNxTk.csv",
+ "publisher": {
+  "@type": "Organization",
+  "description": "NSF funded International Ocean Discovery Program operated by JRSO",
+  "name": "International Ocean Discovery Program",
+  "url": "http://iodp.org"
+ },
+ "spatialCoverage": {
+  "@type": "Place",
+  "geo": {
+   "@type": "GeoCoordinates",
+   "latitude": "36.23",
+   "longitude": "-2.06"
+  }
+ },
+ "url": "http://opencoredata.org/id/dataset/00cd2c07-ff21-4ceb-8595-c6572eda55e9",
+ "variableMeasured": [
+  {
+   "@type": "PropertyValue",
+   "description": "Number identifying the cruise.",
+   "name": "Leg",
+   "unitText": "int64",
+   "url": "http://opencoredata/id/resource/janus/janusmad/1"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Number identifying the site from which the core was retrieved. A site is the position of a beacon around which holes are drilled.",
+   "name": "Site",
+   "unitText": "int64",
+   "url": "http://opencoredata/id/resource/janus/janusmad/2"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Letter identifying the hole at a site from which a core was retrieved or data was collected.",
+   "name": "Hole",
+   "unitText": "string",
+   "url": "http://opencoredata/id/resource/janus/janusmad/3"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Sequential numbers identifying the cores retrieved from a particular hole.",
+   "name": "Core",
+   "unitText": "int64",
+   "url": "http://opencoredata/id/resource/janus/janusmad/4"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Letter code identifying the drill bit/coring method used to retrieve the core.",
+   "name": "Core_type",
+   "unitText": "string",
+   "url": "http://opencoredata/id/resource/janus/janusmad/5"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Sequential number of a section of a core.",
+   "name": "Section_number",
+   "unitText": "int64",
+   "url": "http://opencoredata/id/resource/janus/janusmad/6"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Type of a section C=Core Catcher, S=Core.",
+   "name": "Section_type",
+   "unitText": "string",
+   "url": "http://opencoredata/id/resource/janus/janusmad/7"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Identifier ID of a section of a core.",
+   "name": "Section_id",
+   "unitText": "int64",
+   "url": "http://opencoredata/id/resource/janus/janusmad/8"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Top value of an interval of a section in cm.",
+   "name": "Top_cm",
+   "unitText": "string",
+   "url": "http://opencoredata/id/resource/janus/janusmad/9"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Bottom value of an interval of a section in cm.",
+   "name": "Bot_cm",
+   "unitText": "string",
+   "url": "http://opencoredata/id/resource/janus/janusmad/10"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Depth in meters below sea floor mbsf.",
+   "name": "Depth_mbsf",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/11"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Depth in meters below sea floor mbsf with compression applied.",
+   "name": "Depth_mbsf_c",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/12"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Depth in meters below sea floor mbsf with voids removed.",
+   "name": "Depth_mbsf_v",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/13"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Depth in meters below sea floor mbsf with voids removed and compression applied.",
+   "name": "Depth_mbsf_vc",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/14"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Depth in meters below sea floor mbsf with exotics removed.",
+   "name": "Depth_mbsf_e",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/15"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Depth in meters below sea floor mbsf with exotics removed and compression applied.",
+   "name": "Depth_mbsf_ec",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/16"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Depth in meters below sea floor mbsf with voids and exotics removed.",
+   "name": "Depth_mbsf_ve",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/17"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Depth in meters below sea floor mbsf with voids and exotics removed and compression applied.",
+   "name": "Depth_mbsf_vec",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/18"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Depth in meters composite depth mcd.",
+   "name": "Depth_mcd",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/19"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Depth in meters composite depth mcd with compression applied.",
+   "name": "Depth_mcd_c",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/20"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Depth in meters composite depth mcd with voids removed.",
+   "name": "Depth_mcd_v",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/21"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Depth in meters composite depth mcd with voids removed and compression applied.",
+   "name": "Depth_mcd_vc",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/22"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Depth in meters composite depth mcd with exotics removed.",
+   "name": "Depth_mcd_e",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/23"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Depth in meters composite depth mcd with exotics removed and compression applied.",
+   "name": "Depth_mcd_ec",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/24"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Depth in meters composite depth mcd with voids and exotics removed.",
+   "name": "Depth_mcd_ve",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/25"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Depth in meters composite depth mcd with voids and exotics removed and compression applied.",
+   "name": "Depth_mcd_vec",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/26"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Code that indicates the site where the Janus application is exercised.  Values are SHIship, GCR Gulf Coast Repository, ECR East Coast Repository and BRE Bremen repository.",
+   "name": "Location",
+   "unitText": "string",
+   "url": "http://opencoredata/id/resource/janus/janusmad/27"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Identifier ID of a sample.",
+   "name": "Sample_id",
+   "unitText": "int64",
+   "url": "http://opencoredata/id/resource/janus/janusmad/28"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Letter designation of the actual method of calculation for moisture and density measurements.",
+   "name": "Calc_method",
+   "unitText": "string",
+   "url": "http://opencoredata/id/resource/janus/janusmad/29"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Letter designation of the method of calculation for moisture and density measurements.",
+   "name": "Method",
+   "unitText": "string",
+   "url": "http://opencoredata/id/resource/janus/janusmad/30"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of calculated water content wet in percent.",
+   "name": "Calc_water_content_wet",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/31"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of calculated water content dry in percent.",
+   "name": "Calc_water_content_dry",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/32"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of calculated bulk density in g/cm3.",
+   "name": "Calc_bulk_density",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/33"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of calculated dry_density in g/cm3.",
+   "name": "Calc_dry_density",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/34"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of calculated grain density in g/cm3.",
+   "name": "Calc_grain_density",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/35"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of calculated porosity in percent.",
+   "name": "Calc_porosity",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/36"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of calculated void ratio.",
+   "name": "Calc_void_ratio",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/37"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of bulk sample water content in percent.",
+   "name": "Sample_water_content_bulk",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/38"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of solids sample water content in percent.",
+   "name": "Sample_water_content_solids",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/39"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of sample bulk density by Method A or B in g/cm3.",
+   "name": "Sample_bulk_density",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/40"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of sample dry density in g/cm3.",
+   "name": "Sample_dry_density",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/41"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of sample grain density in g/cm3.",
+   "name": "Sample_grain_density",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/42"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of sample porosity in percent.",
+   "name": "Sample_porosity",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/43"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of sample void ratio.",
+   "name": "Sample_void_ratio",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/44"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of sample bulk mass wet in percent.",
+   "name": "Bulk_mass_wet_total",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/45"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of sample bulk mass dry in percent.",
+   "name": "Bulk_mass_dry_total",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/46"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of sample bulk volume wet in cubic centimeters cm3.",
+   "name": "Bulk_volume_wet_total",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/47"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of sample bulk volume wet standard deviation in cubic centimeters cm3.",
+   "name": "Bulk_volume_wet_sd",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/48"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Number of sample measurements taken for bulk volume wet.",
+   "name": "Bulk_volume_wet_n",
+   "unitText": "sql.NullInt64",
+   "url": "http://opencoredata/id/resource/janus/janusmad/49"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Cell number used for sample measurements of bulk volume wet.",
+   "name": "Bulk_volume_wet_cell",
+   "unitText": "sql.NullInt64",
+   "url": "http://opencoredata/id/resource/janus/janusmad/50"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of sample bulk volume dry in cubic centimeters cm3.",
+   "name": "Bulk_volume_dry_total",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/51"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Measurement value of sample bulk volume dry standard deviation in cubic centimeters cm3.",
+   "name": "Bulk_volume_dry_sd",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/52"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Number of sample measurements taken for bulk volume dry.",
+   "name": "Bulk_volume_dry_n",
+   "unitText": "sql.NullInt64",
+   "url": "http://opencoredata/id/resource/janus/janusmad/53"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Cell number used for sample measurements of bulk volume dry.",
+   "name": "Bulk_volume_dry_cell",
+   "unitText": "sql.NullInt64",
+   "url": "http://opencoredata/id/resource/janus/janusmad/54"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "The date and time calibration data for a MAD Moisture and Density beaker from the physical properties laboratory.",
+   "name": "Beaker_date_time",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/55"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Beaker number used for moisture and density measurements.",
+   "name": "Beaker_number",
+   "unitText": "sql.NullInt64",
+   "url": "http://opencoredata/id/resource/janus/janusmad/56"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Type of beaker used for moisture and density measurements.",
+   "name": "Beaker_type",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/57"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Mass of beaker used for moisture and density measurements in grams g.",
+   "name": "Beaker_mass",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/58"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Volume of beaker used for moisture and density measurements in cubic centimeters cm3.",
+   "name": "Beaker_volume",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/59"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Calculated value of total sample mass wet, in grams g.",
+   "name": "Mass_wet_total",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/60"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Calculated value of total sample mass dry in grams g.",
+   "name": "Mass_dry_total",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/61"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Calculated value of mass of porewater in grams g.",
+   "name": "Mass_porewater",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/62"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Calculated value of mass of solids, excluding precipitated salt, in grams g.",
+   "name": "Mass_solids",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/63"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Calculated value of volume of porewater, in cubic centimeters cm3.",
+   "name": "Volume_porewater",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/64"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Calculated value of mass of salt in grams g.",
+   "name": "Mass_salt",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/65"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Calculated value of volume of salt in cubic centimeters cm3.",
+   "name": "Volume_salt",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/66"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Calculated value of sample total volume in cubic centimeters cm3.",
+   "name": "Volume_total",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/67"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Calculated value of volume of solids in cubic centimeters cm3.",
+   "name": "Volume_solids",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/68"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Calculated value of sample volume dry in cubic centimeters cm3.",
+   "name": "Volume_dry",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/69"
+  },
+  {
+   "@type": "PropertyValue",
+   "description": "Remark on a moisture and density sample.",
+   "name": "Mad_comment",
+   "unitText": "sql.NullString",
+   "url": "http://opencoredata/id/resource/janus/janusmad/70"
+  }
+ ]
+}
