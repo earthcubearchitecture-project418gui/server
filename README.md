@@ -8,6 +8,9 @@ The validation process is driven by looping through every value on a JS obj (val
 ##### Preliminary - Stage 2 of validation
 Stage 2 will verify whole objects are valid. With the result obj from stage 1 representing which primative values were present, which were valid and which were invalid, a higher level of validation can take place. 
 
+- Frequent cmd
+rsync -r -a -u -P -e "ssh" --rsync-path="sudo rsync" * alexm@earthcube.isti.com:/var/jsonld-ucar-isti
+
 
 - systemd setup
 https://stackoverflow.com/questions/4018154/how-do-i-run-a-node-js-app-as-a-background-service/29042953#29042953
