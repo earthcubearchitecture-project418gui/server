@@ -27,12 +27,35 @@ const log = (type) => console.log.bind(console, type);
 //     onError={log("errors")} />
 // ), document.getElementById("app"));
 
-function example(schema) {
+const uiSchema = {
+  "spatialCoverage": {
+    "items": {
+      "geo": {
+        "items": {
+
+          "ui:field": (props) => {
+            return React.createElement('input', {
+              type: "text",
+              className: "custom",
+              value: props.value,
+              required: props.required,
+              onChange: (event) => props.onChange(event.target.value)
+            });
+          }
+        }
+      }
+    }
+
+  }
+}
+
+function example(schema, doc) {
   document.addEventListener('DOMContentLoaded', function () {
     render(
       React.createElement(
         Form, {
           schema: schema,
+          uiSchema: uiSchema,
           onChange: log('changed'),
           onSubmit: log('submitted'),
           onError: log('errors')
