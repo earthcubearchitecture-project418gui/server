@@ -50,11 +50,15 @@
       "items": {
         "type": "object",
         "required": [
+          "@type",
           "@id",
           "name",
           "email"
         ],
         "properties": {
+          "@type": {
+            "const": "ContactPoint"
+          },
           "@id": {
             "type": "string",
             "format": "uri"
@@ -81,6 +85,7 @@
       "items": {
         "type": "object",
         "required": [
+          "@type",
           "streetAddress",
           "addressLocality",
           "addressRegion",
@@ -88,6 +93,9 @@
           "addressCountry"
         ],
         "properties": {
+          "@type": {
+            "const": "PostalAddress"
+          },
           "streetAddress": {
             "type": "string"
           },
@@ -113,9 +121,13 @@
     "logo": {
       "type": "object",
       "required": [
+        "@type",
         "url"
       ],
       "properties": {
+        "@type": {
+          "const": "ImageObject"
+        },
         "url": {
           "type": "string",
           "format": "uri"
@@ -127,11 +139,15 @@
       "items": {
         "type": "object",
         "required": [
+          "@type",
           "@id",
           "legalName",
           "url"
         ],
         "properties": {
+          "@type": {
+            "const": "Organization"
+          },
           "@id": {
             "type": "string",
             "format": "uri"
@@ -149,6 +165,7 @@
           "address": {
             "type": "object",
             "required": [
+              "@type",
               "streetAddress",
               "addressLocality",
               "addressRegion",
@@ -156,6 +173,9 @@
               "addressCountry"
             ],
             "properties": {
+              "@type": {
+                "const": "PostalAddress"
+              },
               "streetAddress": {
                 "type": "string"
               },
@@ -181,19 +201,27 @@
       "items": {
         "type": "object",
         "required": [
+          "@type",
           "programName"
         ],
         "properties": {
+          "@type": {
+            "const": "ProgramMembership"
+          },
           "programName": {
             "type": "string"
           },
           "hostingOrganization": {
             "type": "object",
             "required": [
+              "@type",
               "name",
               "uri"
             ],
             "properties": {
+              "@type": {
+                "const": "Organization"
+              },
               "name": {
                 "type": "string"
               },
@@ -211,11 +239,15 @@
       "items": {
         "type": "object",
         "required": [
+          "@type",
           "@id",
           "legalName",
           "url"
         ],
         "properties": {
+          "@type": {
+            "const": "Organization"
+          },
           "@id": {
             "type": "string",
             "format": "uri"
@@ -233,10 +265,14 @@
           "identifier": {
             "type": "object",
             "required": [
+              "@type",
               "value",
               "url"
             ],
             "properties": {
+              "@type": {
+                "const": "PropertyValue"
+              },
               "value": {
                 "type": "string"
               },
@@ -254,10 +290,14 @@
       "items": {
         "type": "object",
         "required": [
+          "@type",
           "name",
           "url"
         ],
         "properties": {
+          "@type": {
+            "const": "DigitalDocument"
+          },
           "name": {
             "type": "string"
           },
