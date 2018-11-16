@@ -2,10 +2,11 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/front/app.js',
+  entry: './src/front/ajv-test-ui.js',
   watch: true,
   output: {
     path: path.resolve(__dirname, "dist"),
+
     library: "bundle.js",
     libraryTarget: "umd"
   },

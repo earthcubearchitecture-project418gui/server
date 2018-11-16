@@ -21,6 +21,7 @@
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "react-jsonschema-form": "^1.0.6",
+    "split.js": "^1.5.9",
     "validator": "^10.8.0"
   },
   "devDependencies": {
