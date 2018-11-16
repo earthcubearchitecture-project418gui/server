@@ -4,9 +4,10 @@
   "description": "",
   "main": "src/web.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "web": "node src/back/web.js",
-    "local": "node src/back/app-local.js"
+    "local": "node src/back/app-local.js",
+    "test:org": "ajv --all-errors -s src/schema/organization.json -d src/share/jsonld_examples/organizations/*.json",
+    "test:dataset": "ajv --all-errors -s src/schema/dataset.json -d src/share/jsonld_examples/dataset/*.json"
   },
   "keywords": [],
   "author": "",
@@ -22,11 +23,12 @@
     "react-jsonschema-form": "^1.0.6",
     "validator": "^10.8.0"
   },
-  "engines": {
-    "node": "10.x"
-  },
   "devDependencies": {
+    "mocha": "^5.2.0",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }

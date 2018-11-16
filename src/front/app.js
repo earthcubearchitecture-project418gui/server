@@ -5,7 +5,7 @@ const exampleDoc = require('../share/jsonld_examples/datasets/bcodmo_dataset.jso
 // ajv.example(schema, exampleDoc);
 
 const rjs = require('./react-jsonschema-example.js');
-rjs.example(schema);
+rjs.example(schema, exampleDoc);
 
 // const validator = require('../share/dataset_validation.js');
 // const result = validator.isValidDataset(exampleDoc);

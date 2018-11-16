@@ -32,15 +32,17 @@ const uiSchema = {
     "items": {
       "geo": {
         "items": {
-
           "ui:field": (props) => {
+            const { id, formData, classNames, label, help, required, description, errors, children } = props;
+            console.log('[spatialCoverage.geo] UI Render : ', props);
             return React.createElement('input', {
               type: "text",
               className: "custom",
               value: props.value,
               required: props.required,
               onChange: (event) => props.onChange(event.target.value)
-            });
+            },
+              children);
           }
         }
       }
@@ -56,6 +58,7 @@ function example(schema, doc) {
         Form, {
           schema: schema,
           uiSchema: uiSchema,
+          formData: doc,
           onChange: log('changed'),
           onSubmit: log('submitted'),
           onError: log('errors')

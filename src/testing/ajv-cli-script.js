@@ -1,3 +1,4 @@
+// No longer necessary, use package.json "test"
 // Simple script to test schema and all example docs
 // Could use rewrite
 
@@ -12,7 +13,6 @@ const OUTPUT_FILE = 'results.json';
 main(); return;
 
 function main() {
-
   const testsets = [
     {
       schema: join('src', 'schema', 'dataset'),
@@ -25,10 +25,10 @@ function main() {
     result['test'] = i;
     return result;
   });
-  console.log(results);
   results = JSON.stringify(results, undefined, 2);
+  console.log(results);
 
-  fs.writeFileSync(OUTPUT_FILE, results);
+  // fs.writeFileSync(OUTPUT_FILE, results);
 }
 
 function testSet(test) {
