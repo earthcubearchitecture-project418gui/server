@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const select = document.querySelector('#doc-selector');
   const input = document.querySelector('#input');
   const output = document.querySelector('#output');
+  const validateButton = document.querySelector('#validate');
 
   for (let n = 0; n < docs.length; n++) {
     const opt = document.createElement('option');
@@ -50,5 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
       output.value = JSON.stringify(errors, undefined, 2);
     }
   }
+
+  validateButton.addEventListener('click', validate);
 
 });
