@@ -85,7 +85,8 @@
           "format": "uri"
         },
         "encodingFormat": {
-          "type": "string"
+          "type": "string",
+          "format": "MimeType"
         }
       }
     },
@@ -301,11 +302,13 @@
                     "@type": {
                       "const": "GeoShape"
                     },
-                    "polygon": {
-                      "type": "string"
+                    "box": {
+                      "type": "string",
+                      "format": "box"
                     },
-                    "longitude": {
-                      "type": "string"
+                    "polygon": {
+                      "type": "string",
+                      "format": "polygon"
                     }
                   }
                 }

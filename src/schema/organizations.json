@@ -306,7 +306,8 @@
             "format": "uri"
           },
           "fileFormat": {
-            "type": "string"
+            "type": "string",
+            "format": "MimeType"
           }
         }
       }

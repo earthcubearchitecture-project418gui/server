@@ -94,8 +94,9 @@ function isPolygon(input) {
 function isMimeType(input) {
   let res = validator.isMimeType(input);
   if (!res) {
-    console.log("Not recognized as MimeType : " + input);
+    return false;
   }
+  return true;
 }
 
 function isBoolean(input) {
@@ -111,8 +112,8 @@ function isBoolean(input) {
  * @returns {string | number} string = error | number = # of coords
  */
 function isSeriesOfCoordinates(input) {
-  let coordPairs = /(-?\d*\.\d+,-?\d*\.\d+)/g;
-  res = input.match(coordPairs);
+  const coordPairs = /(-?\d*\.\d+,-?\d*\.\d+)/g;
+  const res = input.match(coordPairs);
   if (res === null) {
     return 'No coordinates detected > ' + input;
   }
