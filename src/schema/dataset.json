@@ -20,10 +20,12 @@
     },
     "@id": {
       "type": "string",
-      "format": "uri"
+      "format": "uri",
+      "group": "main"
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "group": "main"
     },
     "alternateType": {
       "type": "array",
@@ -32,33 +34,42 @@
       }
     },
     "alternateName": {
-      "type": "string"
+      "type": "string",
+      "group": "main"
     },
     "url": {
       "type": "string",
+      "group": "main",
       "format": "uri"
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "group": "main"
     },
     "version": {
-      "type": "string"
+      "type": "string",
+      "group": "main"
     },
     "isAccessibleForFree": {
-      "type": "boolean"
+      "type": "boolean",
+      "group": "main"
     },
     "keywords": {
-      "type": "string"
+      "type": "string",
+      "group": "main"
     },
     "license": {
       "type": "string",
+      "group": "main",
       "format": "uri"
     },
     "citation": {
-      "type": "string"
+      "type": "string",
+      "group": "main"
     },
     "includedInDataCatalog": {
       "type": "object",
+      "group": "main",
       "required": [
         "@id"
       ],
@@ -71,6 +82,7 @@
     },
     "distribution": {
       "type": "object",
+      "group": "publishing",
       "required": [
         "@type",
         "contentUrl",
@@ -92,6 +104,7 @@
     },
     "provider": {
       "type": "object",
+      "group": "publishing",
       "required": [
         "@type",
         "@id",
@@ -123,6 +136,7 @@
     },
     "publisher": {
       "type": "object",
+      "group": "publishing",
       "required": [
         "@type",
         "@id",
@@ -152,6 +166,7 @@
     "creator": {
       "description": "Creator (Role)",
       "type": "array",
+      "group": "authors",
       "items": {
         "type": "object",
         "required": [
@@ -245,6 +260,7 @@
     },
     "spatialCoverage": {
       "type": "array",
+      "group": "spatial coverage",
       "items": {
         "type": "object",
         "required": [
@@ -320,6 +336,7 @@
     },
     "variableMeasured": {
       "type": "array",
+      "group": "measurements",
       "items": {
         "type": "object",
         "required": [
@@ -353,6 +370,7 @@
       },
       "measurementTechnique": {
         "type": "array",
+        "group": "measurements",
         "items": {
           "type": "string"
         }

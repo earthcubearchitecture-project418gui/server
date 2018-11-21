@@ -6,6 +6,8 @@
   "scripts": {
     "web": "node src/back/web.js",
     "local": "node src/back/app-local.js",
+    "local:ajv": "node src/back/app-ajv.js",
+    "package": "npx webpack",
     "test:org": "ajv --all-errors -s src/schema/organization.json -d src/share/jsonld_examples/organizations/*.json",
     "test:dataset": "ajv --all-errors -s src/schema/dataset.json -d src/share/jsonld_examples/dataset/*.json"
   },
