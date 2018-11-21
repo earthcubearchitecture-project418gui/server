@@ -2,7 +2,7 @@
 const AJV = require('ajv');
 const ajv = new AJV({ allErrors: true });
 
-const { isPolygon, isBox, isMimeType } = require('./share/validators.js');
+const { isPolygon, isBox, isMimeType } = require('./validators.js');
 
 let additionalErrors = [];
 
@@ -14,7 +14,6 @@ module.exports = {
   compile,
   errors,
 
-  addFormatsToAJV,
   registerCustomFormats
 };
 
@@ -54,8 +53,4 @@ function errors() {
     errors: currentValidator.errors,
     additionalErrors
   };
-}
-
-function addFormatsToAJV(ajv) {
-  registerCustomFormats(ajv);
 }

@@ -20,8 +20,8 @@
     },
     "@id": {
       "type": "string",
-      "format": "uri",
-      "group": "main"
+      "group": "main",
+      "format": "uri"
     },
     "name": {
       "type": "string",

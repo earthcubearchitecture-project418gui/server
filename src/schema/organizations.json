@@ -17,29 +17,36 @@
   "properties": {
     "@id": {
       "type": "string",
+      "group": "main",
       "format": "uri"
     },
     "legalName": {
-      "type": "string"
+      "type": "string",
+      "group": "main"
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "group": "main"
     },
     "url": {
       "type": "string",
+      "group": "main",
       "format": "uri"
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "group": "main"
     },
     "category": {
       "type": "array",
+      "group": "main",
       "items": {
         "type": "string"
       }
     },
     "sameAs": {
       "type": "array",
+      "group": "contact",
       "items": {
         "type": "string",
         "format": "uri"
@@ -47,6 +54,7 @@
     },
     "contactPoint": {
       "type": "array",
+      "group": "contact",
       "items": {
         "type": "object",
         "required": [
@@ -82,6 +90,7 @@
     },
     "address": {
       "type": "array",
+      "group": "contact",
       "items": {
         "type": "object",
         "required": [
@@ -116,10 +125,12 @@
     },
     "foundingData": {
       "type": "string",
+      "group": "info",
       "format": "date-time"
     },
     "logo": {
       "type": "object",
+      "group": "info",
       "required": [
         "@type",
         "url"
@@ -136,6 +147,7 @@
     },
     "parentOrganization": {
       "type": "array",
+      "group": "parent organizations",
       "items": {
         "type": "object",
         "required": [
@@ -198,6 +210,7 @@
     },
     "memberOf": {
       "type": "array",
+      "group": "associations",
       "items": {
         "type": "object",
         "required": [
@@ -236,6 +249,7 @@
     },
     "funder": {
       "type": "array",
+      "group": "funding agencies",
       "items": {
         "type": "object",
         "required": [
@@ -287,6 +301,7 @@
     },
     "publishingPrinciples": {
       "type": "array",
+      "group": "publishing",
       "items": {
         "type": "object",
         "required": [

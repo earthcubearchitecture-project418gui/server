@@ -9,8 +9,7 @@ The validation process is driven by looping through every value on a JS obj (val
 Stage 2 will verify whole objects are valid. With the result obj from stage 1 representing which primative values were present, which were valid and which were invalid, a higher level of validation can take place. 
 
 ##### Testing command
-ajv --all-errors -s src\schema\organization.json -d src\share\jsonld_examples\organizations\*.json > org_errors.txt 2>&1
-ajv --all-errors -s src\schema\dataset.json -d src\share\jsonld_examples\dataset\*.json > dataset_errors.txt 2>&1
+ajv  validate --all-errors -c .\src\back\ajv-cli-formats.js -s src\schema\dataset.json -d src\share\jsonld_examples\datasets\bcodmo_dataset.json > dataset_errors.txt 2>&1
 
 - Frequent cmd
 rsync -r -a -u -P -e "ssh" --rsync-path="sudo rsync" * alexm@earthcube.isti.com:/var/jsonld-ucar-isti
