@@ -17,7 +17,7 @@
     document.addEventListener('DOMContentLoaded', function() {
 
       const orgFile = getFile('organizations.json');
-      const example = getFile('bcodmo_dataset.json');
+      const example = getFile('bcodmo_org.json');
 
       Promise.all([orgFile, example])
         .then(v => {
