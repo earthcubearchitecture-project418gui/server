@@ -14,7 +14,7 @@
     "address",
     "funder"
   ],
-  "group" : { 
+  "groups" : { 
     "main": [ "@id", "legalName", "name", "url", "description", "category"],
     "contact": [ "contactPoint", "address" ],
     "info": [ "foundingDate", "logo" ],

@@ -1,0 +1,75 @@
+{
+    "@context": {
+        "@vocab": "http://schema.org/",
+        "geolink": "http://schema.geolink.org/1.0/base/main#"
+    },
+    "@type": "Dataset",
+    "additionalType": ["http://schema.geolink.org/1.0/base/main#Dataset", "http://vivoweb.org/ontology/core#Dataset"],
+    "name": "LNWB Ch07 Water Management - Agricultural water use - data",
+    "description": "Overview:\u000D\u000AAgricultural water use includes the irrigation of croplands and the water needs of dairy farms. Irrigated agriculture is an important component of the Lower Nooksack Water Budget due to the high demand for water during the relatively dry summer seasons. Along with out\u002Dof\u002Dbasin industrial water use, irrigation is the largest use of water in the Lower Nooksack Subbasin and has a commensurate effect on the water budget. The highest demand for irrigation water occurs during the month of July when streamflows are low. Dairy water use equals the amount of water the cows drink plus the water used for washdown. The dairy demand is small relative to irrigation.\u000D\u000A\u000D\u000ASince measured diversion or withdrawal records are not available, an estimate of crop irrigation requirements was developed using an empirically derived calculation of water demand. Drainage\u002Dwide irrigation estimates are based on the acres irrigated, type of crop, method of irrigation, and soil types.\u000D\u000A\u000D\u000ARecent crop data from Washington Department of Agriculture and previous studies are summarized by surface water drainage area. The U.S. portion of the Lower Nooksack Subbasin contains approximately 54,044 acres of which 28,140 acres are irrigated or approximately 80% of the countywide irrigation total. Major crops include grass hay, pastureland, field corn, raspberries, and potatoes which comprise 97% of the crops grown in the Subbasin.\u000D\u000A\u000D\u000AWithin the 16 Lower Nooksack Subbasin drainages, the irrigated agriculture areas have the highest percent of total drainage area in Scott, Fourmile, Kamm, and Wiser Lake/Cougar Creek. Bertrand and Fishtrap Creek percentages include the irrigated area on both the US and Canadian sides. By volume alone, Bertrand and Fishtrap Creek drainages use the highest amount of irrigation water. Irrigation water use rates for each drainage can be found in Chapter 11 Existing Scenario, Water Budget Model Outputs for Lower Nooksack Drainages.\u000D\u000A\u000D\u000ACrop evapotranspiration is an integral component of the hydrologic cycle and is calculated internally in the Topnet Water Management (Topnet\u002DWM) model. The Topnet model uses the Penman Monteith method (adopted and standardized by the American Society of Civil Engineers (2005)) for calculating evapotranspiration of a reference crop [ETr] (short cut grass or tall alfalfa). Tall alfalfa is the reference crop integrated in the WRIA 1 Topnet model. The difference between potential and actual evapotranspiration is the amount of crop water demand that must be satisfied by irrigation.\u000D\u000A\u000D\u000APurpose:\u000D\u000AThis section defines the model inputs necessary for calculating the irrigation demand outputs. Results summarizing the irrigation demand on a monthly basis can be found in Chapter 11 Existing Conditions, Water Budget Model Outputs for Lower Nooksack Drainages.\u000D\u000A\u000D\u000ACrop evapotranspiration is an integral component of the hydrologic cycle and is calculated, along with the other components of the water budget. The inputs defined in this chapter include crop type, number of acres, monthly crop coefficients, type of irrigation application (drip or spray) and irrigation efficiencies. Inputs were developed for the 16 Lower Nooksack Subbasin drainages only.\u000D\u000A\u000D\u000AThis resource is a subset of the LNWB Ch07 Water Management \u002D Agricultural water use Collection Resource.",
+    "url": "https://www.hydroshare.org/resource/8f361f21f9884c4b883a7b9d723155bc/",
+    "version": "2017-06-04",
+     "isAccessibleForFree": true, 
+    "keywords": "agricultural water use data,crop coefficients,lower nooksack subbasin",
+    
+        "license": "http://creativecommons.org/licenses/by/4.0/",
+    
+    
+    "citation": "Bandaragoda, C., J. Greenberg (2016). LNWB Ch07 Water Management - Agricultural water use - data, HydroShare, http://www.hydroshare.org/resource/8f361f21f9884c4b883a7b9d723155bc",
+    "includedInDataCatalog": {
+        "@id": "https://www.hydroshare.org"
+    },
+    "distribution": {
+        "@type": "DataDownload",
+        "contentUrl": "https://www.hydroshare.org/hsapi/resource/8f361f21f9884c4b883a7b9d723155bc/",
+        "encodingFormat": "application/zip"
+    },
+    
+    
+    "creator": [
+        
+        {
+            "@id": "/user/259/",
+            "@type": "Role",
+            "additionalType": "http://schema.geolink.org/1.0/base/main#Participant",
+            "roleName": "Author",
+            "url": "/user/259/",
+            "creator": {
+                "@id": "/user/259/",
+                "@type": "Person",
+                "additionalType": "http://schema.geolink.org/1.0/base/main#Person",
+                "name": "Christina Bandaragoda",
+                "url": "/user/259//"
+            }
+        }
+        ,
+        
+        {
+            "@id": "",
+            "@type": "Role",
+            "additionalType": "http://schema.geolink.org/1.0/base/main#Participant",
+            "roleName": "Author",
+            "url": "",
+            "creator": {
+                "@id": "",
+                "@type": "Person",
+                "additionalType": "http://schema.geolink.org/1.0/base/main#Person",
+                "name": "Joanne Greenberg",
+                "url": "/"
+            }
+        }
+        
+        
+    ],
+    "provider": {
+        "@id": "https://www.hydroshare.org",
+        "@type": "Organization",
+        "additionalType": "http://schema.geolink.org/1.0/base/main#Organization",
+        "legalName": "HydroShare",
+        "name": "HydroShare",
+        "url": "https://www.hydroshare.org"
+    },
+    "publisher": {
+        "@id": "https://www.hydroshare.org"
+    }
+}

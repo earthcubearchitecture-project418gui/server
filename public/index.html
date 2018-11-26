@@ -16,8 +16,8 @@
   
     document.addEventListener('DOMContentLoaded', function() {
 
-      const orgFile = getFile('organizations.json');
-      const example = getFile('bcodmo_org.json');
+      const orgFile = getFile('schema/organizations.json');
+      const example = getFile('organizations/bcodmo_org.json');
 
       Promise.all([orgFile, example])
         .then(v => {
@@ -27,8 +27,8 @@
           const groups = getGroups(orgSchema);
           console.log({groups});
 
-          const subSchemas = generateSchemaFromGroups(orgSchema, groups);
-          console.log({subSchemas});
+          const catagories = generateSchemaFromGroups(orgSchema, groups);
+          console.log({catagories});
         });
     });
 

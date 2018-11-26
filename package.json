@@ -7,6 +7,7 @@
     "web": "node src/back/web.js",
     "local": "node src/back/app-local.js",
     "package": "npx webpack",
+    "public:setup": " cpx -v -u \"src/schema/*.json\" public/schema && cpx -v \"src/share/jsonld_examples/**/*.json\" public",
     "test:org": "ajv --all-errors -s src/schema/organization.json -d src/share/jsonld_examples/organizations/*.json",
     "test:dataset": "ajv --all-errors -s src/schema/dataset.json -d src/share/jsonld_examples/dataset/*.json"
   },
@@ -26,6 +27,7 @@
     "validator": "^10.8.0"
   },
   "devDependencies": {
+    "cpx": "^1.5.0",
     "mocha": "^5.2.0",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2"

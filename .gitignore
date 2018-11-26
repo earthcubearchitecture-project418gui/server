@@ -1,8 +1,10 @@
 node_modules/
 jsonld_templates/
+
 output.json
 npm-debug.log
 .DS_Store
+
 /*.env
 *.key
 *.crt
