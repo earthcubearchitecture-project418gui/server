@@ -1,0 +1,341 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://earthcube.isti.com/ucar-json-ld.organization.schema.json",
+  "title": "UCAR Dataset",
+  "description": "",
+  "type": "object",
+  "required": [
+    "@id",
+    "legalName",
+    "name",
+    "url",
+    "description",
+    "contactPoint",
+    "address",
+    "funder"
+  ],
+  "groups" : { 
+    "main": [ "@id", "legalName", "name", "url", "description", "category"],
+    "contact": [ "contactPoint", "address" ],
+    "info": [ "foundingDate", "logo" ],
+    "parent organizations": [ "parentOrganization" ] ,
+    "associations": [ "memberOf" ],
+    "funding agencies": [ "funder" ],
+    "publishing": [ "publishingPrinciples" ]
+  }, 
+
+  "properties": {
+    "@id": {
+      "type": "string",
+      "group": "main",
+      "format": "uri"
+    },
+    "legalName": {
+      "type": "string",
+      "group": "main"
+    },
+    "name": {
+      "type": "string",
+      "group": "main"
+    },
+    "url": {
+      "type": "string",
+      "group": "main",
+      "format": "uri"
+    },
+    "description": {
+      "type": "string",
+      "group": "main"
+    },
+    "category": {
+      "type": "array",
+      "group": "main",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sameAs": {
+      "type": "array",
+      "group": "contact",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "contactPoint": {
+      "type": "array",
+      "group": "contact",
+      "items": {
+        "type": "object",
+        "required": [
+          "@type",
+          "@id",
+          "name",
+          "email"
+        ],
+        "properties": {
+          "@type": {
+            "const": "ContactPoint"
+          },
+          "@id": {
+            "type": "string",
+            "format": "uri"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "contactType": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "address": {
+      "type": "array",
+      "group": "contact",
+      "items": {
+        "type": "object",
+        "required": [
+          "@type",
+          "streetAddress",
+          "addressLocality",
+          "addressRegion",
+          "postalCode",
+          "addressCountry"
+        ],
+        "properties": {
+          "@type": {
+            "const": "PostalAddress"
+          },
+          "streetAddress": {
+            "type": "string"
+          },
+          "addressLocality": {
+            "type": "string"
+          },
+          "addressRegion": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "addressCountry": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "foundingData": {
+      "type": "string",
+      "group": "info",
+      "format": "date-time"
+    },
+    "logo": {
+      "type": "object",
+      "group": "info",
+      "required": [
+        "@type",
+        "url"
+      ],
+      "properties": {
+        "@type": {
+          "const": "ImageObject"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "parentOrganization": {
+      "type": "array",
+      "group": "parent organizations",
+      "items": {
+        "type": "object",
+        "required": [
+          "@type",
+          "@id",
+          "legalName",
+          "url"
+        ],
+        "properties": {
+          "@type": {
+            "const": "Organization"
+          },
+          "@id": {
+            "type": "string",
+            "format": "uri"
+          },
+          "legalName": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "address": {
+            "type": "object",
+            "required": [
+              "@type",
+              "streetAddress",
+              "addressLocality",
+              "addressRegion",
+              "postalCode",
+              "addressCountry"
+            ],
+            "properties": {
+              "@type": {
+                "const": "PostalAddress"
+              },
+              "streetAddress": {
+                "type": "string"
+              },
+              "addressLocality": {
+                "type": "string"
+              },
+              "addressRegion": {
+                "type": "string"
+              },
+              "postalCode": {
+                "type": "string"
+              },
+              "addressCountry": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "memberOf": {
+      "type": "array",
+      "group": "associations",
+      "items": {
+        "type": "object",
+        "required": [
+          "@type",
+          "programName"
+        ],
+        "properties": {
+          "@type": {
+            "const": "ProgramMembership"
+          },
+          "programName": {
+            "type": "string"
+          },
+          "hostingOrganization": {
+            "type": "object",
+            "required": [
+              "@type",
+              "name",
+              "uri"
+            ],
+            "properties": {
+              "@type": {
+                "const": "Organization"
+              },
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        }
+      }
+    },
+    "funder": {
+      "type": "array",
+      "group": "funding agencies",
+      "items": {
+        "type": "object",
+        "required": [
+          "@type",
+          "@id",
+          "legalName",
+          "url"
+        ],
+        "properties": {
+          "@type": {
+            "const": "Organization"
+          },
+          "@id": {
+            "type": "string",
+            "format": "uri"
+          },
+          "legalName": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "identifier": {
+            "type": "object",
+            "required": [
+              "@type",
+              "value",
+              "url"
+            ],
+            "properties": {
+              "@type": {
+                "const": "PropertyValue"
+              },
+              "value": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        }
+      }
+    },
+    "publishingPrinciples": {
+      "type": "array",
+      "group": "publishing",
+      "items": {
+        "type": "object",
+        "required": [
+          "@type",
+          "name",
+          "url"
+        ],
+        "properties": {
+          "@type": {
+            "const": "DigitalDocument"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "fileFormat": {
+            "type": "string",
+            "format": "MimeType"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,5 @@
 node_modules/
 jsonld_templates/
-public/*.json
 output.json
 npm-debug.log
 .DS_Store

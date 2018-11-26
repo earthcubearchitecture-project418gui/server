@@ -30,8 +30,6 @@
           const subSchemas = generateSchemaFromGroups(orgSchema, groups);
           console.log({subSchemas});
         });
-
-
     });
 
     function getFile(file) {
@@ -53,7 +51,7 @@
     /**
      * @param {object} schema Should be full schema json
      * @param {object} groups Object that contains arrays of keys. 
-     *    Will search schema for properties with keys, will place subsection of schema into 
+     *    Will search schema for properties with keys, will place subsection of schema into return object.
     */
     function generateSchemaFromGroups(schema, groups) {
       subSchemas = {};
