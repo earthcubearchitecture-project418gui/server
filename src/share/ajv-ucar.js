@@ -4,11 +4,12 @@ const ajv = new AJV({ allErrors: true });
 
 const { isPolygon, isBox, isMimeType } = require('./validators.js');
 
-let additionalErrors = [];
 
 let currentValidator;
 
 registerCustomFormats(ajv);
+
+// module.exports = ajv;
 
 module.exports = {
   compile,
@@ -16,6 +17,8 @@ module.exports = {
 
   registerCustomFormats
 };
+
+let additionalErrors = [];
 
 function registerCustomFormats(ajv) {
   [
@@ -42,8 +45,8 @@ function registerCustomFormats(ajv) {
   });
 }
 
-function compile(...args) {
-  currentValidator = ajv.compile(...args);
+function compile(schema) {
+  currentValidator = ajv.compile(schema);
   additionalErrors = [];
   return currentValidator;
 };

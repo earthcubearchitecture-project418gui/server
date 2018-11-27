@@ -5,67 +5,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+  <style>
+    textarea {
+      display: inline-block;
+      width: 32%;
+      max-width: 32%;
+    }
+
+    div#stage {
+      overflow:hidden;
+    }
+  </style>
+  
 </head>
 <body>
-  <p>
-    <h4>JSON-LD Validator</h4>
-  </p>  
+  <div>
+    <select id="subsection"></select>
+    <button id="extract">Extract</button>
+    <button id="validate">Validate</button>
+  </div>
+  <div id="stage">
+    <textarea id="input-schema" rows=40></textarea>
+    <textarea id="input-doc" rows=40></textarea>
+    <textarea id="output" rows=40></textarea>
+  </div>  
 
-  <script type="text/javascript" >
-  
-    document.addEventListener('DOMContentLoaded', function() {
-
-      const orgFile = getFile('schema/organizations.json');
-      const example = getFile('organizations/bcodmo_org.json');
-
-      Promise.all([orgFile, example])
-        .then(v => {
-          const [orgSchema, example] = v;
-          console.log({orgSchema, example});
-
-          const groups = getGroups(orgSchema);
-          console.log({groups});
-
-          const catagories = generateSchemaFromGroups(orgSchema, groups);
-          console.log({catagories});
-        });
-    });
-
-    function getFile(file) {
-      return fetch(file)
-        .then(res => {
-          if (!res.ok) { return Promise.reject("Failed with status : " + res.status + " | " + res.statusText); }
-          console.log(res);
-          return res.json();
-        })
-        // .then(json => console.log(json))
-        .catch(err => console.log(err));
-    }
-
-    function getGroups(schema) {
-      return schema['groups'];
-    }
-
-    //Retrieves parts of schema that match with 
-    /**
-     * @param {object} schema Should be full schema json
-     * @param {object} groups Object that contains arrays of keys. 
-     *    Will search schema for properties with keys, will place subsection of schema into return object.
-    */
-    function generateSchemaFromGroups(schema, groups) {
-      subSchemas = {};
-
-      for (let group in groups) {
-        subSchemas[group] = {};        
-        
-        for (let k of groups[group] ) {
-          subSchemas[group][k] = schema.properties[k];
-        }
-      }
-      return subSchemas;
-    }
-
-  </script>
+  <script src="app.js" type="text/javascript" ></script>
 </body>
 </html>

@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/web.js",
   "scripts": {
-    "web": "node src/back/web.js",
+    "web": "nodemon src/back/web.js",
+    "web:unsecure": "nodemon src/back/web.js --unsecure",
     "local": "node src/back/app-local.js",
     "package": "npx webpack",
     "public:setup": " cpx -v -u \"src/schema/*.json\" public/schema && cpx -v \"src/share/jsonld_examples/**/*.json\" public",

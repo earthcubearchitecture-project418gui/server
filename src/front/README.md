@@ -1,0 +1,1 @@
+Current front end work is split between index.html in [root]/public and jsonld-ucar-react
