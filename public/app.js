@@ -3,7 +3,7 @@
 const BACK_END = 'https://earthcube.isti.com';
 
 const selectSubsection = document.querySelector('#subsection');
-const buttonExtract = document.querySelector('#extract');
+// const buttonExtract = document.querySelector('#extract');
 const buttonValidate = document.querySelector('#validate');
 
 const inputSchema = document.querySelector('#input-schema');

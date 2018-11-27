@@ -1,6 +1,6 @@
 
 const AJV = require('ajv');
-const ajv = new AJV({ allErrors: true });
+let ajv = new AJV({ allErrors: true });
 
 const { isPolygon, isBox, isMimeType } = require('./validators.js');
 
@@ -17,6 +17,13 @@ module.exports = {
 
   registerCustomFormats
 };
+
+function newAJV() {
+  const ajv = new AJV({ allErrors: true });
+  registerCustomFormats(ajv);
+  return ajv;
+}
+
 
 let additionalErrors = [];
 
@@ -46,6 +53,7 @@ function registerCustomFormats(ajv) {
 }
 
 function compile(schema) {
+  ajv = newAJV();
   currentValidator = ajv.compile(schema);
   additionalErrors = [];
   return currentValidator;
