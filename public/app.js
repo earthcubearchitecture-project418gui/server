@@ -1,6 +1,6 @@
 
-const BACK_END = 'http://localhost:8081';
-// const BACK_END = 'https://earthcube.isti.com';
+// const BACK_END = 'http://localhost:8081';
+const BACK_END = 'https://earthcube.isti.com';
 
 const selectSubsection = document.querySelector('#subsection');
 const buttonExtract = document.querySelector('#extract');
@@ -10,7 +10,7 @@ const inputSchema = document.querySelector('#input-schema');
 const inputDoc = document.querySelector('#input-doc');
 const output = document.querySelector('#output');
 
-let schema, doc, required, catagories, currentSubsection;
+let schema, doc, required, catagories;
 
 document.addEventListener('DOMContentLoaded', function () {
   selectSubsection.addEventListener('change', onSubsectionChange);
@@ -79,7 +79,8 @@ function createOption(text) {
   return e;
 }
 
-
+// Split schema and example doc on group selected
+// Forward sub sections to textarea and global required
 function onSubsectionChange(e) {
   console.log(e);
   const key = e.target.value;
@@ -123,8 +124,8 @@ function schemaShell(props, required) {
   required = required || [];
   return {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "http://earthcube.isti.com/ucar-json-ld.dataset.schema.json",
-    "title": "UCAR Dataset",
+    "$id": "http://earthcube.isti.com/ucar-json-ld.organization.schema.json",
+    "title": "UCAR organization",
     "description": "",
     "type": "object",
     "required": required,

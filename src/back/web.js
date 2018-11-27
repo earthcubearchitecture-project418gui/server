@@ -8,7 +8,8 @@ const app = express();
 
 const public = process.env.NODE_WWW || (path.join(__dirname, '..', '..', 'public'));
 
-const secure = -1 !== process.argv.findIndex(arg => arg === '--unsecure');
+console.log(process.argv);
+const secure = -1 === process.argv.findIndex(arg => arg === '--unsecure');
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
