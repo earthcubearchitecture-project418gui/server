@@ -90,7 +90,7 @@ function onSubsectionChange(e) {
   const result = {};
   retrivalKeys.forEach(key => result[key] = doc[key]);
   required = retrivalKeys.filter(key => -1 !== schema.required.findIndex(req=> req == key));
-  console.log('Required:',{required});
+  // console.log('Required:',{required});
   inputDoc.value = JSON.stringify(result, undefined, 2);
 }
 

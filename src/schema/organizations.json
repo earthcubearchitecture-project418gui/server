@@ -14,6 +14,7 @@
     "address",
     "funder"
   ],
+
   "groups" : { 
     "main": [ "@id", "legalName", "name", "url", "description", "category"],
     "contact": [ "contactPoint", "address" ],
@@ -32,23 +33,33 @@
     },
     "legalName": {
       "type": "string",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "main"
     },
     "name": {
       "type": "string",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "main"
     },
     "url": {
       "type": "string",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "main",
       "format": "uri"
     },
     "description": {
       "type": "string",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "main"
     },
     "category": {
       "type": "array",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "main",
       "items": {
         "type": "string"
@@ -56,6 +67,8 @@
     },
     "sameAs": {
       "type": "array",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "contact",
       "items": {
         "type": "string",
@@ -64,6 +77,8 @@
     },
     "contactPoint": {
       "type": "array",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "contact",
       "items": {
         "type": "object",
@@ -79,28 +94,39 @@
           },
           "@id": {
             "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD",      
             "format": "uri"
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"      
           },
           "email": {
             "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD",      
             "format": "email"
           },
           "url": {
             "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD",      
             "format": "uri"
           },
           "contactType": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"      
           }
         }
       }
     },
     "address": {
       "type": "array",
-      "group": "contact",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "items": {
         "type": "object",
         "required": [
@@ -116,30 +142,44 @@
             "const": "PostalAddress"
           },
           "streetAddress": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"      
           },
           "addressLocality": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"      
           },
           "addressRegion": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"      
           },
           "postalCode": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"      
           },
           "addressCountry": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"      
           }
         }
       }
     },
     "foundingData": {
       "type": "string",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "info",
       "format": "date-time"
     },
     "logo": {
       "type": "object",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "info",
       "required": [
         "@type",
@@ -151,12 +191,16 @@
         },
         "url": {
           "type": "string",
+          "title": "PLACEHOLD",
+          "description": "PLACEHOLD",    
           "format": "uri"
         }
       }
     },
     "parentOrganization": {
       "type": "array",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "parent organizations",
       "items": {
         "type": "object",
@@ -172,20 +216,30 @@
           },
           "@id": {
             "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD",      
             "format": "uri"
           },
           "legalName": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"      
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"      
           },
           "url": {
             "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD",      
             "format": "uri"
           },
           "address": {
             "type": "object",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD",      
             "required": [
               "@type",
               "streetAddress",
@@ -199,19 +253,29 @@
                 "const": "PostalAddress"
               },
               "streetAddress": {
-                "type": "string"
+                "type": "string",
+                "title": "PLACEHOLD",
+                "description": "PLACEHOLD"          
               },
               "addressLocality": {
-                "type": "string"
+                "type": "string",
+                "title": "PLACEHOLD",
+                "description": "PLACEHOLD"          
               },
               "addressRegion": {
-                "type": "string"
+                "type": "string",
+                "title": "PLACEHOLD",
+                "description": "PLACEHOLD"          
               },
               "postalCode": {
-                "type": "string"
+                "type": "string",
+                "title": "PLACEHOLD",
+                "description": "PLACEHOLD"          
               },
               "addressCountry": {
-                "type": "string"
+                "type": "string",
+                "title": "PLACEHOLD",
+                "description": "PLACEHOLD"          
               }
             }
           }
@@ -220,6 +284,8 @@
     },
     "memberOf": {
       "type": "array",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "associations",
       "items": {
         "type": "object",
@@ -232,10 +298,14 @@
             "const": "ProgramMembership"
           },
           "programName": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"      
           },
           "hostingOrganization": {
             "type": "object",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD",      
             "required": [
               "@type",
               "name",
@@ -246,10 +316,14 @@
                 "const": "Organization"
               },
               "name": {
-                "type": "string"
+                "type": "string",
+                "title": "PLACEHOLD",
+                "description": "PLACEHOLD"          
               },
               "url": {
                 "type": "string",
+                "title": "PLACEHOLD",
+                "description": "PLACEHOLD",          
                 "format": "uri"
               }
             }
@@ -259,6 +333,8 @@
     },
     "funder": {
       "type": "array",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "funding agencies",
       "items": {
         "type": "object",
@@ -273,17 +349,23 @@
             "const": "Organization"
           },
           "@id": {
-            "type": "string",
+            "type": "string",   
             "format": "uri"
           },
           "legalName": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"  
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"
           },
           "url": {
             "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD",  
             "format": "uri"
           },
           "identifier": {
@@ -298,10 +380,14 @@
                 "const": "PropertyValue"
               },
               "value": {
-                "type": "string"
+                "type": "string",
+                "title": "PLACEHOLD",
+                "description": "PLACEHOLD"
               },
               "url": {
                 "type": "string",
+                "title": "PLACEHOLD",
+                "description": "PLACEHOLD",   
                 "format": "uri"
               }
             }
@@ -311,6 +397,8 @@
     },
     "publishingPrinciples": {
       "type": "array",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",   
       "group": "publishing",
       "items": {
         "type": "object",
@@ -324,14 +412,20 @@
             "const": "DigitalDocument"
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"
           },
           "url": {
             "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD",   
             "format": "uri"
           },
           "fileFormat": {
             "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD",   
             "format": "MimeType"
           }
         }

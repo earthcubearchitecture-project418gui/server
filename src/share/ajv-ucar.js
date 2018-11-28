@@ -4,12 +4,9 @@ let ajv = new AJV({ allErrors: true });
 
 const { isPolygon, isBox, isMimeType } = require('./validators.js');
 
-
 let currentValidator;
 
 registerCustomFormats(ajv);
-
-// module.exports = ajv;
 
 module.exports = {
   compile,

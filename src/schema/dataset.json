@@ -14,6 +14,13 @@
     "keywords",
     "provider"
   ],
+  "groups": {
+    "main" : [ "@id", "name", "alternateName", "url", "description", "version", "isAccessibleForFree", "keywords", "license", "citation", "includedInDataCatalog"],
+    "publishing" : [ "distribution", "provider", "publisher" ],
+    "authors" : [ "creator" ],
+    "spatial coverage" : [ "spatial coverage" ],
+    "measurements" : [ "variableMeasured", "measurementTechnique" ]
+  },
   "properties": {
     "@type": {
       "const": "Dataset"
@@ -25,50 +32,72 @@
     },
     "name": {
       "type": "string",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "main"
     },
     "alternateType": {
       "type": "array",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "items": {
         "type": "string"
       }
     },
     "alternateName": {
       "type": "string",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "main"
     },
     "url": {
       "type": "string",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "main",
       "format": "uri"
     },
     "description": {
       "type": "string",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "main"
     },
     "version": {
       "type": "string",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "main"
     },
     "isAccessibleForFree": {
       "type": "boolean",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "main"
     },
     "keywords": {
       "type": "string",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "main"
     },
     "license": {
       "type": "string",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "main",
       "format": "uri"
     },
     "citation": {
       "type": "string",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "main"
     },
     "includedInDataCatalog": {
       "type": "object",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "main",
       "required": [
         "@id"
@@ -82,6 +111,8 @@
     },
     "distribution": {
       "type": "object",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "publishing",
       "required": [
         "@type",
@@ -94,16 +125,22 @@
         },
         "contentUrl": {
           "type": "string",
+          "title": "PLACEHOLD",
+          "description": "PLACEHOLD",    
           "format": "uri"
         },
         "encodingFormat": {
           "type": "string",
+          "title": "PLACEHOLD",
+          "description": "PLACEHOLD",    
           "format": "MimeType"
         }
       }
     },
     "provider": {
       "type": "object",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "publishing",
       "required": [
         "@type",
@@ -120,22 +157,32 @@
         },
         "additionalType": {
           "type": "string",
+          "title": "PLACEHOLD",
+          "description": "PLACEHOLD",    
           "format": "uri"
         },
         "legalName": {
-          "type": "string"
+          "type": "string",
+          "title": "PLACEHOLD",
+          "description": "PLACEHOLD"    
         },
         "name": {
-          "type": "string"
+          "type": "string",
+          "title": "PLACEHOLD",
+          "description": "PLACEHOLD"    
         },
         "url": {
           "type": "string",
+          "title": "PLACEHOLD",
+          "description": "PLACEHOLD",    
           "format": "uri"
         }
       }
     },
     "publisher": {
       "type": "object",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "publishing",
       "required": [
         "@type",
@@ -152,20 +199,27 @@
           "format": "uri"
         },
         "description": {
-          "type": "string"
+          "type": "string",
+          "title": "PLACEHOLD",
+          "description": "PLACEHOLD"    
         },
         "url": {
           "type": "string",
+          "title": "PLACEHOLD",
+          "description": "PLACEHOLD",    
           "format": "uri"
         },
         "name": {
-          "type": "string"
+          "type": "string",
+          "title": "PLACEHOLD",
+          "description": "PLACEHOLD"
         }
       }
     },
     "creator": {
-      "description": "Creator (Role)",
       "type": "array",
+      "title" : "PLACEHOLD",
+      "description": "Creator (Role)",
       "group": "authors",
       "items": {
         "type": "object",
@@ -184,18 +238,25 @@
           },
           "additionalType": {
             "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD",      
             "format": "uri"
           },
           "roleName": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"  
           },
           "url": {
             "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD",      
             "format": "uri"
           },
           "creator": {
-            "description": "Creator (Person)",
             "type": "object",
+            "title": "PLACEHOLD",  
+            "description": "Creator (Person)",
             "required": [
               "@type",
               "@id",
@@ -211,23 +272,35 @@
               },
               "additionalType": {
                 "type": "string",
+                "title": "PLACEHOLD",
+                "description": "PLACEHOLD",      
                 "format": "uri"
               },
               "name": {
-                "type": "string"
+                "type": "string",
+                "title": "PLACEHOLD",
+                "description": "PLACEHOLD"    
               },
               "givenName": {
-                "type": "string"
+                "type": "string",
+                "title": "PLACEHOLD",
+                "description": "PLACEHOLD"    
               },
               "familyName": {
-                "type": "string"
+                "type": "string",
+                "title": "PLACEHOLD",
+                "description": "PLACEHOLD"    
               },
               "url": {
                 "type": "string",
+                "title": "PLACEHOLD",
+                "description": "PLACEHOLD",    
                 "format": "uri"
               },
               "identifier": {
                 "type": "object",
+                "title": "PLACEHOLD",
+                "description": "PLACEHOLD",          
                 "required": [
                   "@type",
                   "url",
@@ -239,13 +312,19 @@
                   },
                   "url": {
                     "type": "string",
+                    "title": "PLACEHOLD",
+                    "description": "PLACEHOLD",              
                     "format": "uri"
                   },
                   "value": {
-                    "type": "string"
+                    "type": "string",
+                    "title": "PLACEHOLD",
+                    "description": "PLACEHOLD"        
                   },
                   "additionalType": {
                     "type": "array",
+                    "title": "PLACEHOLD",
+                    "description": "PLACEHOLD",
                     "items": {
                       "type": "string",
                       "format": "uri"
@@ -260,6 +339,8 @@
     },
     "spatialCoverage": {
       "type": "array",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "spatial coverage",
       "items": {
         "type": "object",
@@ -272,7 +353,9 @@
             "const": "Place"
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"
           },
           "geo": {
             "type": "array",
@@ -281,6 +364,7 @@
               "anyOf": [
                 {
                   "type": "object",
+                  "title": "PLACEHOLD",
                   "description": "GeoCoordinate",
                   "required": [
                     "@type",
@@ -309,6 +393,7 @@
                 },
                 {
                   "type": "object",
+                  "title": "PLACEHOLD",
                   "description": "GeoShape",
                   "required": [
                     "@type",
@@ -336,6 +421,8 @@
     },
     "variableMeasured": {
       "type": "array",
+      "title": "PLACEHOLD",
+      "description": "PLACEHOLD",
       "group": "measurements",
       "items": {
         "type": "object",
@@ -354,22 +441,32 @@
             "format": "uri"
           },
           "description": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"      
           },
           "url": {
             "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD",      
             "format": "uri"
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"      
           },
           "unitText": {
-            "type": "string"
+            "type": "string",
+            "title": "PLACEHOLD",
+            "description": "PLACEHOLD"      
           }
         }
       },
       "measurementTechnique": {
         "type": "array",
+        "title": "PLACEHOLD",
+        "description": "PLACEHOLD",  
         "group": "measurements",
         "items": {
           "type": "string"
