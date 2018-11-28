@@ -28,39 +28,33 @@
   "properties": {
     "@id": {
       "type": "string",
-      "group": "main",
       "format": "uri"
     },
     "legalName": {
       "type": "string",
       "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
-      "group": "main"
+      "description": "PLACEHOLD"
     },
     "name": {
       "type": "string",
       "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
-      "group": "main"
+      "description": "PLACEHOLD"
     },
     "url": {
       "type": "string",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "main",
       "format": "uri"
     },
     "description": {
       "type": "string",
       "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
-      "group": "main"
+      "description": "PLACEHOLD"
     },
     "category": {
       "type": "array",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "main",
       "items": {
         "type": "string"
       }
@@ -69,7 +63,6 @@
       "type": "array",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "contact",
       "items": {
         "type": "string",
         "format": "uri"
@@ -79,7 +72,6 @@
       "type": "array",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "contact",
       "items": {
         "type": "object",
         "required": [
@@ -173,14 +165,12 @@
       "type": "string",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "info",
       "format": "date-time"
     },
     "logo": {
       "type": "object",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "info",
       "required": [
         "@type",
         "url"
@@ -201,7 +191,6 @@
       "type": "array",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "parent organizations",
       "items": {
         "type": "object",
         "required": [
@@ -286,7 +275,6 @@
       "type": "array",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "associations",
       "items": {
         "type": "object",
         "required": [
@@ -335,7 +323,6 @@
       "type": "array",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "funding agencies",
       "items": {
         "type": "object",
         "required": [
@@ -399,7 +386,6 @@
       "type": "array",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",   
-      "group": "publishing",
       "items": {
         "type": "object",
         "required": [

@@ -27,14 +27,12 @@
     },
     "@id": {
       "type": "string",
-      "group": "main",
       "format": "uri"
     },
     "name": {
       "type": "string",
       "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
-      "group": "main"
+      "description": "PLACEHOLD"
     },
     "alternateType": {
       "type": "array",
@@ -47,58 +45,49 @@
     "alternateName": {
       "type": "string",
       "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
-      "group": "main"
+      "description": "PLACEHOLD"
     },
     "url": {
       "type": "string",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "main",
       "format": "uri"
     },
     "description": {
       "type": "string",
       "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
-      "group": "main"
+      "description": "PLACEHOLD"
     },
     "version": {
       "type": "string",
       "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
-      "group": "main"
+      "description": "PLACEHOLD"
     },
     "isAccessibleForFree": {
       "type": "boolean",
       "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
-      "group": "main"
+      "description": "PLACEHOLD"
     },
     "keywords": {
       "type": "string",
       "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
-      "group": "main"
+      "description": "PLACEHOLD"
     },
     "license": {
       "type": "string",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "main",
       "format": "uri"
     },
     "citation": {
       "type": "string",
       "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
-      "group": "main"
+      "description": "PLACEHOLD"
     },
     "includedInDataCatalog": {
       "type": "object",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "main",
       "required": [
         "@id"
       ],
@@ -113,7 +102,6 @@
       "type": "object",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "publishing",
       "required": [
         "@type",
         "contentUrl",
@@ -141,7 +129,6 @@
       "type": "object",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "publishing",
       "required": [
         "@type",
         "@id",
@@ -183,7 +170,6 @@
       "type": "object",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "publishing",
       "required": [
         "@type",
         "@id",
@@ -220,7 +206,6 @@
       "type": "array",
       "title" : "PLACEHOLD",
       "description": "Creator (Role)",
-      "group": "authors",
       "items": {
         "type": "object",
         "required": [
@@ -341,7 +326,6 @@
       "type": "array",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "spatial coverage",
       "items": {
         "type": "object",
         "required": [
@@ -423,7 +407,6 @@
       "type": "array",
       "title": "PLACEHOLD",
       "description": "PLACEHOLD",
-      "group": "measurements",
       "items": {
         "type": "object",
         "required": [
@@ -467,7 +450,6 @@
         "type": "array",
         "title": "PLACEHOLD",
         "description": "PLACEHOLD",  
-        "group": "measurements",
         "items": {
           "type": "string"
         }
