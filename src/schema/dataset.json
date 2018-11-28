@@ -31,37 +31,38 @@
     },
     "name": {
       "type": "string",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD"
-    },
+      "title": "COMMON NAME",
+      "description": ", EXAMPLE: LNWB Ch07 Water Management - Agricultural water use - date"
+      },
     "alternateType": {
       "type": "array",
       "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "description": "EXAMPLE : http://vivoweb.org/ontology/core#Dataset",
       "items": {
-        "type": "string"
+        "type": "string",
+        "format": "uri"
       }
     },
     "alternateName": {
       "type": "string",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD"
+      "title": "Alternate Name",
+      "description": "EXAMPLE: NE15_AlexanderB"
     },
     "url": {
       "type": "string",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "title": "DATASET URL or DOI URL",
+      "description": "EXAMPLE : http://opencoredata.org/id/dataset/00cd2c07-ff21-4ceb-8595-c6572eda55e9",
       "format": "uri"
     },
     "description": {
       "type": "string",
       "title": "PLACEHOLD",
-      "description": "PLACEHOLD"
+      "description": ", EXAMPLE: Overview: Agricultural water use includes the irrigation of croplands and the water needs of dairy farms"
     },
     "version": {
       "type": "string",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD"
+      "title": "Date or semvar",
+      "description": "EXAMPLE: 2017-06-04 | VERSION NUMBER, EXAMPLE: v1.2.2"
     },
     "isAccessibleForFree": {
       "type": "boolean",
@@ -70,30 +71,30 @@
     },
     "keywords": {
       "type": "string",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD"
+      "title": "Use comma delimited keywords",
+      "description": "EXAMPLE: ocean acidification, OA, Dissolved Organic Carbon, DOC, bacterioplankton respiration, pCO2, carbon dioxide"
     },
     "license": {
       "type": "string",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "title": "LICENSE URL",
+      "description": "EXAMPLE: http://creativecommons.org/licenses/by/4.0",
       "format": "uri"
     },
     "citation": {
       "type": "string",
       "title": "PLACEHOLD",
-      "description": "PLACEHOLD"
+      "description": "EXAMPLE: Peter Spooner, Nivedita Thiagarajan, Weifu Guo, Katherine R. Hendry, Melanie J. Leng, Laura F. Robinson, Brad E. Rosenheim (2017), Clumped isotope composition of modern cold-water corals. Interdisciplinary Earth Data Alliance (IEDA). doi:10.1594/IEDA/10070"
     },
     "includedInDataCatalog": {
       "type": "object",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
       "required": [
         "@id"
       ],
       "properties": {
         "@id": {
           "type": "string",
+          "title": "CATALOG URL",
+          "description": "EXAMPLE: https://www.hydroshare.org",
           "format": "uri"
         }
       }
@@ -113,14 +114,14 @@
         },
         "contentUrl": {
           "type": "string",
-          "title": "PLACEHOLD",
-          "description": "PLACEHOLD",    
+          "title": "DOWNLOAD URL",
+          "description": "EXAMPLE: https://www.hydroshare.org/hsapi/resource/8f361f21f9884c4b883a7b9d723155bcc",
           "format": "uri"
         },
         "encodingFormat": {
           "type": "string",
-          "title": "PLACEHOLD",
-          "description": "PLACEHOLD",    
+          "title": "MIME type",
+          "description": "EXAMPLE: application/zip",
           "format": "MimeType"
         }
       }
@@ -140,28 +141,31 @@
           "const": "Organization"
         },
         "@id": {
-          "type": "string"
+          "type": "string",
+          "title": "PROVIDER URL",
+          "description": "EXAMPLE: https://www.hydroshare.org",
+          "format": "uri"    
         },
         "additionalType": {
           "type": "string",
           "title": "PLACEHOLD",
-          "description": "PLACEHOLD",    
+          "description": "EXAMPLE : http://schema.geolink.org/1.0/base/main#Organization",    
           "format": "uri"
         },
         "legalName": {
           "type": "string",
-          "title": "PLACEHOLD",
-          "description": "PLACEHOLD"    
+          "title": "Full Name",
+          "description": "EXAMPLE: Biological and Chemical Data Management Office"
         },
         "name": {
           "type": "string",
-          "title": "PLACEHOLD",
-          "description": "PLACEHOLD"    
+          "title": "COMMON NAME",
+          "description": "EXAMPLE: BCO-DM"
         },
         "url": {
           "type": "string",
-          "title": "PLACEHOLD",
-          "description": "PLACEHOLD",    
+          "title": "PROVIDER URL",
+          "description": ", EXAMPLE: https://www.hydroshare.org",
           "format": "uri"
         }
       }
@@ -182,30 +186,32 @@
         },
         "@id": {
           "type": "string",
+          "title": "PUBLISHER URL",
+          "description": "EXAMPLE: https://csdco.umn.edu/",    
           "format": "uri"
         },
         "description": {
           "type": "string",
-          "title": "PLACEHOLD",
-          "description": "PLACEHOLD"    
+          "title": "PUBLISHER DESCRIPTION",
+          "description": "EXAMPLE: Continental Scientific Drilling Coordination Office"
         },
         "url": {
           "type": "string",
-          "title": "PLACEHOLD",
-          "description": "PLACEHOLD",    
+          "title": "PUBLISHER URL",
+          "description": "EXAMPLE: https://csdco.umn.edu/",
           "format": "uri"
         },
         "name": {
           "type": "string",
-          "title": "PLACEHOLD",
-          "description": "PLACEHOLD"
+          "title": "PUBLISHER COMMON NAME",
+          "description": "EXAMPLE: CSDC"
         }
       }
     },
     "creator": {
       "type": "array",
-      "title" : "PLACEHOLD",
-      "description": "Creator (Role)",
+      "title": "Creator (Role)",
+      "description" : "PLACEHOLD",
       "items": {
         "type": "object",
         "required": [
@@ -219,29 +225,31 @@
           },
           "@id": {
             "type": "string",
+            "title": "ROLE URL",
+            "description": "EXAMPLE : http://lod.bco-dmo.org/id/person-role/472032",      
             "format": "uri"
           },
           "additionalType": {
             "type": "string",
             "title": "PLACEHOLD",
-            "description": "PLACEHOLD",      
+            "description": "EXAMPLE : http://schema.geolink.org/1.0/base/main#Participants",      
             "format": "uri"
           },
           "roleName": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"  
+            "title": "TYPE OF ROLE",
+            "description": "EXAMPLE: Principal Investigator, Author"
           },
           "url": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD",      
+            "title": "ROLE URL",
+            "description": "EXAMPLE: http://lod.bco-dmo.org/id/person-role/47203",
             "format": "uri"
           },
           "creator": {
             "type": "object",
-            "title": "PLACEHOLD",  
-            "description": "Creator (Person)",
+            "title": "Creator (Person)",
+            "description": "PLACEHOLD",  
             "required": [
               "@type",
               "@id",
@@ -253,33 +261,35 @@
               },
               "@id": {
                 "type": "string",
+                "title": "PERSON URL",
+                "description": "EXAMPLE : https://www.bco-dmo.org/person/5131",        
                 "format": "uri"
               },
               "additionalType": {
                 "type": "string",
                 "title": "PLACEHOLD",
-                "description": "PLACEHOLD",      
+                "description": "EXAMPLE : http://schema.geolink.org/1.0/base/main#Person",      
                 "format": "uri"
               },
               "name": {
                 "type": "string",
-                "title": "PLACEHOLD",
-                "description": "PLACEHOLD"    
+                "title": "FULL NAME",
+                "description": "EXAMPLE: Dr. Uta Passo"
               },
               "givenName": {
                 "type": "string",
-                "title": "PLACEHOLD",
-                "description": "PLACEHOLD"    
+                "title": "FIRST NAME",
+                "description": "EXAMPLE: Ut"
               },
               "familyName": {
                 "type": "string",
-                "title": "PLACEHOLD",
-                "description": "PLACEHOLD"    
+                "title": "LAST NAME",
+                "description": "EXAMPLE: Passo"
               },
               "url": {
                 "type": "string",
-                "title": "PLACEHOLD",
-                "description": "PLACEHOLD",    
+                "title": "PERSON URL",
+                "description": "EXAMPLE: https://www.bco-dmo.org/person/5131",
                 "format": "uri"
               },
               "identifier": {
@@ -297,19 +307,19 @@
                   },
                   "url": {
                     "type": "string",
-                    "title": "PLACEHOLD",
-                    "description": "PLACEHOLD",              
+                    "title": "ORCID URL",
+                    "description": "EXAMPLE: https://orcid.org/0000-0003-2591-5292",
                     "format": "uri"
                   },
                   "value": {
                     "type": "string",
-                    "title": "PLACEHOLD",
-                    "description": "PLACEHOLD"        
+                    "title": "ORCID VALUE",
+                    "description": "EXAMPLE: 0000-0003-2591-529"
                   },
                   "additionalType": {
                     "type": "array",
                     "title": "PLACEHOLD",
-                    "description": "PLACEHOLD",
+                    "description": "EXAMPLE : http://purl.org/spar/datacite/Identifier",
                     "items": {
                       "type": "string",
                       "format": "uri"
@@ -338,8 +348,8 @@
           },
           "name": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"
+            "title": "NAME OF PLACE",
+            "description": "EXAMPLE: Falling Water Falls [3PP40] vertebrate fauna dataset"
           },
           "geo": {
             "type": "array",
@@ -348,8 +358,8 @@
               "anyOf": [
                 {
                   "type": "object",
-                  "title": "PLACEHOLD",
-                  "description": "GeoCoordinate",
+                  "title": "GeoCoordinate",
+                  "description": "PLACEHOLD",
                   "required": [
                     "@type",
                     "latitude",
@@ -389,10 +399,14 @@
                     },
                     "box": {
                       "type": "string",
+                      "title": "BOUNDING BOX",
+                      "description": "EXAMPLE: -149.8727,-17.45 -64.6353,34.40",            
                       "format": "box"
                     },
                     "polygon": {
                       "type": "string",
+                      "title": "POLYGON VERTICES",
+                      "description": "EXAMPLE: -149.8727,-17.45 -149.8727,34.407 -64.6353,34.407 -64.6353,-17.45 -149.8727,-17.4",            
                       "format": "polygon"
                     }
                   }
@@ -421,35 +435,37 @@
           },
           "@id": {
             "type": "string",
+            "title": "URL DESCRIBING PARAMETER",
+            "description": "EXAMPLE: https://www.bco-dmo.org/dataset-parameter/66578",
             "format": "uri"
           },
           "description": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"      
+            "title": "PROPERTY DESCRIPTION",
+            "description": "EXAMPLE: Number identifying the cruise"
           },
           "url": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD",      
+            "title": "URL DESCRIBING PARAMETER",
+            "description": "EXAMPLE: https://www.bco-dmo.org/dataset-parameter/66578",
             "format": "uri"
           },
           "name": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"      
+            "title": "PROPERTY NAME",
+            "description": "EXAMPLE: Leg, target_pCO"
           },
           "unitText": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"      
+            "title": "UNIT DESCRIPTOR",
+            "description": "EXAMPLE: int64, string, parts per million (ppm)"
           }
         }
       },
       "measurementTechnique": {
         "type": "array",
-        "title": "PLACEHOLD",
-        "description": "PLACEHOLD",  
+        "title": "MEASUREMENT TECHNIQUE",
+        "description": "EXAMPLE: Shimadzu TOC-V Analyze",
         "items": {
           "type": "string"
         }

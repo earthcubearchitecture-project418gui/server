@@ -14,7 +14,6 @@
     "address",
     "funder"
   ],
-
   "groups" : { 
     "main": [ "@id", "legalName", "name", "url", "description", "category"],
     "contact": [ "contactPoint", "address" ],
@@ -32,37 +31,37 @@
     },
     "legalName": {
       "type": "string",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD"
+      "title": "FULL NAME",
+      "description": "EXAMPLE: Biological and Chemical Data Management Office"
     },
     "name": {
       "type": "string",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD"
+      "title": "COMMON NAME",
+      "description": "EXAMPLE: BCO-DMO"
     },
     "url": {
       "type": "string",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "title": "URL",
+      "description": "EXAMPLE: https://www.bco-dmo.org",
       "format": "uri"
     },
     "description": {
       "type": "string",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD"
+      "title": "DESCRIPTION",
+      "description": "EXAMPLE: The BCO-DMO resource catalog offers free and open access to publicly funded research products whose field of study are biological and chemical oceanography"
     },
     "category": {
       "type": "array",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "title": "DOMAIN",
+      "description": "EXAMPLE: Biological Oceanograph",
       "items": {
         "type": "string"
       }
     },
     "sameAs": {
       "type": "array",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "title": "ADDITIONAL LINK",
+      "description": "EXAMPLE: https://twitter.com/BCODM",
       "items": {
         "type": "string",
         "format": "uri"
@@ -86,31 +85,31 @@
           },
           "@id": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD",      
+            "title": "CONTACT URL",
+            "description": "EXAMPLE: https://www.bco-dmo.org/about-u",
             "format": "uri"
           },
           "name": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"      
+            "title": "CONTACT LABEL",
+            "description": "EXAMPLE: Support"
           },
           "email": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD",      
+            "title": "CONTACT EMAIL",
+            "description": "EXAMPLE: info@bco-dmo.org",
             "format": "email"
           },
           "url": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD",      
+            "title": "CONTACT URL",
+            "description": "EXAMPLE: https:/www.bco-dmo.org/about-us",
             "format": "uri"
           },
           "contactType": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"      
+            "title": "CONTACT TYPE",
+            "description": "EXAMPLE: Customer Support"
           }
         }
       }
@@ -135,36 +134,36 @@
           },
           "streetAddress": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"      
+            "title": "STREET ADDRESS",
+            "description": "EXAMPLE: WHOI, MS#36, Shiverick House 11 School St"
           },
           "addressLocality": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"      
+            "title": "CITY",
+            "description": "EXAMPLE: Woods Holm"
           },
           "addressRegion": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"      
+            "title": "STATE",
+            "description": "EXAMPLE: MN"
           },
           "postalCode": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"      
+            "title": "ZIP CODE",
+            "description": "EXAMPLE: 02543" 
           },
           "addressCountry": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"      
+            "title": "COUNTRY",
+            "description": "EXAMPLE: US"
           }
         }
       }
     },
     "foundingData": {
       "type": "string",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "title": "DATE OF INCEPTION",
+      "description": "EXAMPLE: 2006-09-07",
       "format": "date-time"
     },
     "logo": {
@@ -181,8 +180,8 @@
         },
         "url": {
           "type": "string",
-          "title": "PLACEHOLD",
-          "description": "PLACEHOLD",    
+          "title": "LOGO URL",
+          "description": "EXAMPLE: https://www.bco-dmo.org/files/bcodmo/images/bco-dmo-words-BLUE.jp",
           "format": "uri"
         }
       }
@@ -205,24 +204,24 @@
           },
           "@id": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD",      
+            "title": "PARENT URL",
+            "description": "EXAMPLE: http://www.nsf.gov | PARENT DOI URL, EXAMPLE: http://dx.doi.org/10.13039/1000000851",
             "format": "uri"
           },
           "legalName": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"      
+            "title": "PARENT FULL NAME",
+            "description": "EXAMPLE: Directorate for Geoscience"
           },
           "name": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"      
+            "title": "PARENT COMMON NAME",
+            "description": "EXAMPLE: NSF-GE"
           },
           "url": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD",      
+            "title": "PARENT URL",
+            "description": "EXAMPLE: http://www.nsf.go",
             "format": "uri"
           },
           "address": {
@@ -240,31 +239,31 @@
             "properties": {
               "@type": {
                 "const": "PostalAddress"
-              },
+              },              
               "streetAddress": {
                 "type": "string",
-                "title": "PLACEHOLD",
-                "description": "PLACEHOLD"          
+                "title": "STREET ADDRESS",
+                "description": "EXAMPLE: WHOI, MS#36, Shiverick House 11 School St"
               },
               "addressLocality": {
                 "type": "string",
-                "title": "PLACEHOLD",
-                "description": "PLACEHOLD"          
+                "title": "CITY",
+                "description": "EXAMPLE: Woods Holm"
               },
               "addressRegion": {
                 "type": "string",
-                "title": "PLACEHOLD",
-                "description": "PLACEHOLD"          
+                "title": "STATE",
+                "description": "EXAMPLE: MN"
               },
               "postalCode": {
                 "type": "string",
-                "title": "PLACEHOLD",
-                "description": "PLACEHOLD"          
+                "title": "ZIP CODE",
+                "description": "EXAMPLE: 02543" 
               },
               "addressCountry": {
                 "type": "string",
-                "title": "PLACEHOLD",
-                "description": "PLACEHOLD"          
+                "title": "COUNTRY",
+                "description": "EXAMPLE: US"
               }
             }
           }
@@ -287,8 +286,8 @@
           },
           "programName": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"      
+            "title": "PROGRAM NAME",
+            "description": "EXAMPLE: EarthCube CDF Registrar"
           },
           "hostingOrganization": {
             "type": "object",
@@ -305,13 +304,13 @@
               },
               "name": {
                 "type": "string",
-                "title": "PLACEHOLD",
-                "description": "PLACEHOLD"          
+                "title": "HOSTING ORGANIZATION",
+                "description": "EXAMPLE: RE3Data"
               },
               "url": {
                 "type": "string",
-                "title": "PLACEHOLD",
-                "description": "PLACEHOLD",          
+                "title": "HOSTING ORGANIZATION URL",
+                "description": "EXAMPLE: http://www.re3data.org",
                 "format": "uri"
               }
             }
@@ -337,22 +336,24 @@
           },
           "@id": {
             "type": "string",   
+            "title": "FUNDER URL",
+            "description": "EXAMPLE: https://www.nsf.gov/div/index.jsp?div=OCE",      
             "format": "uri"
           },
           "legalName": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"  
+            "title": "FUNDER FULL NAME",
+            "description": "EXAMPLE: Division of Ocean Science"
           },
           "name": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"
+            "title": "FUNDER COMMON NAME",
+            "description": "EXAMPLE: OC"
           },
           "url": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD",  
+            "title": "FUNDER URL",
+            "description": "EXAMPLE: https://www.nsf.gov/div/index.jsp?div=OC",
             "format": "uri"
           },
           "identifier": {
@@ -368,13 +369,13 @@
               },
               "value": {
                 "type": "string",
-                "title": "PLACEHOLD",
-                "description": "PLACEHOLD"
+                "title": "FUNDER DOI",
+                "description": "EXAMPLE: 10.13039/10000014"
               },
               "url": {
                 "type": "string",
-                "title": "PLACEHOLD",
-                "description": "PLACEHOLD",   
+                "title": "FUNDER DOI URL",
+                "description": "EXAMPLE: https://doi.org/10.13039/10000014",
                 "format": "uri"
               }
             }
@@ -399,19 +400,19 @@
           },
           "name": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD"
+            "title": "COMMON NAME",
+            "description": "EXAMPLE: Terms of Us"
           },
           "url": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD",   
+            "title": "URL",
+            "description": "EXAMPLE: https://help.hydroshare.org/about-hydroshare/policies/terms-of-use",
             "format": "uri"
           },
           "fileFormat": {
             "type": "string",
             "title": "PLACEHOLD",
-            "description": "PLACEHOLD",   
+            "description": "EXAMPLE: text/html",
             "format": "MimeType"
           }
         }

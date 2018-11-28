@@ -12,7 +12,7 @@ Stage 2 will verify whole objects are valid. With the result obj from stage 1 re
 
 ajv  validate --all-errors -c .\src\back\ajv-cli.js -s src\schema\dataset.json -d src\share\jsonld_examples\datasets\bcodmo_dataset.json > dataset_errors.txt 2>&1
 
-ajv  validate --all-errors -c .\src\back\ajv-cli.js -s src\schema\organizations.json -d src\share\jsonld_examples\organizations\bcodmo_org.json > organization_errors.txt 2>&1
+ajv  validate --all-errors -c .\src\back\ajv-cli.js -s src\schema\organization.json -d src\share\jsonld_examples\organizations\bcodmo_org.json > organization_errors.txt 2>&1
 
 
 -  cmd
