@@ -363,8 +363,7 @@
                   "required": [
                     "@type",
                     "latitude",
-                    "longitude",
-                    "elevation"
+                    "longitude"
                   ],
                   "properties": {
                     "@type": {
@@ -446,8 +445,9 @@
           },
           "url": {
             "type": "string",
-            "title": "URL DESCRIBING PARAMETER",
-            "description": "EXAMPLE: https://www.bco-dmo.org/dataset-parameter/66578",
+            "title": "URL",
+            "description": "URL DESCRIBING PARAMETER",
+            "examples": ["https://www.bco-dmo.org/dataset-parameter/66578"],
             "format": "uri"
           },
           "name": {

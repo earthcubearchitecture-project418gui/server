@@ -17,7 +17,7 @@
   "groups" : { 
     "main": [ "@id", "legalName", "name", "url", "description", "category"],
     "contact": [ "contactPoint", "address" ],
-    "info": [ "foundingDate", "logo" ],
+    "info": [ "foundingData", "logo" ],
     "parent organizations": [ "parentOrganization" ] ,
     "associations": [ "memberOf" ],
     "funding agencies": [ "funder" ],
@@ -320,8 +320,9 @@
     },
     "funder": {
       "type": "array",
-      "title": "PLACEHOLD",
+      "title": "Funders",
       "description": "PLACEHOLD",
+      "minItems": 1,
       "items": {
         "type": "object",
         "required": [
