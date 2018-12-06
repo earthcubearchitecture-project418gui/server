@@ -21,7 +21,7 @@ app.options('/*', function(req,res) {
   console.log("Hit [OPTIONS /*]");
   // Access-Control-Allow-Origin: http://foo.example
   // Access-Control-Allow-Headers: X-PINGOTHER, Content-Type
-  
+
   res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
   res.header("Access-Control-Max-Age", "86400");
   res.sendStatus(200);
@@ -34,18 +34,18 @@ app.use(express.static(public));
 
 if (secure) {
   const PORT = process.env.PORT || 443;
-  
+
   const certPath = process.env.NODE_CERT || (path.join(__dirname, '..', '..', 'ssl', 'server.crt'));
   const keyPath = process.env.NODE_KEY || (path.join(__dirname, '..', '..', 'ssl', 'server.key'));
-  
+
   console.log('Public folder : ', public);
   console.log('Crt : ', certPath);
   console.log('Key : ', keyPath);
-  
+
   const httpsOptions = {
     cert: fs.readFileSync(certPath),
     key: fs.readFileSync(keyPath)
-  }
+  };
 
   https.createServer(httpsOptions, app).listen(PORT, () => console.log(`JSON-LD validator app listening on port ${PORT}, with HTTPS.`));
 

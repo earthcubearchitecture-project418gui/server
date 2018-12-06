@@ -13,7 +13,7 @@ router.use((err, req, res, next) => {
     if (res.headersSent) {
       return next(err);
     }
-    res.status(400)
+    res.status(400);
     res.send(err.message);
     return next(err);
   }
