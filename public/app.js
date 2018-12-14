@@ -1,6 +1,6 @@
 
-// const BACK_END = 'http://localhost:8081';
-const BACK_END = 'https://earthcube.isti.com';
+const BACK_END = 'http://localhost:8081';
+// const BACK_END = 'https://earthcube.isti.com';
 
 const selectSubsection = document.querySelector('#subsection');
 // const buttonExtract = document.querySelector('#extract');

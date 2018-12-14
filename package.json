@@ -5,12 +5,14 @@
   "main": "src/web.js",
   "scripts": {
     "web": "nodemon src/back/web.js",
-    "web:unsecure": "nodemon src/back/web.js --unsecure",
+    "web:unsecure": "node src/back/web.js --unsecure",
+    "web:dev": "nodemon --inspect-brk src/back/web.js --unsecure",
+    "web:dev:ndb": "ndb nodemon src/back/web.js --unsecure",
     "local": "node src/back/app-local.js",
     "package": "npx webpack",
     "public:setup": " cpx -v -u \"src/schema/*.json\" public/schema && cpx -v \"src/share/jsonld_examples/**/*.json\" public",
-    "test:org": "ajv --all-errors -s src/schema/organization.json -d src/share/jsonld_examples/organizations/*.json",
-    "test:dataset": "ajv --all-errors -s src/schema/dataset.json -d src/share/jsonld_examples/dataset/*.json"
+    "test:dataset": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/dataset.json -d src/share/jsonld_examples/datasets/*.json",
+    "test:org": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/organizations.json -d src/share/jsonld_examples/organizations/*.json"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,37 @@
+graph TD
+a["START. <br/>Retrive schemaCatagory from function. <br/>Select catagory : <br/> Foreach c in catagory: <br/>typeof(c) == 'object' "]-->b['Top section']
+b-->g
+subgraph  Object Properties
+e["Parse properties.  <br/>###typeof(properties) =='object' <br/>Each key,value pair represents a UI element, <br/>or nested collection of UI elements in the case of object"]
+
+e-->f["foreach key, value pair:   ### typeof(key)=='string', typeof(value)=='object' "] 
+
+f-- "valve[?]"  -->g[Parse title,description,example for element UI text]
+
+g-->h[if type == :]
+
+h -- "string, number, boolean" --> ii["Display SINGLE text box. Continue"]
+
+h -- object --> i[Recurse to SINGLE child object <br/>### 'Indent' and display child UI elements <br/>as alongside parent UI elements]
+
+h -- array --> j[Recurse to MANY child object <br/>]
+end
+i -- .properties -->bb['Subsection']
+bb-->e
+j-- .items -->p
+subgraph Array Items
+p[Parse object ### Yes, its an object]-->q[Parse title,description, for section UI text, not required to be present]
+q-->r[Add a plus button to UI]
+r-->s["Parse items <br/>###typeof(items) =='object' . <br/>But items['type'] determines what this array contains"]
+
+s-->t[if type == :]
+
+t -- string, number, boolean --> tt["Display simple text box for each instance"]
+
+t -- object --> u[Display SINGLE containment box for EACH instance <br/>### 'Indent' and display child UI elements <br/>as alongside container]
+
+t -- array --> v[POSSIBLE BUT NOT USED]
+
+end
+
+u-- .properties -->bb
