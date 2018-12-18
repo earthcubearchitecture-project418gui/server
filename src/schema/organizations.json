@@ -23,7 +23,20 @@
     "funding agencies": [ "funder" ],
     "publishing": [ "publishingPrinciples" ]
   }, 
-
+  "mimetypes": [
+    "image/jpeg",
+    "application/octet-stream",
+    "application/json",
+    "application/pdf",
+    "application/rtf",
+    "image/bmp",
+    "application/x-bzip",
+    "application/x-bzip2",
+    "application/x-csh",
+    "text/css",
+    "text/csv",
+    "application/msword"
+  ],
   "properties": {
     "@id": {
       "type": "string",
