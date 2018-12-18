@@ -487,14 +487,14 @@
             "description": "EXAMPLE: int64, string, parts per million (ppm)"
           }
         }
-      },
-      "measurementTechnique": {
-        "type": "array",
-        "title": "MEASUREMENT TECHNIQUE",
-        "description": "EXAMPLE: Shimadzu TOC-V Analyze",
-        "items": {
-          "type": "string"
-        }
+      }
+    },
+    "measurementTechnique": {
+      "type": "array",
+      "title": "MEASUREMENT TECHNIQUE",
+      "description": "EXAMPLE: Shimadzu TOC-V Analyze",
+      "items": {
+        "type": "string"
       }
     }
   }
