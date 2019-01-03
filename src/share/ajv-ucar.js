@@ -1,8 +1,10 @@
+// Wrapper around ajv, for custom error reporting
+
 
 const AJV = require('ajv');
 let ajv = new AJV({ allErrors: true });
 
-const { isPolygon, isBox, isMimeType } = require('./validators.js');
+const { isPolygon, isBox, isRestrictedMimeType } = require('./validators.js');
 
 let currentValidator;
 
@@ -36,7 +38,7 @@ function registerCustomFormats(ajv) {
     },
     {
       format: "MimeType",
-      validator: isMimeType
+      validator: isRestrictedMimeType
     }
   ].forEach(customFormat => {
     ajv.addFormat(customFormat.format, (data) => {

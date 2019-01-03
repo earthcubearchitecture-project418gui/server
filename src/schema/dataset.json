@@ -18,7 +18,7 @@
     "main" : [ "@id", "name", "alternateName", "url", "description", "version", "isAccessibleForFree", "keywords", "license", "citation", "includedInDataCatalog"],
     "publishing" : [ "distribution", "provider", "publisher" ],
     "authors" : [ "creator" ],
-    "spatial coverage" : [ "spatial coverage" ],
+    "spatial coverage" : [ "spatialCoverage" ],
     "measurements" : [ "variableMeasured", "measurementTechnique" ]
   },
   "mimetypes": [
