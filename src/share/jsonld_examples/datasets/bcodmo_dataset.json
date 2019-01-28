@@ -166,7 +166,8 @@
     "url": "http://www.example.com/MODIFIED"
   },
   "includedInDataCatalog": {
-    "@id": "http:\/\/www.bco-dmo.org\/datasets"
+    "@id": "http:\/\/www.bco-dmo.org\/datasets",
+    "url": "http:\/\/www.bco-dmo.org\/datasets"
   },
   "isPartOf": [
     {
