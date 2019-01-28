@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://earthcube.isti.com/ucar-json-ld.dataset.schema.json",
-  "title": "UCAR Dataset",
+  "title": "EarthCube GeoCODES Registered Dataset",
   "description": "",
   "type": "object",
   "required": [
@@ -18,7 +18,7 @@
     "main" : [ "@id", "name", "alternateName", "url", "description", "version", "isAccessibleForFree", "keywords", "license", "citation", "includedInDataCatalog"],
     "publishing" : [ "distribution", "provider", "publisher" ],
     "authors" : [ "creator" ],
-    "spatial coverage" : [ "spatial coverage" ],
+    "spatialcoverage" : [ "spatialCoverage" ],
     "measurements" : [ "variableMeasured", "measurementTechnique" ]
   },
   "mimetypes": [
@@ -57,78 +57,84 @@
     },
     "name": {
       "type": "string",
-      "title": "COMMON NAME",
-      "description": ", EXAMPLE: LNWB Ch07 Water Management - Agricultural water use - date"
+      "title": "Dataset Name",
+      "description": "Enter the name commonly used for the dataset.",
+      "example": "LNWB Ch07 Water Management - Agricultural water use - date"
       },
-    "alternateType": {
-      "type": "array",
-      "title": "PLACEHOLD",
-      "description": "EXAMPLE : http://vivoweb.org/ontology/core#Dataset",
-      "items": {
-        "type": "string",
-        "format": "uri"
-      }
-    },
+  
     "alternateName": {
       "type": "string",
-      "title": "Alternate Name",
-      "description": "EXAMPLE: NE15_AlexanderB"
+      "title": "Alternate Dataset Name",
+      "description": "Enter an alternative name for the dataset.",
+      "example": "NE15_AlexanderB"
     },
     "url": {
       "type": "string",
-      "title": "DATASET URL or DOI URL",
-      "description": "EXAMPLE : http://opencoredata.org/id/dataset/00cd2c07-ff21-4ceb-8595-c6572eda55e9",
+      "title": "Dataset URL or DOI URL",
+      "description": "Enter the dataset's URL or DOI URL.",
+      "example": "URL example: http://opencoredata.org/id/dataset/00cd2c07-ff21-4ceb-8595-c6572eda55e9 | DOI URL example: https://doi.org/10.7283/T5TM7881",
       "format": "uri"
     },
     "description": {
       "type": "string",
-      "title": "PLACEHOLD",
-      "description": ", EXAMPLE: Overview: Agricultural water use includes the irrigation of croplands and the water needs of dairy farms"
+      "title": "Description",
+      "description": "Provide a description of the dataset.",
+      "example": "Overview: Agricultural water use includes the irrigation of croplands and the water needs of dairy farms"
     },
     "version": {
       "type": "string",
-      "title": "Date or semvar",
-      "description": "EXAMPLE: 2017-06-04 | VERSION NUMBER, EXAMPLE: v1.2.2"
+      "title": "Version",
+      "description": "Enter the dataset version as either a date or a version number.",
+      "example": "Date example: 2017-06-04 | Version Number example: v1.2.2"
     },
     "isAccessibleForFree": {
       "type": "boolean",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD"
+      "title": "Accessible for Free",
+      "description": "Indicate if the dataset is available for free by selecting this checkbox."
     },
     "keywords": {
       "type": "string",
-      "title": "Use comma delimited keywords",
-      "description": "EXAMPLE: ocean acidification, OA, Dissolved Organic Carbon, DOC, bacterioplankton respiration, pCO2, carbon dioxide"
+      "title": "Keywords",
+      "description": "Enter one or more keywords, with each keyword separated by a comma.",
+      "example": "ocean acidification, OA, Dissolved Organic Carbon, DOC, bacterioplankton respiration, pCO2, carbon dioxide"
     },
     "license": {
       "type": "string",
-      "title": "LICENSE URL",
-      "description": "EXAMPLE: http://creativecommons.org/licenses/by/4.0",
+      "title": "Software License URL",
+      "description": "Enter the URL for the dataset software license, which may be commercial, non-profit, or university.",
+      "example": "http://creativecommons.org/licenses/by/4.0",
       "format": "uri"
     },
     "citation": {
       "type": "string",
-      "title": "PLACEHOLD",
-      "description": "EXAMPLE: Peter Spooner, Nivedita Thiagarajan, Weifu Guo, Katherine R. Hendry, Melanie J. Leng, Laura F. Robinson, Brad E. Rosenheim (2017), Clumped isotope composition of modern cold-water corals. Interdisciplinary Earth Data Alliance (IEDA). doi:10.1594/IEDA/10070"
+      "title": "Citation",
+      "description": "Provide one or more citations for this dataset.",
+      "example": "Peter Spooner, Nivedita Thiagarajan, Weifu Guo, Katherine R. Hendry, Melanie J. Leng, Laura F. Robinson, Brad E. Rosenheim (2017), Clumped isotope composition of modern cold-water corals. Interdisciplinary Earth Data Alliance (IEDA). doi:10.1594/IEDA/10070"
     },
     "includedInDataCatalog": {
       "type": "object",
       "required": [
-        "@id"
+        "@id",
+        "url"
       ],
       "properties": {
         "@id": {
           "type": "string",
-          "title": "CATALOG URL",
-          "description": "EXAMPLE: https://www.hydroshare.org",
+          "format": "uri"
+        },
+        "url": {
+          "type": "string",
+          "title": "Data Catalog URL",
+          "description": "Enter the URL for the data catalog.",
+          "example": "https://www.hydroshare.org",
           "format": "uri"
         }
       }
     },
     "distribution": {
       "type": "object",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "title": "Distribution",
+      "description": "Distribution refers to the dataset's distribution online.",
       "required": [
         "@type",
         "contentUrl",
@@ -140,22 +146,24 @@
         },
         "contentUrl": {
           "type": "string",
-          "title": "DOWNLOAD URL",
-          "description": "EXAMPLE: https://www.hydroshare.org/hsapi/resource/8f361f21f9884c4b883a7b9d723155bcc",
+          "title": "Dataset Download URL",
+          "description": "Provide the URL for downloading the dataset file.",
+          "example": "https://www.hydroshare.org/hsapi/resource/8f361f21f9884c4b883a7b9d723155bcc",
           "format": "uri"
         },
         "encodingFormat": {
           "type": "string",
-          "title": "MIME type",
-          "description": "EXAMPLE: application/zip",
+          "title": "File Type",
+          "description": "Select a File Type for the dataset file.",
+          "example": "application/zip",
           "format": "MimeType"
         }
       }
     },
     "provider": {
       "type": "object",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "title": "Data Provider",
+      "description": "The organization that has created the data.",
       "required": [
         "@type",
         "@id",
@@ -168,38 +176,34 @@
         },
         "@id": {
           "type": "string",
-          "title": "PROVIDER URL",
-          "description": "EXAMPLE: https://www.hydroshare.org",
           "format": "uri"    
         },
-        "additionalType": {
-          "type": "string",
-          "title": "PLACEHOLD",
-          "description": "EXAMPLE : http://schema.geolink.org/1.0/base/main#Organization",    
-          "format": "uri"
-        },
+        
         "legalName": {
           "type": "string",
-          "title": "Full Name",
-          "description": "EXAMPLE: Biological and Chemical Data Management Office"
+          "title": "Legal Name",
+          "description": "Enter the name that is legally registered to the data provider.",
+          "example": "Biological and Chemical Data Management Office"
         },
         "name": {
           "type": "string",
-          "title": "COMMON NAME",
-          "description": "EXAMPLE: BCO-DM"
+          "title": "Common Name",
+          "description": "Enter a name for the data provider that is commonly used. This may be a shortened version of the legal name.",
+          "example": "BCO-DM"
         },
         "url": {
           "type": "string",
-          "title": "PROVIDER URL",
-          "description": ", EXAMPLE: https://www.hydroshare.org",
+          "title": "URL or DOI URL",
+          "description": "Enter the data provider's URL or DOI URL.",
+          "example": "https://www.hydroshare.org",
           "format": "uri"
         }
       }
     },
     "publisher": {
       "type": "object",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "title": "Publisher",
+      "description": "The organization maintaining the data catalog for distribution.",
       "required": [
         "@type",
         "@id",
@@ -212,32 +216,33 @@
         },
         "@id": {
           "type": "string",
-          "title": "PUBLISHER URL",
-          "description": "EXAMPLE: https://csdco.umn.edu/",    
           "format": "uri"
         },
         "description": {
           "type": "string",
-          "title": "PUBLISHER DESCRIPTION",
-          "description": "EXAMPLE: Continental Scientific Drilling Coordination Office"
+          "title": "Description",
+          "description": "Provide a description of the publisher, which could include its goal or purpose.",
+          "example": "Continental Scientific Drilling Coordination Office"
         },
         "url": {
           "type": "string",
-          "title": "PUBLISHER URL",
-          "description": "EXAMPLE: https://csdco.umn.edu/",
+          "title": "URL or DOI URL",
+          "description": "Enter the publisher's URL or DOI URL. The publisher is the organization maintaining the data catalog for distribution.",
+          "example": "https://csdco.umn.edu/",
           "format": "uri"
         },
         "name": {
           "type": "string",
-          "title": "PUBLISHER COMMON NAME",
-          "description": "EXAMPLE: CSDC"
+          "title": "Common Name",
+          "description": "Enter a name for the publisher that is commonly used.",
+          "example": "CDSC"
         }
       }
     },
     "creator": {
       "type": "array",
-      "title": "Creator (Role)",
-      "description" : "PLACEHOLD",
+      "title": "Dataset Author (Role)",
+      "description" : "Identifies the role of the individual that created the dataset.",
       "items": {
         "type": "object",
         "required": [
@@ -251,31 +256,25 @@
           },
           "@id": {
             "type": "string",
-            "title": "ROLE URL",
-            "description": "EXAMPLE : http://lod.bco-dmo.org/id/person-role/472032",      
-            "format": "uri"
-          },
-          "additionalType": {
-            "type": "string",
-            "title": "PLACEHOLD",
-            "description": "EXAMPLE : http://schema.geolink.org/1.0/base/main#Participants",      
             "format": "uri"
           },
           "roleName": {
             "type": "string",
-            "title": "TYPE OF ROLE",
-            "description": "EXAMPLE: Principal Investigator, Author"
+            "title": "Type of Role",
+            "description": "Enter the type of role(s) listed for the dataset author.",
+            "example": "Principal Investigator, Author"
           },
           "url": {
             "type": "string",
-            "title": "ROLE URL",
-            "description": "EXAMPLE: http://lod.bco-dmo.org/id/person-role/47203",
+            "title": "Author (Role) URL",
+            "description": "Enter a URL for the web page that lists the dataset author's role.",
+            "example": "http://lod.bco-dmo.org/id/person-role/472032",
             "format": "uri"
           },
           "creator": {
             "type": "object",
-            "title": "Creator (Person)",
-            "description": "PLACEHOLD",  
+            "title": "Dataset Author (Person)",
+            "description": "Identifies the individual that created the dataset.",  
             "required": [
               "@type",
               "@id",
@@ -287,41 +286,37 @@
               },
               "@id": {
                 "type": "string",
-                "title": "PERSON URL",
-                "description": "EXAMPLE : https://www.bco-dmo.org/person/5131",        
-                "format": "uri"
-              },
-              "additionalType": {
-                "type": "string",
-                "title": "PLACEHOLD",
-                "description": "EXAMPLE : http://schema.geolink.org/1.0/base/main#Person",      
                 "format": "uri"
               },
               "name": {
                 "type": "string",
-                "title": "FULL NAME",
-                "description": "EXAMPLE: Dr. Uta Passo"
+                "title": "Full Name",
+                "description": "Enter this dataset author's full name, including their credentials.",
+                "example": "Dr. Jim Johnson"
               },
               "givenName": {
                 "type": "string",
-                "title": "FIRST NAME",
-                "description": "EXAMPLE: Ut"
+                "title": "First Name",
+                "description": "Enter this dataset author's first name.",
+                "example": "Jim"
               },
               "familyName": {
                 "type": "string",
-                "title": "LAST NAME",
-                "description": "EXAMPLE: Passo"
+                "title": "Last Name",
+                "description": "Enter this dataset author's last name.",
+                "example": "Johnson"
               },
               "url": {
                 "type": "string",
-                "title": "PERSON URL",
-                "description": "EXAMPLE: https://www.bco-dmo.org/person/5131",
+                "title": "Author (Person) URL",
+                "description": "Enter a URL for the web page that provides information about this dataset author (person).",
+                "example": "https://www.bco-dmo.org/person/51317",
                 "format": "uri"
               },
               "identifier": {
                 "type": "object",
-                "title": "PLACEHOLD",
-                "description": "PLACEHOLD",          
+                "title": "ORCID",
+                "description": "ORCID is a standardized method often used by the scientific community to identify an individual. For example, if two individuals with the same name authored a paper, ORCID uniquely identifies the two authors.",          
                 "required": [
                   "@type",
                   "url",
@@ -334,13 +329,15 @@
                   "url": {
                     "type": "string",
                     "title": "ORCID URL",
-                    "description": "EXAMPLE: https://orcid.org/0000-0003-2591-5292",
+                    "description": "Enter the ORCID URL for this Dataset Author (Person).",
+                    "example": "https://orcid.org/0000-0003-2591-5293",
                     "format": "uri"
                   },
                   "value": {
                     "type": "string",
-                    "title": "ORCID VALUE",
-                    "description": "EXAMPLE: 0000-0003-2591-529"
+                    "title": "ORCID Value",
+                    "description": "Enter the number value of the ORCID belonging to this Dataset Author (Person).",
+                    "example": "0000-0003-2591-5293"
                   },
                   "additionalType": {
                     "type": "array",
@@ -360,8 +357,8 @@
     },
     "spatialCoverage": {
       "type": "array",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "title": "Spatial Coverage",
+      "description": "Refers to the geographical area where the dataset was collected.",
       "items": {
         "type": "object",
         "required": [
@@ -374,8 +371,9 @@
           },
           "name": {
             "type": "string",
-            "title": "NAME OF PLACE",
-            "description": "EXAMPLE: Falling Water Falls [3PP40] vertebrate fauna dataset"
+            "title": "Name of Place",
+            "description": "Enter the name of the geographical area where the dataset was collected.",
+            "example": "Falling Water Falls [3PP40] vertebrate fauna dataset"
           },
           "geo": {
             "type": "array",
@@ -384,8 +382,8 @@
               "anyOf": [
                 {
                   "type": "object",
-                  "title": "GeoCoordinate",
-                  "description": "PLACEHOLD",
+                  "title": "Geographical Coordinates",
+                  "description": "A set of one or more individual geographical coordinate points.",
                   "required": [
                     "@type",
                     "latitude",
@@ -412,8 +410,8 @@
                 },
                 {
                   "type": "object",
-                  "title": "PLACEHOLD",
-                  "description": "GeoShape",
+                  "title": "Geographical Shape",
+                  "description": "A geographical way to identify spatial coverage using a bounding box and/or a polygon.",
                   "required": [
                     "@type",
                     "polygon"
@@ -424,14 +422,16 @@
                     },
                     "box": {
                       "type": "string",
-                      "title": "BOUNDING BOX",
-                      "description": "EXAMPLE: -149.8727,-17.45 -64.6353,34.40",            
+                      "title": "Bounding Box",
+                      "description": "Enter latitude and longitude coordinates for the bounding box, which is the entire shape of the geographical area.",
+                      "example": "-149.8727,-17.45 -64.6353,34.40",
                       "format": "box"
                     },
                     "polygon": {
                       "type": "string",
-                      "title": "POLYGON VERTICES",
-                      "description": "EXAMPLE: -149.8727,-17.45 -149.8727,34.407 -64.6353,34.407 -64.6353,-17.45 -149.8727,-17.4",            
+                      "title": "Polygon Vertices",
+                      "description": "Enter a latitude and longitude for the points on the polygon.",
+                      "example": "-149.8727,-17.45 -149.8727,34.407 -64.6353,34.407 -64.6353,-17.45 -149.8727,-17.4",
                       "format": "polygon"
                     }
                   }
@@ -444,8 +444,8 @@
     },
     "variableMeasured": {
       "type": "array",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "title": "Measurements",
+      "description": "Describe what the numbers in this dataset mean.",
       "items": {
         "type": "object",
         "required": [
@@ -460,39 +460,44 @@
           },
           "@id": {
             "type": "string",
-            "title": "URL DESCRIBING PARAMETER",
-            "description": "EXAMPLE: https://www.bco-dmo.org/dataset-parameter/66578",
+            "title": "Measurement Description URL",
+            "description": "Enter the URL for the web page that describes this measurement.",
+            "example": "https://www.bco-dmo.org/dataset-parameter/665789",
             "format": "uri"
           },
           "description": {
             "type": "string",
-            "title": "PROPERTY DESCRIPTION",
-            "description": "EXAMPLE: Number identifying the cruise"
+            "title": "Measurement Description",
+            "description": "Enter a description of this measurement.",
+            "example": "Number identifying the cruise"
           },
           "url": {
             "type": "string",
-            "title": "URL",
-            "description": "URL DESCRIBING PARAMETER",
-            "examples": ["https://www.bco-dmo.org/dataset-parameter/66578"],
+            "title": "Measurement Description URL",
+            "description": "Enter the URL for the web page that describes this measurement.",
+            "example": "https://www.bco-dmo.org/dataset-parameter/665789",
             "format": "uri"
           },
           "name": {
             "type": "string",
-            "title": "PROPERTY NAME",
-            "description": "EXAMPLE: Leg, target_pCO"
+            "title": "Measurement Name",
+            "description": "Enter one or more names for this measurement, with each name separated by a comma.",
+            "example": "Leg, target_pCO"
           },
           "unitText": {
             "type": "string",
-            "title": "UNIT DESCRIPTOR",
-            "description": "EXAMPLE: int64, string, parts per million (ppm)"
+            "title": "Measurement Unit Descriptor",
+            "description": "Describe the unit for this measurement.",
+            "example": "meters, int64, string, parts per million (ppm)"
           }
         }
       }
     },
     "measurementTechnique": {
       "type": "array",
-      "title": "MEASUREMENT TECHNIQUE",
-      "description": "EXAMPLE: Shimadzu TOC-V Analyze",
+      "title": "Measurement Technique",
+      "description": "Enter one or more measurement devices and techniques that were used to measure the variables in the dataset.",
+      "example": "Shimadzu TOC-V Analyzer",
       "items": {
         "type": "string"
       }

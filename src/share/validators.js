@@ -1,3 +1,5 @@
+// Pure functions, for validating inputs
+
 
 const validator = require('validator');
 const R = require('ramda');
@@ -89,6 +91,11 @@ function isPolygon(input) {
     return "Not enough coordinates > " + input.trim() + ` has ${res} coords.`;
   }
   return true;
+}
+
+mimetypelist = require('./ericsmimetypelist.js');
+function isRestrictedMimeType(input) {
+  return mimetypelist.includes(input.trim());
 }
 
 function isMimeType(input) {
@@ -215,7 +222,7 @@ module.exports = {
   // isFloat,
   isPolygon,
   isBox,
-  isMimeType,
+  isRestrictedMimeType,
   isCoord,
   isURL,
 

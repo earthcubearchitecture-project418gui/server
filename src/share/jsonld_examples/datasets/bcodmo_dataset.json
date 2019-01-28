@@ -124,7 +124,7 @@
         {
           "@type": "GeoShape",
           "box": "24.94972,-80.45361 24.94972,-80.45361",
-          "polygon": "24.94972,-80.45361 24.94972,-80.a45361 24.94b972,-80.45361 24.94972,-80.45361 24.94972,-80.45361"
+          "polygon": "24.94972,-80.45361 24.94972,-80.45361 24.94972,-80.45361 24.94972,-80.45361 24.94972,-80.45361"
         }
       ],
       "subjectOf": {
@@ -189,7 +189,7 @@
     "fileFormat": "text\/tab-separated-values",
     "datePublished": "2017-03-27",
     "inLanguage": "en-US",
-    "encodingFormat": "MODIFIED"
+    "encodingFormat": "text/html"
   },
   "measurementTechnique": [
     "Elemental Analyzer"

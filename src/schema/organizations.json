@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://earthcube.isti.com/ucar-json-ld.organization.schema.json",
-  "title": "UCAR Dataset",
+  "title": "EarthCube GeoCODES Registered Organization",
   "description": "",
   "type": "object",
   "required": [
@@ -56,37 +56,43 @@
     },
     "legalName": {
       "type": "string",
-      "title": "FULL NAME",
-      "description": "EXAMPLE: Biological and Chemical Data Management Office"
+      "title": "Legal Name",
+      "description": "Enter the name that is legally registered to your organization.",
+      "example": "Biological and Chemical Data Management Office"
     },
     "name": {
       "type": "string",
-      "title": "COMMON NAME",
-      "description": "EXAMPLE: BCO-DMO"
+      "title": "Common Name",
+      "description": "Enter the name commonly used to refer to your organization.",
+      "example": "BCO-DMO"
     },
     "url": {
       "type": "string",
-      "title": "URL",
-      "description": "EXAMPLE: https://www.bco-dmo.org",
+      "title": "URL or DOI URL",
+      "description": "Enter the organization's URL or DOI URL.",
+     "example": "https://www.bco-dmo.org",
       "format": "uri"
     },
     "description": {
       "type": "string",
-      "title": "DESCRIPTION",
-      "description": "EXAMPLE: The BCO-DMO resource catalog offers free and open access to publicly funded research products whose field of study are biological and chemical oceanography"
+      "title": "Description",
+      "description": "Describe your organization, e.g., its mission, goals, etc.",
+      "example": "The BCO-DMO resource catalog offers free and open access to publicly funded research products whose field of study are biological and chemical oceanography."
     },
     "category": {
       "type": "array",
-      "title": "DOMAIN",
-      "description": "EXAMPLE: Biological Oceanograph",
+      "title": "Field(s) of Study",
+      "description": "Enter your organization field(s) of study.",
+     "example": "Biological Oceanography, Chemical Oceanography",
       "items": {
         "type": "string"
       }
     },
     "sameAs": {
       "type": "array",
-      "title": "ADDITIONAL LINK",
-      "description": "EXAMPLE: https://twitter.com/BCODM",
+      "title": "Social Media URLs",
+      "description": "Enter links to your organization social media pages, e.g., Facebook, LinkedIn, Twitter, etc.",
+      "example": "https://twitter.com/BCODMO, https://linkedin.com/company/6378439/",
       "items": {
         "type": "string",
         "format": "uri"
@@ -94,8 +100,8 @@
     },
     "contactPoint": {
       "type": "array",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "title": "Contact",
+      "description": "A contact can be an individual and/or a department within the organization.",
       "items": {
         "type": "object",
         "required": [
@@ -110,39 +116,41 @@
           },
           "@id": {
             "type": "string",
-            "title": "CONTACT URL",
-            "description": "EXAMPLE: https://www.bco-dmo.org/about-u",
             "format": "uri"
           },
           "name": {
             "type": "string",
-            "title": "CONTACT LABEL",
-            "description": "EXAMPLE: Support"
+            "title": "Name",
+            "description": "Enter the contact name, which may be that of either an individual or a department within the organization.",
+            "example": "Support"
           },
           "email": {
             "type": "string",
-            "title": "CONTACT EMAIL",
-            "description": "EXAMPLE: info@bco-dmo.org",
+            "title": "Email",
+            "description": "Provide an email address for this organizational contact.",
+            "example": "info@bco-dmo.org",
             "format": "email"
           },
           "url": {
             "type": "string",
-            "title": "CONTACT URL",
-            "description": "EXAMPLE: https:/www.bco-dmo.org/about-us",
+            "title": "URL",
+            "description": "Provide a URL to your organization's web pages that provide information about this contact.",
+            "example": "info@bco-dmo.org/contact-us",
             "format": "uri"
           },
           "contactType": {
             "type": "string",
-            "title": "CONTACT TYPE",
-            "description": "EXAMPLE: Customer Support"
+            "title": "Contact Role",
+            "description": "Enter the role fulfilled by this contact within the organization.",
+            "example": "Customer Support, Sales"
           }
         }
       }
     },
     "address": {
       "type": "array",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "title": "Address",
+      "description": "Address is this organization's postal address(es).",
       "items": {
         "type": "object",
         "required": [
@@ -159,42 +167,48 @@
           },
           "streetAddress": {
             "type": "string",
-            "title": "STREET ADDRESS",
-            "description": "EXAMPLE: WHOI, MS#36, Shiverick House 11 School St"
+            "title": "Street",
+            "description": "Enter the street address used for this organizational postal address.",
+            "example": "WHOI, MS#36, Shiverick House 11 School St"
           },
           "addressLocality": {
             "type": "string",
-            "title": "CITY",
-            "description": "EXAMPLE: Woods Holm"
+            "title": "City",
+            "description": "Enter the city used for this organizational postal address.",
+            "example": "Woods Hole"
           },
           "addressRegion": {
             "type": "string",
-            "title": "STATE",
-            "description": "EXAMPLE: MN"
+            "title": "State",
+            "description": " Enter the state used for this organizational postal address.",
+            "example": "MA"
           },
           "postalCode": {
             "type": "string",
-            "title": "ZIP CODE",
-            "description": "EXAMPLE: 02543" 
+            "title": "ZIP Code",
+            "description": "Enter the ZIP code used for this organizational postal address.",
+            "example": "02543"
           },
           "addressCountry": {
             "type": "string",
-            "title": "COUNTRY",
-            "description": "EXAMPLE: US"
+            "title": "Country",
+            "description": "Enter the country used for this organizational postal address.",
+            "example": "US"
           }
         }
       }
     },
-    "foundingData": {
+    "foundingDate": {
       "type": "string",
-      "title": "DATE OF INCEPTION",
-      "description": "EXAMPLE: 2006-09-07",
-      "format": "date-time"
+      "title": "Inception Date",
+      "description": "Provide the date on which your organization was founded.",
+      "example": "2006-09-01",
+      "format": "date"
     },
     "logo": {
       "type": "object",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "title": "Logo",
+      "description": "The symbol or graphical design adopted by your organization to readily identify it.",
       "required": [
         "@type",
         "url"
@@ -205,16 +219,17 @@
         },
         "url": {
           "type": "string",
-          "title": "LOGO URL",
-          "description": "EXAMPLE: https://www.bco-dmo.org/files/bcodmo/images/bco-dmo-words-BLUE.jp",
+          "title": "Logo URL",
+          "description": "Provide a link to the image file containing your organization's logo.",
+            "example": "https://www.bco-dmo.org/files/bcodmo/images/bco-dmo-words-BLUE.jpg",
           "format": "uri"
         }
       }
     },
     "parentOrganization": {
       "type": "array",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "title": "Parent Organizations",
+      "description": "A Parent Organization is that part of an organization that coordinates, supervises, or exercises control over policy, fund-raising, and expenditures, or assists or advises one or more chapters, branches, or affiliates.",
       "items": {
         "type": "object",
         "required": [
@@ -229,30 +244,31 @@
           },
           "@id": {
             "type": "string",
-            "title": "PARENT URL",
-            "description": "EXAMPLE: http://www.nsf.gov | PARENT DOI URL, EXAMPLE: http://dx.doi.org/10.13039/1000000851",
-            "format": "uri"
+    		    "format": "uri"
           },
           "legalName": {
             "type": "string",
-            "title": "PARENT FULL NAME",
-            "description": "EXAMPLE: Directorate for Geoscience"
+            "title": " Legal Name",
+            "description": " Enter the name that is legally registered to this parent organization ",
+            "example": "Directorate for Geoscience"
           },
           "name": {
             "type": "string",
-            "title": "PARENT COMMON NAME",
-            "description": "EXAMPLE: NSF-GE"
+            "title": "Common Name",
+            "description": "Enter the name commonly used to refer to this parent organization.",
+            "example": "NSF-GE"
           },
           "url": {
             "type": "string",
-            "title": "PARENT URL",
-            "description": "EXAMPLE: http://www.nsf.go",
+            "title": "Parent Org URL",
+            "description": "Enter a link to this parent organization's web site.",
+            "example": "http://www.nsf.gov",
             "format": "uri"
           },
           "address": {
             "type": "object",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD",      
+            "title": "Street",
+            "description": " Address refers to this parent organization's entire postal address.",      
             "required": [
               "@type",
               "streetAddress",
@@ -267,28 +283,33 @@
               },              
               "streetAddress": {
                 "type": "string",
-                "title": "STREET ADDRESS",
-                "description": "EXAMPLE: WHOI, MS#36, Shiverick House 11 School St"
+                "title": "Street",
+                "description": "Enter the street address used in this parent organization's postal address.",
+                "example": "WHOI, MS#36, Shiverick House 11 School St"
               },
               "addressLocality": {
                 "type": "string",
-                "title": "CITY",
-                "description": "EXAMPLE: Woods Holm"
+                "title": "City",
+                "description": " Enter the city used in this parent organization's postal address.",
+                "example": "Woods Hole"
               },
               "addressRegion": {
                 "type": "string",
-                "title": "STATE",
-                "description": "EXAMPLE: MN"
+                "title": "State",
+                "description": "Enter the state used in this parent organization's postal address.",
+                "example": "ME"
               },
               "postalCode": {
                 "type": "string",
-                "title": "ZIP CODE",
-                "description": "EXAMPLE: 02543" 
+                "title": "ZIP Code",
+                "description": "Enter the ZIP code used in this parent organization's postal address.",
+            "example": "02543"
               },
               "addressCountry": {
                 "type": "string",
-                "title": "COUNTRY",
-                "description": "EXAMPLE: US"
+                "title": "Country",
+                "description": "Enter the country used in this parent organization's postal address.",
+                "example": "US"
               }
             }
           }
@@ -297,8 +318,8 @@
     },
     "memberOf": {
       "type": "array",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",
+      "title": "Associations",
+      "description": "Associations can be any outside partners that your organization works with, including programs with which your organization is affiliated or of which your organization is a member. ",
       "items": {
         "type": "object",
         "required": [
@@ -311,13 +332,14 @@
           },
           "programName": {
             "type": "string",
-            "title": "PROGRAM NAME",
-            "description": "EXAMPLE: EarthCube CDF Registrar"
+            "title": "Name",
+            "description": "Enter the name of this association.",
+            "example": "EarthCube CDF Registry"
           },
           "hostingOrganization": {
             "type": "object",
-            "title": "PLACEHOLD",
-            "description": "PLACEHOLD",      
+            "title": "Hosting Organization",
+            "description": "This association's hosting organization.",      
             "required": [
               "@type",
               "name",
@@ -329,13 +351,15 @@
               },
               "name": {
                 "type": "string",
-                "title": "HOSTING ORGANIZATION",
-                "description": "EXAMPLE: RE3Data"
+                "title": "Host Org Name",
+                "description": "Enter the name of this association's hosting organization.",
+                "example": "RE3Data"
               },
               "url": {
                 "type": "string",
-                "title": "HOSTING ORGANIZATION URL",
-                "description": "EXAMPLE: http://www.re3data.org",
+                "title": "Hosting Org URL",
+                "description": "Enter a link to this hosting organization's web site.",
+                "example": "http://www.re3data.org",
                 "format": "uri"
               }
             }
@@ -345,8 +369,8 @@
     },
     "funder": {
       "type": "array",
-      "title": "Funders",
-      "description": "PLACEHOLD",
+      "title": "Funding Agencies",
+      "description": "Agencies that fund your organization.",
       "minItems": 1,
       "items": {
         "type": "object",
@@ -360,26 +384,24 @@
           "@type": {
             "const": "Organization"
           },
-          "@id": {
-            "type": "string",   
-            "title": "FUNDER URL",
-            "description": "EXAMPLE: https://www.nsf.gov/div/index.jsp?div=OCE",      
-            "format": "uri"
-          },
+         
           "legalName": {
             "type": "string",
-            "title": "FUNDER FULL NAME",
-            "description": "EXAMPLE: Division of Ocean Science"
+            "title": "Legal Name",
+            "description": "Enter the name that is legally registered to this funding agency.",
+            "example": "Division of Ocean Science"
           },
           "name": {
             "type": "string",
-            "title": "FUNDER COMMON NAME",
-            "description": "EXAMPLE: OC"
+            "title": "Common Name",
+            "description": "Enter the name commonly used to refer to this funding agency.",
+            "example": "OCE"
           },
           "url": {
             "type": "string",
-            "title": "FUNDER URL",
-            "description": "EXAMPLE: https://www.nsf.gov/div/index.jsp?div=OC",
+            "title": "Funding Agency URL",
+            "description": "Enter a link to this funding agency's web site.",
+            "example": "https://www.nsf.gov/div/index.jsp?div=OCE",
             "format": "uri"
           },
           "identifier": {
@@ -395,13 +417,15 @@
               },
               "value": {
                 "type": "string",
-                "title": "FUNDER DOI",
-                "description": "EXAMPLE: 10.13039/10000014"
+                "title": "Funding Agency DOI",
+                "description": "Enter the Digital Object Identifier, or DOI, used by the funding agency.",
+                "example": "10.13039/100000141"
               },
               "url": {
                 "type": "string",
-                "title": "FUNDER DOI URL",
-                "description": "EXAMPLE: https://doi.org/10.13039/10000014",
+                "title": "Funding Agency DOI URL",
+                "description": "DOI URL is a DOI in URL form. Enter a link to the DOI.",
+                "example": "https://doi.org/10.13039/100000141",
                 "format": "uri"
               }
             }
@@ -411,8 +435,8 @@
     },
     "publishingPrinciples": {
       "type": "array",
-      "title": "PLACEHOLD",
-      "description": "PLACEHOLD",   
+      "title": "Publishing",
+      "description": "Digital documents published by your organization.",   
       "items": {
         "type": "object",
         "required": [
@@ -426,19 +450,22 @@
           },
           "name": {
             "type": "string",
-            "title": "COMMON NAME",
-            "description": "EXAMPLE: Terms of Us"
+            "title": "Common Name",
+            "description": "Enter the name commonly used to refer to this document.",
+            "example": "Terms of Use"
           },
           "url": {
             "type": "string",
             "title": "URL",
-            "description": "EXAMPLE: https://help.hydroshare.org/about-hydroshare/policies/terms-of-use",
+            "description": "Enter a link to where this document can be found online.",
+            "example": "https://help.hydroshare.org/about-hydroshare/policies/terms-of-use",
             "format": "uri"
           },
           "fileFormat": {
             "type": "string",
-            "title": "PLACEHOLD",
-            "description": "EXAMPLE: text/html",
+            "title": "File Type",
+            "description": "Provide the file type for this document.",
+            "example": "text/html",
             "format": "MimeType"
           }
         }
