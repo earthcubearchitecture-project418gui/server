@@ -132,33 +132,36 @@
       }
     },
     "distribution": {
-      "type": "object",
+      "type": "array",
       "title": "Distribution",
       "description": "Distribution refers to the dataset's distribution online.",
-      "required": [
-        "@type",
-        "contentUrl",
-        "encodingFormat"
-      ],
-      "properties": {
-        "@type": {
-          "const": "DataDownload"
-        },
-        "contentUrl": {
-          "type": "string",
-          "title": "Dataset Download URL",
-          "description": "Provide the URL for downloading the dataset file.",
-          "example": "https://www.hydroshare.org/hsapi/resource/8f361f21f9884c4b883a7b9d723155bcc",
-          "format": "uri"
-        },
-        "encodingFormat": {
-          "type": "string",
-          "title": "File Type",
-          "description": "Select a File Type for the dataset file.",
-          "example": "application/zip",
-          "format": "MimeType"
+      "items": {
+        "type": "object",   
+        "required": [
+          "@type",
+          "contentUrl",
+          "encodingFormat"
+        ],
+        "properties": {
+          "@type": {
+            "const": "DataDownload"
+          },
+          "contentUrl": {
+            "type": "string",
+            "title": "Dataset Download URL",
+            "description": "Provide the URL for downloading the dataset file.",
+            "example": "https://www.hydroshare.org/hsapi/resource/8f361f21f9884c4b883a7b9d723155bcc",
+            "format": "uri"
+          },
+          "encodingFormat": {
+            "type": "string",
+            "title": "File Type",
+            "description": "Select a File Type for the dataset file.",
+            "example": "application/zip",
+            "format": "MimeType"
+          }
         }
-      }
+      }      
     },
     "provider": {
       "type": "object",
