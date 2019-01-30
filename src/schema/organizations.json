@@ -17,7 +17,7 @@
   "groups" : { 
     "main": [ "@id", "legalName", "name", "url", "description", "category"],
     "contact": [ "contactPoint", "address" ],
-    "info": [ "foundingData", "logo" ],
+    "info": [ "foundingDate", "logo" ],
     "parent organizations": [ "parentOrganization" ] ,
     "associations": [ "memberOf" ],
     "funding agencies": [ "funder" ],
