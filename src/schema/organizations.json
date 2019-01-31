@@ -14,7 +14,7 @@
     "address",
     "funder"
   ],
-  "groups" : { 
+  "groups" : {
     "main": [ "@id", "legalName", "name", "url", "description", "category"],
     "contact": [ "contactPoint", "address" ],
     "info": [ "foundingDate", "logo" ],
@@ -22,7 +22,7 @@
     "associations": [ "memberOf" ],
     "funding agencies": [ "funder" ],
     "publishing": [ "publishingPrinciples" ]
-  }, 
+  },
   "mimetypes": [
     "text/html",
     "text/plain",
@@ -101,7 +101,7 @@
     "contactPoint": {
       "type": "array",
       "title": "Contact",
-      "description": "A contact can be an individual and/or a department within the organization.",
+      "description": "Provide information about the organization's contact(s), which may be an individual and/or a department within the organization.",
       "items": {
         "type": "object",
         "required": [
@@ -150,7 +150,7 @@
     "address": {
       "type": "array",
       "title": "Address",
-      "description": "Address is this organization's postal address(es).",
+      "description": "Enter this organization's postal address(es).",
       "items": {
         "type": "object",
         "required": [
@@ -208,7 +208,7 @@
     "logo": {
       "type": "object",
       "title": "Logo",
-      "description": "The symbol or graphical design adopted by your organization to readily identify it.",
+      "description": "Logo refers to the symbol or graphical design adopted by your organization to readily identify it.",
       "required": [
         "@type",
         "url"
@@ -268,7 +268,7 @@
           "address": {
             "type": "object",
             "title": "Street",
-            "description": " Address refers to this parent organization's entire postal address.",      
+            "description": " Enter this parent organization's entire postal address.",
             "required": [
               "@type",
               "streetAddress",
@@ -280,7 +280,7 @@
             "properties": {
               "@type": {
                 "const": "PostalAddress"
-              },              
+              },
               "streetAddress": {
                 "type": "string",
                 "title": "Street",
@@ -339,7 +339,7 @@
           "hostingOrganization": {
             "type": "object",
             "title": "Hosting Organization",
-            "description": "This association's hosting organization.",      
+            "description": "Provide information about this association's hosting organization.",
             "required": [
               "@type",
               "name",
@@ -370,7 +370,7 @@
     "funder": {
       "type": "array",
       "title": "Funding Agencies",
-      "description": "Agencies that fund your organization.",
+      "description": "Provide information about agencies that fund your organization.",
       "minItems": 1,
       "items": {
         "type": "object",
@@ -384,7 +384,7 @@
           "@type": {
             "const": "Organization"
           },
-         
+
           "legalName": {
             "type": "string",
             "title": "Legal Name",
@@ -436,7 +436,7 @@
     "publishingPrinciples": {
       "type": "array",
       "title": "Publishing",
-      "description": "Digital documents published by your organization.",   
+      "description": "Provide information about the digital documents published by your organization.",
       "items": {
         "type": "object",
         "required": [
