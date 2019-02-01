@@ -343,7 +343,7 @@
             "required": [
               "@type",
               "name",
-              "uri"
+              "url"
             ],
             "properties": {
               "@type": {

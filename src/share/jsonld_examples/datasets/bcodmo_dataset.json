@@ -183,7 +183,7 @@
       "url": "https:\/\/www.bco-dmo.org\/project\/676143"
     }
   ],
-  "distribution": {
+  "distribution": [{
     "@type": "DataDownload",
     "@id": "https:\/\/www.bco-dmo.org\/dataset\/685783\/data\/download",
     "contentUrl": "https:\/\/www.bco-dmo.org\/dataset\/685783\/data\/download",
@@ -191,7 +191,7 @@
     "datePublished": "2017-03-27",
     "inLanguage": "en-US",
     "encodingFormat": "text/html"
-  },
+  }],
   "measurementTechnique": [
     "Elemental Analyzer"
   ],
