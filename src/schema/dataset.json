@@ -59,7 +59,7 @@
       "type": "string",
       "title": "Dataset Name",
       "description": "Enter the name commonly used for the dataset.",
-      "example": "LNWB Ch07 Water Management - Agricultural water use - date"
+      "example": "Super nintendo"
     },
     "alternateName": {
       "type": "string",
