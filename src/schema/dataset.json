@@ -59,7 +59,7 @@
       "type": "string",
       "title": "Dataset Name",
       "description": "Enter the name commonly used for the dataset.",
-      "example": "Super nintendo"
+      "example": "LNWB Ch07 Water Management - Agricultural water use - data"
     },
     "alternateName": {
       "type": "string",
@@ -78,13 +78,13 @@
       "type": "string",
       "title": "Description",
       "description": "Provide a description of the dataset. The description can include anything you believe describes the dataset, e.g., type of data, its size, its location, etc.",
-      "example": "Overview: Agricultural water use includes the irrigation of croplands and the water needs of dairy farms"
+      "example": "Overview: Agricultural water use includes the irrigation of croplands and the water needs of dairy farms."
     },
     "version": {
       "type": "string",
       "title": "Version",
       "description": "Enter the dataset version as either a date or a version number.",
-      "example": "Date example: 2017-06-04 | Version Number example: v1.2.2"
+      "example": "Date example: 2017-06-04 | Version Number example: v1.2.5"
     },
     "isAccessibleForFree": {
       "type": "boolean",
@@ -101,14 +101,14 @@
       "type": "string",
       "title": "Software License URL",
       "description": "Enter the URL for the dataset software license, which may be commercial, non-profit, or university.",
-      "example": "http://creativecommons.org/licenses/by/4.0",
+      "example": "http://creativecommons.org/licenses/by/4.0/",
       "format": "uri"
     },
     "citation": {
       "type": "string",
       "title": "Citation",
       "description": "Provide one or more citations for this dataset.",
-      "example": "Peter Spooner, Nivedita Thiagarajan, Weifu Guo, Katherine R. Hendry, Melanie J. Leng, Laura F. Robinson, Brad E. Rosenheim (2017), Clumped isotope composition of modern cold-water corals. Interdisciplinary Earth Data Alliance (IEDA). doi:10.1594/IEDA/10070"
+      "example": "Peter Spooner, Nivedita Thiagarajan, Weifu Guo, Katherine R. Hendry, Melanie J. Leng, Laura F. Robinson, Brad E. Rosenheim (2017), Clumped isotope composition of modern cold-water corals. Interdisciplinary Earth Data Alliance (IEDA). doi:10.1594/IEDA/100704"
     },
     "includedInDataCatalog": {
       "type": "object",
@@ -149,14 +149,14 @@
             "type": "string",
             "title": "Dataset Download URL",
             "description": "Provide the URL for downloading the dataset file.",
-            "example": "https://www.hydroshare.org/hsapi/resource/8f361f21f9884c4b883a7b9d723155bcc",
+            "example": "https://www.hydroshare.org/hsapi/resource/jjadfs89e4jjzx74jdjd784j",
             "format": "uri"
           },
           "encodingFormat": {
             "type": "string",
             "title": "File Type",
             "description": "Select the type of file you are making available.",
-            "example": "application/zip",
+            "example": "application/zip, text/csv",
             "format": "MimeType"
           }
         }
