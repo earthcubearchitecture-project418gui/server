@@ -92,7 +92,7 @@
       "type": "array",
       "title": "Social Media URLs",
       "description": "Enter links to your organization social media pages, e.g., Facebook, LinkedIn, Twitter, etc.",
-      "example": "https://twitter.com/BCODMO, https://linkedin.com/company/6378439/",
+      "example": "https://twitter.com/BCODMO, https://www.linkedin.com/company/6378439/",
       "items": {
         "type": "string",
         "format": "uri"
@@ -122,27 +122,27 @@
             "type": "string",
             "title": "Name",
             "description": "Enter the contact name, which may be that of either an individual or a department within the organization.",
-            "example": "Support"
+            "example": "Customer Support"
           },
           "email": {
             "type": "string",
             "title": "Email",
             "description": "Provide an email address for this organizational contact.",
-            "example": "info@bco-dmo.org",
+            "example": "contact@bco-dmo.org",
             "format": "email"
           },
           "url": {
             "type": "string",
             "title": "URL",
             "description": "Provide a URL to your organization's web pages that provide information about this contact.",
-            "example": "info@bco-dmo.org/contact-us",
+            "example": "https://www.@bco-dmo.org/contact",
             "format": "uri"
           },
           "contactType": {
             "type": "string",
             "title": "Contact Role",
             "description": "Enter the role fulfilled by this contact within the organization.",
-            "example": "Customer Support, Sales"
+            "example": "Customer Support, Help Line"
           }
         }
       }
@@ -169,7 +169,7 @@
             "type": "string",
             "title": "Street",
             "description": "Enter the street address used for this organizational postal address.",
-            "example": "WHOI, MS#36, Shiverick House 11 School St"
+            "example": "WHOI, MS#36, Shiverick House 11 School St."
           },
           "addressLocality": {
             "type": "string",
@@ -193,7 +193,7 @@
             "type": "string",
             "title": "Country",
             "description": "Enter the country used for this organizational postal address.",
-            "example": "US"
+            "example": "USA"
           }
         }
       }
@@ -250,13 +250,13 @@
             "type": "string",
             "title": " Legal Name",
             "description": " Enter the name that is legally registered to this parent organization ",
-            "example": "Directorate for Geoscience"
+            "example": "Directorate for Geosciences"
           },
           "name": {
             "type": "string",
             "title": "Common Name",
             "description": "Enter the name commonly used to refer to this parent organization.",
-            "example": "NSF-GE"
+            "example": "NSF-GEO"
           },
           "url": {
             "type": "string",
@@ -285,31 +285,31 @@
                 "type": "string",
                 "title": "Street",
                 "description": "Enter the street address used in this parent organization's postal address.",
-                "example": "WHOI, MS#36, Shiverick House 11 School St"
+                "example": "2415 Eisenhower Ave."
               },
               "addressLocality": {
                 "type": "string",
                 "title": "City",
                 "description": " Enter the city used in this parent organization's postal address.",
-                "example": "Woods Hole"
+                "example": "Alexandria"
               },
               "addressRegion": {
                 "type": "string",
                 "title": "State",
                 "description": "Enter the state used in this parent organization's postal address.",
-                "example": "ME"
+                "example": "VA"
               },
               "postalCode": {
                 "type": "string",
                 "title": "ZIP Code",
                 "description": "Enter the ZIP code used in this parent organization's postal address.",
-            "example": "02543"
+            "example": "22314"
               },
               "addressCountry": {
                 "type": "string",
                 "title": "Country",
                 "description": "Enter the country used in this parent organization's postal address.",
-                "example": "US"
+                "example": "USA"
               }
             }
           }
@@ -343,7 +343,7 @@
             "required": [
               "@type",
               "name",
-              "url"
+              "uri"
             ],
             "properties": {
               "@type": {
@@ -389,7 +389,7 @@
             "type": "string",
             "title": "Legal Name",
             "description": "Enter the name that is legally registered to this funding agency.",
-            "example": "Division of Ocean Science"
+            "example": "Division of Ocean Sciences"
           },
           "name": {
             "type": "string",
@@ -419,7 +419,7 @@
                 "type": "string",
                 "title": "Funding Agency DOI",
                 "description": "Enter the Digital Object Identifier, or DOI, used by the funding agency.",
-                "example": "10.13039/100000141"
+                "example": "https://doi.org/10.13039/100000141"
               },
               "url": {
                 "type": "string",
@@ -458,7 +458,7 @@
             "type": "string",
             "title": "URL",
             "description": "Enter a link to where this document can be found online.",
-            "example": "https://help.hydroshare.org/about-hydroshare/policies/terms-of-use",
+            "example": "https://help.hydroshare.org/about-hydroshare/policies/terms-of-use/",
             "format": "uri"
           },
           "fileFormat": {
