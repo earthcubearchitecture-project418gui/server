@@ -371,9 +371,9 @@
             "type": "array",
             "minItems": 1,
             "items": {
+              "type": "object",
               "anyOf": [
                 {
-                  "type": "object",
                   "title": "Geographical Coordinates",
                   "description": "Enter a set of one or more individual geographical coordinate points.",
                   "required": [
@@ -401,7 +401,6 @@
                   }
                 },
                 {
-                  "type": "object",
                   "title": "Geographical Shape",
                   "description": "Geographical shape is a way to identify spatial coverage using a bounding box and/or a polygon.",
                   "required": [
