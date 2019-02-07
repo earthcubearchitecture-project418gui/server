@@ -18,9 +18,9 @@
     "main": [ "@id", "legalName", "name", "url", "description", "category"],
     "contact": [ "contactPoint", "address" ],
     "info": [ "foundingDate", "logo" ],
-    "parent organizations": [ "parentOrganization" ] ,
+    "parentorganizations": [ "parentOrganization" ] ,
     "associations": [ "memberOf" ],
-    "funding agencies": [ "funder" ],
+    "fundingagencies": [ "funder" ],
     "publishing": [ "publishingPrinciples" ]
   },
   "mimetypes": [
