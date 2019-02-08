@@ -15,7 +15,7 @@
     "test:org": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/organizations.json -d src/share/jsonld_examples/organizations/*.json"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alex McNurlan (ISTI inc.)",
   "license": "ISC",
   "dependencies": {
     "ajv": "^6.5.5",
