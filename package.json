@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/web.js",
   "scripts": {
-    "web": "nodemon src/back/web.js",
-    "web:unsecure": "node src/back/web.js --unsecure",
+    "web": "node src/back/web.js",
+    "web:unsecure": "nodemon src/back/web.js --unsecure",
     "web:dev": "nodemon --inspect-brk src/back/web.js --unsecure",
     "web:dev:ndb": "ndb nodemon src/back/web.js --unsecure",
     "local": "node src/back/app-local.js",

@@ -6,7 +6,7 @@ const https = require('https');
 const express = require('express');
 const app = express();
 
-const public = process.env.NODE_WWW || (path.join(__dirname, '..', '..', 'public'));
+const public = process.env.NODE_WWW || './public';
 
 console.log(process.argv);
 const secure = -1 === process.argv.findIndex(arg => arg === '--unsecure');
@@ -27,10 +27,9 @@ app.options('/*', function(req,res) {
   res.sendStatus(200);
 });
 
-app.use('/api', require('./routes.js'));
+app.use('/api', require('./routes.js')(public));
 
 app.use(express.static(public));
-
 
 if (secure) {
   const PORT = process.env.PORT || 443;
@@ -50,6 +49,7 @@ if (secure) {
   https.createServer(httpsOptions, app).listen(PORT, () => console.log(`JSON-LD validator app listening on port ${PORT}, with HTTPS.`));
 
 } else {
-  app.listen(8081, () => console.log(`JSON-LD validator app listening on port ${8081}, with HTTP.`));
+  console.log('Public folder : ', public);
 
+  app.listen(8081, () => console.log(`JSON-LD validator app listening on port ${8081}, with HTTP.`));
 }
