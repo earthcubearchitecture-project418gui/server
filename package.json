@@ -9,8 +9,6 @@
     "web:dev": "nodemon --inspect-brk src/back/web.js --unsecure",
     "web:dev:ndb": "ndb nodemon src/back/web.js --unsecure",
     "local": "node src/back/app-local.js",
-    "package": "npx webpack",
-    "public:setup": " cpx -v -u \"src/schema/*.json\" public/schema && cpx -v \"src/share/jsonld_examples/**/*.json\" public",
     "test:dataset": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/dataset.json -d src/share/jsonld_examples/datasets/*.json",
     "test:org": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/organizations.json -d src/share/jsonld_examples/organizations/*.json"
   },
@@ -18,10 +16,9 @@
   "author": "Alex McNurlan (ISTI inc.)",
   "license": "ISC",
   "dependencies": {
-    "ajv": "^6.5.5",
+    "ajv": "^6.8.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "jsonld": "^1.1.0",
     "ramda": "^0.25.0",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
