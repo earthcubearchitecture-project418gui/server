@@ -46,14 +46,13 @@ module.exports = function (publicFolder) {
   (function (publicFolder) {
     const names = ['dataset', 'organizations'];
     const files = names.map(n => n + '.json');
-    const fullpath = files.map(filename => path.join('.', publicFolder, filename));
+    const fullpath = files.map(filename => path.join( publicFolder, filename));
     
     const schemas = {};
     zip(names, fullpath)
       .filter(([_, fullpath]) => fs.existsSync(fullpath))
       .map(([name, fullpath]) => schemas[name] = JSON.parse(fs.readFileSync(fullpath, { encoding: 'utf-8' })) );
     
-    console.log(schemas);
     router.post('/validate_standard', (req, res) => {
       const {schema, doc} = req.body;
       const validator = ajv.compile(schemas[schema]);

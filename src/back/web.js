@@ -27,7 +27,8 @@ app.options('/*', function(req,res) {
   res.sendStatus(200);
 });
 
-app.use('/api', require('./routes.js')(public));
+const schemaPath = path.join(public, 'schema');
+app.use('/api', require('./routes.js')(schemaPath));
 
 app.use(express.static(public));
 
