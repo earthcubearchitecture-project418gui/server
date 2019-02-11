@@ -190,7 +190,7 @@
           "type": "string",
           "title": "Common Name",
           "description": "Enter a name for the data provider that is commonly used. This may be a shortened version of the legal name.",
-          "example": "BCO-DM"
+          "example": "BCO-DMO"
         },
         "url": {
           "type": "string",
@@ -236,7 +236,7 @@
           "type": "string",
           "title": "Common Name",
           "description": "Enter a name for the publisher that is commonly used.",
-          "example": "CDSC"
+          "example": "CSDCO"
         }
       }
     },
@@ -460,20 +460,20 @@
             "type": "string",
             "title": "Measurement Description",
             "description": "Enter a description of this measurement.",
-            "example": "Number identifying the cruise"
+            "example": "Bottle identifier"
           },
           "url": {
             "type": "string",
             "title": "Measurement Description URL",
             "description": "Enter the URL for the web page that describes this measurement.",
-            "example": "https://www.bco-dmo.org/dataset-parameter/665789",
+            "example": "https://www.bco-dmo.org/dataset-parameter/6657889",
             "format": "uri"
           },
           "name": {
             "type": "string",
             "title": "Measurement Name",
             "description": "Enter one or more names for this measurement, with each name separated by a comma.",
-            "example": "Leg, target_pCO"
+            "example": "Leg, Target_pCO2 level"
           },
           "unitText": {
             "type": "string",
