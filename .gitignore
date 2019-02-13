@@ -2,6 +2,9 @@ node_modules/
 jsonld_templates/
 public/
 
+dist/
+.cache/
+
 output.json
 npm-debug.log
 .DS_Store
