@@ -4,9 +4,12 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const express = require('express');
+const { zip } = require('ramda');
+
 const app = express();
 
 const public = process.env.NODE_WWW || './public';
+const schemaPath = './src/schema/';
 
 console.log(process.argv);
 const secure = -1 === process.argv.findIndex(arg => arg === '--unsecure');
@@ -27,8 +30,17 @@ app.options('/*', function(req,res) {
   res.sendStatus(200);
 });
 
-const schemaPath = path.join(public, 'schema');
 app.use('/api', require('./routes.js')(schemaPath));
+
+(function (app) {
+  const names = ['dataset', 'organizations'];
+  
+  names.forEach(filename => {
+    const location = schemaPath + filename + '.json';
+    const endPoint = '/schema/' + filename + '.json';
+    app.use(endPoint, express.static(location));
+  });
+})(app);
 
 app.use(express.static(public));
 
