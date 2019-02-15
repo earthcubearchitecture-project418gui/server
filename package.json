@@ -22,7 +22,8 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "ramda": "^0.25.0",
-    "validator": "^10.8.0"
+    "validator": "^10.8.0",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "mocha": "^5.2.0"

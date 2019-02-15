@@ -1,8 +1,9 @@
 const path = require('path');
 const fs = require('fs');
-const express = require('express');
 
+const express = require('express');
 const { zip } = require('ramda');
+const logger = require('./logging.js');
 
 const ajv = require('../share/ajv-ucar.js');
 
@@ -12,12 +13,15 @@ module.exports = function (schemaFolder) {
   router.use(express.json());
   router.use((err, req, res, next) => {
     if (err) {
+      console.log(!!err, err);
+      logger.verbose('Inbound JSON error - ' + err.message);
+      logger.debug('Inbound JSON error - ' + req.body);
       if (res.headersSent) {
-        return next(err);
+        return;
       }
       res.status(400);
-      res.send(err.message);
-      return next(err);
+      res.end(err.message);
+      return;
     }
     next();
   });
