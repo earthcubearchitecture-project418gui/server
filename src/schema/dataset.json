@@ -49,7 +49,9 @@
   ],
   "properties": {
     "@type": {
-      "const": "Dataset"
+      "type": "string",
+      "const": "Dataset",
+      "default": "Dataset"
     },
     "@id": {
       "type": "string",
@@ -143,7 +145,9 @@
         ],
         "properties": {
           "@type": {
-            "const": "DataDownload"
+            "type": "string",
+            "const": "DataDownload",
+            "default": "DataDownload"
           },
           "contentUrl": {
             "type": "string",
@@ -174,7 +178,9 @@
       ],
       "properties": {
         "@type": {
-          "const": "Organization"
+          "type": "string",
+          "const": "Organization",
+          "default": "Organization"
         },
         "@id": {
           "type": "string",
@@ -213,7 +219,9 @@
       ],
       "properties": {
         "@type": {
-          "const": "Organization"
+          "type": "string",
+          "const": "Organization",
+          "default": "Organization"
         },
         "@id": {
           "type": "string",
@@ -253,7 +261,9 @@
         ],
         "properties": {
           "@type": {
-            "const": "Role"
+            "type": "string",
+            "const": "Role",
+            "default": "Role"
           },
           "@id": {
             "type": "string",
@@ -283,7 +293,9 @@
             ],
             "properties": {
               "@type": {
-                "const": "Person"
+                "type": "string",
+                "const": "Person",
+                "default": "Person"
               },
               "@id": {
                 "type": "string",
@@ -325,7 +337,9 @@
                 ],
                 "properties": {
                   "@type": {
-                    "const": "PropertyValue"
+                    "type": "string",
+                    "const": "PropertyValue",
+                    "default": "PropertyValue"
                   },
                   "url": {
                     "type": "string",
@@ -359,7 +373,9 @@
         ],
         "properties": {
           "@type": {
-            "const": "Place"
+            "type": "string",
+            "const": "Place",
+            "default": "Place"
           },
           "name": {
             "type": "string",
@@ -383,7 +399,9 @@
                   ],
                   "properties": {
                     "@type": {
-                      "const": "GeoCoordinates"
+                      "type": "string",
+                      "const": "GeoCoordinates",
+                      "default": "GeoCoordinates"
                     },
                     "latitude": {
                       "type": "number",
@@ -409,7 +427,9 @@
                   ],
                   "properties": {
                     "@type": {
-                      "const": "GeoShape"
+                      "type": "string",
+                      "const": "GeoShape",
+                      "default": "GeoShape"
                     },
                     "box": {
                       "type": "string",
@@ -447,7 +467,9 @@
         ],
         "properties": {
           "@type": {
-            "const": "PropertyValue"
+            "type": "string",
+            "const": "PropertyValue",
+            "default": "PropertyValue"
           },
           "@id": {
             "type": "string",
