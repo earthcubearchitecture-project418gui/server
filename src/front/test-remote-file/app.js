@@ -37,7 +37,6 @@ function fetchCross(url, options) {
   });
 }
 
-
 function findScriptJSONLD(html) {
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, "text/html");

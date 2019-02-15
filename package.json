@@ -9,7 +9,9 @@
     "web:dev": "nodemon --inspect-brk src/back/web.js --unsecure",
     "web:dev:ndb": "ndb nodemon src/back/web.js --unsecure",
     "local": "node src/back/app-local.js",
+    "test:dataset:bco": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/dataset.json -d src/share/jsonld_examples/datasets/bcodmo_dataset.json",
     "test:dataset": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/dataset.json -d src/share/jsonld_examples/datasets/*.json",
+    "test:org:bco": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/organizations.json -d src/share/jsonld_examples/organizations/bcodmo_org.json",
     "test:org": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/organizations.json -d src/share/jsonld_examples/organizations/*.json"
   },
   "keywords": [],
@@ -20,17 +22,10 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "ramda": "^0.25.0",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1",
-    "react-jsonschema-form": "^1.0.6",
-    "split.js": "^1.5.9",
     "validator": "^10.8.0"
   },
   "devDependencies": {
-    "cpx": "^1.5.0",
-    "mocha": "^5.2.0",
-    "webpack": "^4.25.1",
-    "webpack-cli": "^3.1.2"
+    "mocha": "^5.2.0"
   },
   "engines": {
     "node": "10.x"

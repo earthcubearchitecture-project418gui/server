@@ -112,7 +112,8 @@
         ],
         "properties": {
           "@type": {
-            "const": "ContactPoint"
+            "const": "ContactPoint",
+            "default": "ContactPoint"
           },
           "@id": {
             "type": "string",
@@ -163,7 +164,8 @@
         ],
         "properties": {
           "@type": {
-            "const": "PostalAddress"
+            "const": "PostalAddress",
+            "default": "PostalAddress"
           },
           "streetAddress": {
             "type": "string",
@@ -215,7 +217,8 @@
       ],
       "properties": {
         "@type": {
-          "const": "ImageObject"
+          "const": "ImageObject",
+          "default": "ImageObject"
         },
         "url": {
           "type": "string",
@@ -240,7 +243,8 @@
         ],
         "properties": {
           "@type": {
-            "const": "Organization"
+            "const": "Organization",
+            "default": "Organization"
           },
           "@id": {
             "type": "string",
@@ -279,7 +283,8 @@
             ],
             "properties": {
               "@type": {
-                "const": "PostalAddress"
+                "const": "PostalAddress",
+                "default": "PostalAddress"
               },
               "streetAddress": {
                 "type": "string",
@@ -328,7 +333,8 @@
         ],
         "properties": {
           "@type": {
-            "const": "ProgramMembership"
+            "const": "ProgramMembership",
+            "default": "ProgramMembership"
           },
           "programName": {
             "type": "string",
@@ -347,7 +353,8 @@
             ],
             "properties": {
               "@type": {
-                "const": "Organization"
+                "const": "Organization",
+                "default": "Organization"
               },
               "name": {
                 "type": "string",
@@ -382,7 +389,8 @@
         ],
         "properties": {
           "@type": {
-            "const": "Organization"
+            "const": "Organization",
+            "default": "Organization"
           },
 
           "legalName": {
@@ -413,7 +421,8 @@
             ],
             "properties": {
               "@type": {
-                "const": "PropertyValue"
+                "const": "PropertyValue",
+                "default": "PropertyValue"
               },
               "value": {
                 "type": "string",
@@ -446,7 +455,8 @@
         ],
         "properties": {
           "@type": {
-            "const": "DigitalDocument"
+            "const": "DigitalDocument",
+            "default": "DigitalDocument"
           },
           "name": {
             "type": "string",

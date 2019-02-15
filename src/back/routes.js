@@ -6,7 +6,7 @@ const { zip } = require('ramda');
 
 const ajv = require('../share/ajv-ucar.js');
 
-module.exports = function (publicFolder) {
+module.exports = function (schemaFolder) {
   const router = express.Router();
 
   router.use(express.json());
@@ -42,11 +42,11 @@ module.exports = function (publicFolder) {
   // -------------------------------------
   // @route   POST api/validate_standard
   // @desc    Validates input json with custom validator
-  ///         Uses locally stored schema files in publicFolder
-  (function (publicFolder) {
+  // /         Uses locally stored schema files in schemaFolder
+  (function (schemaFolder) {
     const names = ['dataset', 'organizations'];
     const files = names.map(n => n + '.json');
-    const fullpath = files.map(filename => path.join( publicFolder, filename));
+    const fullpath = files.map(filename => path.join(schemaFolder, filename));
     
     const schemas = {};
     zip(names, fullpath)
@@ -64,7 +64,9 @@ module.exports = function (publicFolder) {
         valid
       });
     });
-  })(publicFolder);
+  })(schemaFolder);
+
+  
   
   return router;
 }
