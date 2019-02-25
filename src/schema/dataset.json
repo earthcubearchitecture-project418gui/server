@@ -106,11 +106,14 @@
       "example": "http://creativecommons.org/licenses/by/4.0/",
       "format": "uri"
     },
-    "citation": {
-      "type": "string",
+    "citation":  {
+      "type": "array",
       "title": "Citation",
       "description": "Provide one or more citations for this dataset.",
-      "example": "Peter Spooner, Nivedita Thiagarajan, Weifu Guo, Katherine R. Hendry, Melanie J. Leng, Laura F. Robinson, Brad E. Rosenheim (2017), Clumped isotope composition of modern cold-water corals. Interdisciplinary Earth Data Alliance (IEDA). doi:10.1594/IEDA/100704"
+      "example": "Peter Spooner, Nivedita Thiagarajan, Weifu Guo, Katherine R. Hendry, Melanie J. Leng, Laura F. Robinson, Brad E. Rosenheim (2017), Clumped isotope composition of modern cold-water corals. Interdisciplinary Earth Data Alliance (IEDA). doi:10.1594/IEDA/100704",
+      "items": {
+        "type": "string"
+      }
     },
     "includedInDataCatalog": {
       "type": "object",
