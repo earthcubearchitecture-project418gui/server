@@ -11,7 +11,7 @@ let currentValidator;
 registerCustomFormats(ajv);
 
 function new_ajv() {
-  const ajv = new AJV({ allErrors: true });
+  const ajv = new AJV({ allErrors: true, jsonPointers: true });
   registerCustomFormats(ajv);
   return ajv;
 }

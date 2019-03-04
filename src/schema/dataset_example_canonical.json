@@ -114,20 +114,20 @@
 		{
 			"@type": "Place",
 			"name": "Falling Water Falls [3PP40] vertebrate fauna dataset",
-			"geo": [{
+			"geo": {
 				"@type": "GeoCoordinates",
 				"latitude": 35.6166667,
 				"longitude": -92.8666667
-			}]
+			}
 		},
 		{
 			"@type": "Place",
 			"name": "Falling Water Falls [3PP40] vertebrate fauna dataset",
-			"geo": [{
+			"geo": {
 				"@type": "GeoShape",
 				"box": "-149.8727,-17.45 -64.6353,34.407",
 				"polygon": "-149.8727,-17.45 -149.8727,34.407 -64.6353,34.407 -64.6353,-17.45 -149.8727,-17.45"
-			}]
+			}
 		}
 	],
 	"variableMeasured": [

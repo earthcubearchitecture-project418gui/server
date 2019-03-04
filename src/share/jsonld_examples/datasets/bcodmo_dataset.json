@@ -106,7 +106,7 @@
       }
     }
   ],
-  "citation": "Finelli, C., Pawlik, J., McMurray, S. (2017) Carbon flux for the Caribbean giant barrel sponge Xestospongia muta (Sponge-loop). Biological and Chemical Oceanography Data Management Office (BCO-DMO). Dataset version 2017-03-27 [if applicable, indicate subset used]. doi:10.1575\/1912\/bco-dmo.685952 [access date]",
+  "citation": ["Finelli, C., Pawlik, J., McMurray, S. (2017) Carbon flux for the Caribbean giant barrel sponge Xestospongia muta (Sponge-loop). Biological and Chemical Oceanography Data Management Office (BCO-DMO). Dataset version 2017-03-27 [if applicable, indicate subset used]. doi:10.1575\/1912\/bco-dmo.685952 [access date]"],
   "version": "2017-03-27",
   "license": "http:\/\/creativecommons.org\/licenses\/by\/4.0\/",
   "publishingPrinciples": {
@@ -120,13 +120,11 @@
   "spatialCoverage": [
     {
       "@type": "Place",
-      "geo": [
-        {
-          "@type": "GeoShape",
-          "box": "24.94972,-80.45361 24.94972,-80.45361",
-          "polygon": "24.94972,-80.45361 24.94972,-80.45361 24.94972,-80.45361 24.94972,-80.45361 24.94972,-80.45361"
-        }
-      ],
+      "geo": {
+        "@type": "GeoShape",
+        "box": "24.94972,-80.45361 24.94972,-80.45361",
+        "polygon": "24.94972,-80.45361 24.94972,-80.45361 24.94972,-80.45361 24.94972,-80.45361 24.94972,-80.45361"
+      },
       "subjectOf": {
         "@type": "CreativeWork",
         "fileFormat": "application\/vnd.geo+json",
