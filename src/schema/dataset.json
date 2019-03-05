@@ -15,7 +15,7 @@
     "provider"
   ],
   "groups": {
-    "main" : [ "@id", "name", "alternateName", "url", "description", "version", "isAccessibleForFree", "keywords", "license", "citation", "includedInDataCatalog"],
+    "main" : [ "@type", "@id", "name", "alternateName", "url", "description", "version", "isAccessibleForFree", "keywords", "license", "citation", "includedInDataCatalog"],
     "publishing" : [ "distribution", "provider", "publisher" ],
     "authors" : [ "creator" ],
     "spatialcoverage" : [ "spatialCoverage" ],
@@ -164,7 +164,32 @@
             "title": "File Type",
             "description": "Select the type of file you are making available.",
             "example": "application/zip, text/csv",
-            "format": "MimeType"
+            "format": "MimeType",
+            "enum": [
+              "text/html",
+              "text/plain",
+              "text/csv",
+              "application/rtf",
+              "application/pdf",
+              "application/postscript",
+              "application/msword",
+              "application/powerpoint",
+              "application/excel",
+              "image/tiff",
+              "image/png",
+              "image/jpeg",
+              "image/gif",
+              "image/svg+xml",
+              "video/x-ms-wmv",
+              "video/quicktime",
+              "video/mp4",
+              "video/x-msvideo",
+              "application/zip",
+              "application/x-gzip",
+              "application/x-hdf5",
+              "application/x-netcdf4"
+            ]
+          
           }
         }
       }
@@ -387,9 +412,9 @@
             "example": "Falling Water Falls [3PP40] vertebrate fauna dataset"
           },
           "geo": {
-            "anyOf": [
+            "type": "object",
+            "oneOf": [
               {
-                "type": "object",
                 "title": "Geographical Coordinates",
                 "description": "Enter a set of one or more individual geographical coordinate points.",
                 "required": [
@@ -419,7 +444,6 @@
                 }
               },
               {
-                "type": "object",
                 "title": "Geographical Shape",
                 "description": "Geographical shape is a way to identify spatial coverage using a bounding box and/or a polygon.",
                 "required": [
