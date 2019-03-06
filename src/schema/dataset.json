@@ -188,8 +188,31 @@
               "application/x-gzip",
               "application/x-hdf5",
               "application/x-netcdf4"
+            ],
+            "enumNames": [
+              "HTML Document",
+              "Plain Text Document",
+              "CSV File",
+              "RTF Document",
+              "PDF Document",
+              "PostScript Document / EPS Document",
+              "Microsoft Word Document",
+              "Microsoft PowerPoint Presentation",
+              "Microsoft Excel Spreadsheet",
+              "TIFF Image",
+              "PNG Image",
+              "JPEG Image",
+              "GIF Image",
+              "SVG Image",
+              "Windows Media Video",
+              "QuickTime Movie",
+              "MPEG-4 Video",
+              "AVI Video",
+              "Zip File",
+              "Gzip Tar File",
+              "HDF5 File",
+              "NetCDF4 File"
             ]
-          
           }
         }
       }
