@@ -13,9 +13,8 @@ module.exports = function (schemaFolder) {
   router.use(express.json());
   router.use((err, req, res, next) => {
     if (err) {
-      console.log(!!err, err);
-      logger.verbose('Inbound JSON error - ' + err.message);
-      logger.debug('Inbound JSON error - ' + req.body);
+      logger.info('Inbound JSON error - ' + err.message);
+      logger.debug('Inbound JSON error - ' + err.body);
       if (res.headersSent) {
         return;
       }
