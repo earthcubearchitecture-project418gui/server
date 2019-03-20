@@ -30,7 +30,7 @@ module.exports = function (schemaFolder) {
   // @desc    Validates input json with custom validator
   router.post('/validate_ajv', (req, res) => {
     const {schema, doc} = req.body;
-    console.log(req.body);
+    // console.log(req.body); 
     const validator = ajv.compile(schema);
     let valid = validator(doc);
   

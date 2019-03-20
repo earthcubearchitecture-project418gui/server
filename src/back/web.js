@@ -30,7 +30,7 @@ app.use(function(req, res, next) {
 });
 
 app.options('/*', function(req,res) {
-  console.log("Hit [OPTIONS /*]");
+  // console.log("Hit [OPTIONS /*]");
   // Access-Control-Allow-Origin: http://foo.example
   // Access-Control-Allow-Headers: X-PINGOTHER, Content-Type
 

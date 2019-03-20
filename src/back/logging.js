@@ -6,7 +6,7 @@ let level = 'info';
 if (process.argv.includes('--verbose')) { level = 'verbose'; }
 if (process.argv.includes('--debug')) { level = 'debug'; }
 
-// console.log('level', level);
+console.log('log level:', level);
 
 const logger = createLogger({
   level,
