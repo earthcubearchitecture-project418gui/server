@@ -14,7 +14,7 @@ module.exports = function (schemaFolder) {
   router.use((err, req, res, next) => {
     if (err) {
       logger.info('Inbound JSON error - ' + err.message);
-      logger.debug('Inbound JSON error - ' + err.body);
+      logger.debug('Inbound JSON error - ' + JSON.stringify( err.body, undefined, 2));
       if (res.headersSent) {
         return;
       }
@@ -47,7 +47,7 @@ module.exports = function (schemaFolder) {
   // @desc    Validates input json with custom validator
   // /         Uses locally stored schema files in schemaFolder
   (function (schemaFolder) {
-    const names = ['dataset', 'organizations'];
+    const names = ['dataset', 'organization'];
     const files = names.map(n => n + '.json');
     const fullpath = files.map(filename => path.join(schemaFolder, filename));
     
