@@ -18,7 +18,7 @@
     "main" : [ "@type", "@id", "name", "alternateName", "url", "description", "version", "isAccessibleForFree", "keywords", "license", "citation", "includedInDataCatalog"],
     "publishing" : [ "distribution", "provider", "publisher" ],
     "authors" : [ "creator" ],
-    "spatialcoverage" : [ "spatialCoverage" ],
+    "spatial Coverage" : [ "spatialCoverage" ],
     "measurements" : [ "variableMeasured", "measurementTechnique" ]
   },
   "mimetypes": [
@@ -117,6 +117,7 @@
     },
     "includedInDataCatalog": {
       "type": "object",
+      "title": "Data Catalog",
       "required": [
         "@id",
         "url"
@@ -187,7 +188,8 @@
               "application/zip",
               "application/x-gzip",
               "application/x-hdf5",
-              "application/x-netcdf4"
+              "application/x-netcdf4",
+              " "
             ],
             "enumNames": [
               "HTML Document",
@@ -211,7 +213,8 @@
               "Zip File",
               "Gzip Tar File",
               "HDF5 File",
-              "NetCDF4 File"
+              "NetCDF4 File",
+              "Other..."
             ]
           }
         }
@@ -307,8 +310,7 @@
         "type": "object",
         "required": [
           "@type",
-          "@id",
-          "creator"
+          "@id"
         ],
         "properties": {
           "@type": {
@@ -381,11 +383,7 @@
                 "type": "object",
                 "title": "ORCID",
                 "description": "ORCID is a standardized method often used by the scientific community to identify an individual. For example, if two individuals with the same name authored a paper, ORCID uniquely identifies the two authors.",
-                "required": [
-                  "@type",
-                  "url",
-                  "value"
-                ],
+         
                 "properties": {
                   "@type": {
                     "type": "string",
@@ -483,14 +481,14 @@
                     "type": "string",
                     "title": "Bounding Box",
                     "description": "Enter latitude and longitude coordinates for the bounding box, which is the entire shape of the geographical area.",
-                    "example": "-149.8727,-17.45 -64.6353,34.40",
+                    "example": "40.9719474,-109.0713774  36.9924303,-102.0463517",
                     "format": "box"
                   },
                   "polygon": {
                     "type": "string",
                     "title": "Polygon Vertices",
                     "description": "Enter a latitude and longitude for the points on the polygon.",
-                    "example": "-149.8727,-17.45 -149.8727,34.407 -64.6353,34.407 -64.6353,-17.45 -149.8727,-17.4",
+                    "example": " 25.7617,-80.1918 32.3078,-64.7505 18.4655,-66.1057 25.7617,-80.1918",
                     "format": "polygon"
                   }
                 }
