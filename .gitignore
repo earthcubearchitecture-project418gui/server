@@ -4,6 +4,7 @@ public/
 
 dist/
 .cache/
+.vs/
 
 output.json
 npm-debug.log
