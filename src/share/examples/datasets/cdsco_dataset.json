@@ -9,7 +9,7 @@
   "distribution": {
     "@type": "DataDownload",
     "contentUrl": "http://opencoredata.org/pkg/id/0f2f7570f90209db89db5e20b85bb359852a1593e08c39357b0f7a4861cc14ec.zip",
-    "encodingFormat": "application/vnd.datapackage+json"
+    "fileFormat": "application/vnd.datapackage+json"
   },
   "keywords": "CSDCO, Continental Scientific Drilling",
   "license": "https://creativecommons.org/publicdomain/zero/1.0/",

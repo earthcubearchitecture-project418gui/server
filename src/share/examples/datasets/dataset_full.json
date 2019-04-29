@@ -318,7 +318,7 @@
     "@type": "DataDownload",
     "contentUrl": "https://www.bco-dmo.org/dataset/472032/data/download",
     "datePublished": "2016-12-05",
-    "encodingFormat": "text/tab-separated-values",
+    "fileFormat": "text/tab-separated-values",
     "inLanguage": "en-US"
   },
   "temporalCoverage": "2012-09-20/2016-01-22",

@@ -22,7 +22,7 @@
     "distribution": {
         "@type": "DataDownload",
         "contentUrl": "https://www.hydroshare.org/hsapi/resource/8f361f21f9884c4b883a7b9d723155bc/",
-        "encodingFormat": "application/zip"
+        "fileFormat": "application/zip"
     },
     
     
