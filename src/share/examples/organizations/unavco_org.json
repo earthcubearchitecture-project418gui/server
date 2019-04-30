@@ -84,7 +84,7 @@
         ],
         "mainEntityOfPage": [{
             "@type": "DigitalDocument",
-            "fileformat": "HTML",
+            "encodingFormat": "HTML",
             "keywords": "Swagger, Custom",
             "description": "Main web services catalog for swagger documents and custom API documentation",
             "url": "http://www.unavco.org/data/web-services/web-services.html"

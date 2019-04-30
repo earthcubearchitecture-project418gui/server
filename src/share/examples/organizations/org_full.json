@@ -107,14 +107,14 @@
         "additionalType": "https://geodex.org/voc/Protocol-TermsOfUse",
         "name": "Terms of Use",
         "url": "https://www.bco-dmo.org/terms-use",
-        "fileFormat": "text/html"
+        "encodingFormat": "text/html"
       },
       {
         "@type": "DigitalDocument",
         "additionalType": "https://geodex.org/voc/Protocol-ResourceSubmissionPolicy",
         "name": "How to Get Started Contributing Data",
         "url": "https://www.bco-dmo.org/how-get-started",
-        "fileFormat": "text/html"
+        "encodingFormat": "text/html"
       }
     ],
     "hasOfferCatalog": [
@@ -139,7 +139,7 @@
               "@type": "DigitalDocument",
               "name": "Data Access Tutorial",
               "url": "https://www.bco-dmo.org/files/bcodmo/OCB-Tutorial.pdf",
-              "fileFormat": "application/pdf"
+              "encodingFormat": "application/pdf"
             }
           }
         ]
@@ -158,14 +158,14 @@
                         "additionalType": "https://geodex.org/voc/Protocol-TermsOfUse",
                         "name": "Terms of Use",
                         "url": "http://www.bco-dmo.org/terms-use",
-                        "fileFormat": "text/html"
+                        "encodingFormat": "text/html"
                     },
                     {
                         "@type": "DigitalDocument",
                         "additionalType": "https://geodex.org/voc/Protocol-Access",
                         "name": "Accessing Data",
                         "url": "https://www.bco-dmo.org/data",
-                        "fileFormat": "text/html"
+                        "encodingFormat": "text/html"
                     }
                 ],
                 "audience": {
@@ -249,7 +249,7 @@
                     "object": {
                         "@type": "DigitalDocument",
                         "url": "https://www.bco-dmo.org/sitemap.xml",
-                        "fileFormat": "application/xml"
+                        "encodingFormat": "application/xml"
                     }
                 }
             }

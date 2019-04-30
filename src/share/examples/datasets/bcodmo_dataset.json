@@ -127,7 +127,7 @@
       },
       "subjectOf": {
         "@type": "CreativeWork",
-        "fileFormat": "application\/vnd.geo+json",
+        "encodingFormat": "application\/vnd.geo+json",
         "text": "{\u0022type\u0022:\u0022Feature\u0022,\u0022geometry\u0022:{\u0022type\u0022:\u0022Polygon\u0022,\u0022coordinates\u0022:[[[-80.45361,24.94972],[-80.45361,24.94972],[-80.45361,24.94972],[-80.45361,24.94972],[-80.45361,24.94972]]],\u0022properties\u0022:[]}}"
       },
       "additionalProperty": [
@@ -185,10 +185,9 @@
     "@type": "DataDownload",
     "@id": "https:\/\/www.bco-dmo.org\/dataset\/685783\/data\/download",
     "contentUrl": "https:\/\/www.bco-dmo.org\/dataset\/685783\/data\/download",
-    "fileFormat": "text\/tab-separated-values",
     "datePublished": "2017-03-27",
     "inLanguage": "en-US",
-    "fileFormat": "text/html"
+    "encodingFormat": "text/html"
   }],
   "measurementTechnique": [
     "Elemental Analyzer"

@@ -81,14 +81,14 @@
             "additionalType": "https://geodex.org/voc/Protocol-TermsOfUse",
             "name": "Terms of Use",
             "url": "https://help.hydroshare.org/about-hydroshare/policies/terms-of-use/",
-            "fileFormat": "text/html"
+            "encodingFormat": "text/html"
         },
         {
             "@type": "DigitalDocument",
             "additionalType": "https://geodex.org/voc/Protocol-ResourceSubmissionPolicy",
             "name": "HydroShare Publication Agreement",
             "url": "https://help.hydroshare.org/about-hydroshare/policies/hydroshare-publication-agreement/",
-            "fileFormat": "text/html"
+            "encodingFormat": "text/html"
         }
     ],
     "availableChannel": [
@@ -129,7 +129,7 @@
                     "object": {
                         "@type": "DigitalDocument",
                         "url": "https://www.hydroshare.org/sitemap.xml",
-                        "fileFormat": "application/xml"
+                        "encodingFormat": "application/xml"
                     }
                 }
             }

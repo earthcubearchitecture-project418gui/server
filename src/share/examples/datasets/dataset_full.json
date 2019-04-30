@@ -318,7 +318,7 @@
     "@type": "DataDownload",
     "contentUrl": "https://www.bco-dmo.org/dataset/472032/data/download",
     "datePublished": "2016-12-05",
-    "fileFormat": "text/tab-separated-values",
+    "encodingFormat": "text/tab-separated-values",
     "inLanguage": "en-US"
   },
   "temporalCoverage": "2012-09-20/2016-01-22",
@@ -339,7 +339,7 @@
     },
     "subjectOf": {
       "@type": "CreativeWork",
-      "fileFormat": "application/vnd.geo+json",
+      "encodingFormat": "application/vnd.geo+json",
       "text": "{\"type\":\"Feature\",\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[\"-64.635300000000\",\"34.407000000000\"],[\"-64.635300000000\",\"-17.450000000000\"],[\"-149.872700000000\",\"-17.450000000000\"],[\"-149.872700000000\",\"34.407000000000\"],[\"-64.635300000000\",\"34.407000000000\"]]]}}"
     }
   },

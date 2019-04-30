@@ -8,10 +8,10 @@
     "web:unsecure": "nodemon src/back/web.js --unsecure",
     "web:debug": "nodemon src/back/web.js --debug",
     "web:dev": "nodemon src/back/web.js --unsecure --debug",
-    "test:dataset:bco": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/dataset.json -d src/share/jsonld_examples/datasets/bcodmo_dataset.json",
-    "test:dataset": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/dataset.json -d src/share/jsonld_examples/datasets/*.json",
-    "test:org:bco": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/organizations.json -d src/share/jsonld_examples/organizations/bcodmo_org.json",
-    "test:org": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/organizations.json -d src/share/jsonld_examples/organizations/*.json"
+    "test:dataset:bco": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/dataset.json -d src/share/examples/datasets/bcodmo_dataset.json",
+    "test:dataset": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/dataset.json -d src/share/examples/datasets/*.json",
+    "test:org:bco": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/organization.json -d src/share/examples/organizations/bcodmo_org.json",
+    "test:org": "ajv  validate --all-errors -c ./src/back/ajv-cli.js -s src/schema/organization.json -d src/share/examples/organizations/*.json"
   },
   "keywords": [],
   "author": "Alex McNurlan (ISTI inc.)",

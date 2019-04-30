@@ -78,7 +78,7 @@
       "name": "DOI landing page",
       "http://www.w3.org/ns/dcat#accessURL": "http://dx.doi.org/10.1594/IEDA/100704",
       "url": "http://dx.doi.org/10.1594/IEDA/100704",
-      "fileFormat": "application/vnd.ms-excel"
+      "encodingFormat": "application/vnd.ms-excel"
     },
     {
       "@type": "DataDownload",
@@ -86,7 +86,7 @@
       "name": "URL",
       "http://www.w3.org/ns/dcat#accessURL": "http://www.earthchem.org/library/browse/view?id=1088",
       "url": "http://www.earthchem.org/library/browse/view?id=1088",
-      "fileFormat": "application/vnd.ms-excel"
+      "encodingFormat": "application/vnd.ms-excel"
     }
   ],
   "identifier": [

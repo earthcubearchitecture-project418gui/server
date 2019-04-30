@@ -82,7 +82,7 @@
             "mainEntityOfPage": [{
                 "@type": "DigitalDocument",
                 "@id": "http://opencoredata.org/id/facilityinfo#mainEntityOfPageSwaggerUI",
-                "fileformat": "HTML",
+                "encodingFormat": "HTML",
                 "keywords": "Swagger",
                 "description": "User interface for the swagger document",
                 "url": "http://opencoredata.org/common/swagger-ui/"
@@ -90,7 +90,7 @@
             {
                 "@type": "DigitalDocument",
                 "@id": "http://opencoredata.org/id/facilityinfo#mainEntityOfPageSwaggerUI",
-                "fileformat": "HTML",
+                "encodingFormat": "HTML",
                 "keywords": "CatalogMap",
                 "description": "A map of all catalog files available",
                 "url": "http://opencoredata.org/maps/catalog/"

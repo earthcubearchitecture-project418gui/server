@@ -6,7 +6,7 @@
     "alternateName": "NE15_AlexanderB",
     "description": "This dataset was collected using the Optech Aquarius ALTM, a hybrid laser mapping system which collects simultaneous land and shallow water-depth measurements using a beam wavelength of 532 nm. <br><br>This dataset was collected as an NCALM Seed grant for PI Jason Alexandra, University of Wyoming. <br><br>This survey was performed with 2 different LiDAR systems: 1) Optech Gemini Airborne Laser Terrain Mapper (ALTM) which is an infrared laser mapping sensor and 2) Optech Aquarius ALTM which is a hybrid laser mapping system as it collects simultaneous land and shallow water-depth measurements. It operates in the green spectrum, thus enabling it to penetrate water. These LiDAR mapping systems along with an Optech 12-bit full waveform digitizer were mounted consecutively in a twin-engine Piper PA- 31-350 Navajo Chieftain (Tail Number N154WW).",
     "url": "http://opentopo.sdsc.edu/lidarDataset?opentopoID=OTLAS.102016.26914.1b",
-    "fileFormat" : "Point Cloud Data",
+    "encodingFormat" : "Point Cloud Data",
     "publisher" : {
         "@type": "Organization",
         "additionalType": "geolink:Organization",

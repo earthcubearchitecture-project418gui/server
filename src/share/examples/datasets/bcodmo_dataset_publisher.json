@@ -1,0 +1,50 @@
+{
+  "@context": {
+    "@vocab": "http:\/\/schema.org\/",
+    "gdx": "https:\/\/geodex.org\/voc\/",
+    "datacite": "http:\/\/purl.org\/spar\/datacite\/",
+    "earthcollab": "https:\/\/library.ucar.edu\/earthcollab\/schema#",
+    "geolink": "http:\/\/schema.geolink.org\/1.0\/base\/main#",
+    "geolink-vocab": "http:\/\/schema.geolink.org\/1.0\/voc\/local#",
+    "vivo": "http:\/\/vivoweb.org\/ontology\/core#"
+  },
+  "@id": "https:\/\/www.bco-dmo.org\/dataset\/685783",
+  "name": "MODIFIED",
+  "isAccessibleForFree": true,
+  "identifier": [
+    "http:\/\/lod.bco-dmo.org\/id\/dataset\/685783",
+    {
+      "@type": "PropertyValue",
+      "additionalType": [
+        "http:\/\/schema.geolink.org\/1.0\/base\/main#Identifier",
+        "http:\/\/purl.org\/spar\/datacite\/Identifier"
+      ],
+      "@id": "https:\/\/doi.org\/10.1575\/1912\/bco-dmo.685952",
+      "propertyID": "http:\/\/purl.org\/spar\/datacite\/doi",
+      "value": "10.1575\/1912\/bco-dmo.685952",
+      "url": "https:\/\/doi.org\/10.1575\/1912\/bco-dmo.685952"
+    }
+  ],
+  "url": "https:\/\/www.bco-dmo.org\/dataset\/685783",
+  "@type": "Dataset",
+  "additionalType": [
+    "http:\/\/schema.geolink.org\/1.0\/base\/main#Dataset",
+    "http:\/\/vivoweb.org\/ontology\/core#Dataset"
+  ],
+  "alternateName": "Carbon flux",
+  "description": "MODIFIED",
+  "datePublished": "2017-03-27",
+  "keywords": "benthic pelagic coupling, Dissolved Organic Carbon, particulate organic carbon, Porifera, benthic suspension feeding, biota, oceans",
+  
+  "citation": ["Finelli, C., Pawlik, J., McMurray, S. (2017) Carbon flux for the Caribbean giant barrel sponge Xestospongia muta (Sponge-loop). Biological and Chemical Oceanography Data Management Office (BCO-DMO). Dataset version 2017-03-27 [if applicable, indicate subset used]. doi:10.1575\/1912\/bco-dmo.685952 [access date]"],
+  "version": "2017-03-27",
+  "license": "http:\/\/creativecommons.org\/licenses\/by\/4.0\/",
+  
+ 
+  "provider": {
+    "@type": "Organization",
+    "@id": "https:\/\/www.bco-dmo.org",
+    "legalName": "MODIFIED",
+    "url": "http://www.example.com/MODIFIED"
+  }
+}

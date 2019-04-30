@@ -24,7 +24,7 @@
     "distribution": [
         {
             "@type": "DataDownload",
-            "fileFormat": "CSV",
+            "encodingFormat": "CSV",
             "contentUrl": "<a href=\"https:\/\/www.unavco.org\/data\/gps-gnss\/data-access-methods\/dai1\/select_data.php?code=MWTP&gid=2937&ds=24&parent_link=Permanent&pview=original&filter_data_availability=checked&from_date=1998-08-14&to_date=2018-08-15\">Download data<\/a>"
         }
     ],
