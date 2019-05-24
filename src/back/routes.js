@@ -67,6 +67,30 @@ module.exports = function (schemaFolder) {
         valid
       });
     });
+
+    router.post('/validate_standard_dataset', (req, res) => {
+      // const {schema, doc} = req.body;
+      const validator = ajv.compile(schemas['dataset']);
+
+      let valid = validator(req.body);
+      res.status(200);
+      res.send({
+        ...ajv.errors(),
+        valid
+      });
+    });
+
+    router.post('/validate_standard_organization', (req, res) => {
+      // const {schema, doc} = req.body;
+      const validator = ajv.compile(schemas['organization']);
+
+      let valid = validator(req.body);
+      res.status(200);
+      res.send({
+        ...ajv.errors(),
+        valid
+      });
+    });
   })(schemaFolder);
 
   
