@@ -32,7 +32,7 @@ function fetchCross(url, options) {
   return fetch('https://crossorigin.me/' + url, {
     mode: "cors",
     headers: {
-      Origin: 'https://earthcube.isti.com'
+      Origin: 'https://earthcube.org/webapps/geocodes/registration'
     }
   });
 }

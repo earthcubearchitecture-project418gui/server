@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://earthcube.isti.com/ucar-json-ld.dataset.schema.json",
+  "$id": "http://earthcube.org/webapps/geocodes/registration/ucar-json-ld.dataset.schema.json",
   "title": "EarthCube GeoCODES Registered Dataset",
   "description": "",
   "type": "object",
@@ -243,7 +243,7 @@
           "type": "string",
           "title": "Legal Name",
           "description": "Enter the name that is legally registered to the data provider.",
-          "example": "Biological and Chemical Data Management Office"
+          "example": "Biological and Chemical Oceanography Data Management Office"
         },
         "name": {
           "type": "string",
