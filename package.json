@@ -17,7 +17,7 @@
   "author": "Alex McNurlan (ISTI inc.)",
   "license": "ISC",
   "dependencies": {
-    "ajv": "^6.8.1",
+    "ajv": "^6.12.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "ramda": "^0.25.0",
