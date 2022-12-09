@@ -19,7 +19,7 @@
   "dependencies": {
     "ajv": "^6.8.1",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "ramda": "^0.25.0",
     "validator": "^10.8.0",
     "winston": "^3.2.1"
